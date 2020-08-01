@@ -1,59 +1,0 @@
-
-6python:S3626Ê"Remove this redundant return.(ÙãÞŸ
->python:S1481½
-"%Remove the unused local variable "x".(«§ÎÚ
-mpython:S1192³"ODefine a constant instead of duplicating this literal "Person Banned:" 4 times.(÷ç€üûÿÿÿÿ
-epython:S1192‰"GDefine a constant instead of duplicating this literal "Lives:" 3 times.(ÞÊÊ„ùÿÿÿÿ
-dpython:S1192Ñ"KDefine a constant instead of duplicating this literal "Kicked By:" 3 times.(º†êà
-Tpython:S57547"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-mpython:S3776Š"TRefactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.(Šè´Ä
-~python:S1192æ"`Define a constant instead of duplicating this literal 'https://i.imgur.com/XgqWMei.jpg' 4 times.(Ç¼·øÿÿÿÿ
-qpython:S1192Ù"SDefine a constant instead of duplicating this literal "%b %d %Y %H:%M UTC" 3 times.(Ô™¢ûÿÿÿÿ
-rpython:S3776÷"TRefactor this function to reduce its Cognitive Complexity from 25 to the 15 allowed.(¦žÃðþÿÿÿÿ
-Upython:S5754 "<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-Dpython:S5806ú"+Rename this variable; it shadows a builtin.(Óö‚²
-dpython:S1192ª"KDefine a constant instead of duplicating this literal "Banned By:" 5 times.(ŸÛ…ã
-jpython:S1192Ç	"QDefine a constant instead of duplicating this literal "Translated Text:" 3 times.(äÞ‹Ù
-ppython:S1192ü"WDefine a constant instead of duplicating this literal "Please enter a number!" 4 times.(õþ†»
-Hpython:S14816"+Remove the unused local variable "cur_num".(†­¼³üÿÿÿÿ
->python:S1481²
-"%Remove the unused local variable "x".(«§ÎÚ
-Cpython:S1481ð"%Remove the unused local variable "x".(ìž–Ùûÿÿÿÿ
-ipython:S1542Þ"KRename function "_x" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(…—Å˜üÿÿÿÿ
-bpython:S1192µ"IDefine a constant instead of duplicating this literal "User ID:" 7 times.(ÏÊà§
-lpython:S1192Š"NDefine a constant instead of duplicating this literal "Letters Left:" 3 times.(ÔÕËËûÿÿÿÿ
-Upython:S5754¯	"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-mpython:S3776Ò"TRefactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.(…Ãã’
-¿python:S1192Ö"¥Define a constant instead of duplicating this literal "Requester ID: {} | Requester Name + Discriminator {}#{} | Message ID: {} | Message Link: {} | At: {}" 3 times.(ãªÄ×
-opython:S1192Ä	"VDefine a constant instead of duplicating this literal "Translation Completed" 3 times.(×ÌÑ•
-qpython:S1192Æ"SDefine a constant instead of duplicating this literal "%Y-%m-%d %H:%M UTC" 4 times.(Ç™êüÿÿÿÿ
-dpython:S1192Ç"FDefine a constant instead of duplicating this literal "Soft " 6 times.(ÂŒÃ¯ûÿÿÿÿ
-Upython:S5754·"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-hpython:S1192Ï"ODefine a constant instead of duplicating this literal "Dealer's Hand:" 4 times.(ûÿõÂ
-dpython:S1542Ê"KRename function "_f" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(°š¥
-mpython:S1192ÿ"ODefine a constant instead of duplicating this literal "Unshadowed By:" 3 times.( òûÿÿÿÿ
-§python:S1192ö"Define a constant instead of duplicating this literal "https://raw.githubusercontent.com/bevacqua/correcthorse/master/wordlist.json" 5 times.(Àí™§
-epython:S1192Ú"MDefine a constant instead of duplicating this literal "Shadowed By:" 3 times.(ß–°$
-Upython:S5754³"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-apython:S1192»"IDefine a constant instead of duplicating this literal "Reason:" 25 times.(ÏùW
-dpython:S1192÷"KDefine a constant instead of duplicating this literal "Warned By:" 3 times.(¬´³œ
-8python:S3626Ž"Remove this redundant continue.(À–¬ˆ
-mpython:S3776Ø"TRefactor this function to reduce its Cognitive Complexity from 42 to the 15 allowed.(Ø§þ
-Cpython:S1481Â"%Remove the unused local variable "x".(¿Çßæúÿÿÿÿ
-mpython:S3776ô"TRefactor this function to reduce its Cognitive Complexity from 29 to the 15 allowed.(ªÕõ“
-cpython:S1542¿"KRename function "dm" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ÅÇô(
-dpython:S1192Î"KDefine a constant instead of duplicating this literal "Your Hand:" 4 times.(ŒÆ²
-jpython:S1192‚"LDefine a constant instead of duplicating this literal "Unmuted By:" 3 times.(ý–‹øÿÿÿÿ
-spython:S117è"\Rename this local variable "RPS_options" to match the regular expression ^[_a-z][a-z0-9_]*$.(½ž*
-epython:S1192¥"GDefine a constant instead of duplicating this literal "Error:" 7 times.(¬´Ëøÿÿÿÿ
-gpython:S1192Î"NDefine a constant instead of duplicating this literal "{}\nValue: {}" 8 times.(ŒÆ²
->python:S1481À"%Remove the unused local variable "x".(©ÝÏü
-rpython:S3776ö"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ï®À¸ýÿÿÿÿ
-=python:S1481ý"%Remove the unused local variable "x".(»¨±
-mpython:S1192È	"ODefine a constant instead of duplicating this literal "Pronunciation:" 3 times.(¼–þÉýÿÿÿÿ
-Upython:S5754û"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-spython:S3776ë"URefactor this function to reduce its Cognitive Complexity from 119 to the 15 allowed.(·Ší¡øÿÿÿÿ
-ºpython:S1192À	"›Define a constant instead of duplicating this literal "https://raw.githubusercontent.com/TheodoreHua/elevator-bot-resources/master/languages.json" 3 times.(¸Ê²éúÿÿÿÿ
-Upython:S5754©	"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-hpython:S1192Ý"JDefine a constant instead of duplicating this literal "Muted By:" 3 times.(Ó­€¤ýÿÿÿÿ
-npython:S1192Ê	"VDefine a constant instead of duplicating this literal "Destination Language:" 3 times.(ê‰-
