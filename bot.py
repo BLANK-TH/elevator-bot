@@ -26,7 +26,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.39.174 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.39.175 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -2100,7 +2100,11 @@ async def ban(ctx,user: discord.Member,*,reason=None):
     embed.add_field(name="Reason:",value=reason,inline=False)
     embed.set_image(url='https://i.imgur.com/YXndYr3.png')
     embed.set_footer(text=df)
-    await user.send(embed=embed)
+    try:
+        await user.send(embed=embed)
+    except discord.ext.commands.errors.CommandInvokeError as e:
+        await ctx.message.channel.send("The user could not be DMed, they were still banned regardless.",
+                                       embed=discord.Embed(description=repr(e)))
     log_embed = discord.Embed(
         title="Someone was banned!",
         colour=hc
@@ -2139,7 +2143,11 @@ async def kick(ctx,user: discord.Member,*,reason="None"):
     embed.add_field(name="Reason:",value=reason,inline=False)
     embed.set_image(url='https://i.imgur.com/KUdbyB6.png')
     embed.set_footer(text=df)
-    await user.send(embed=embed)
+    try:
+        await user.send(embed=embed)
+    except discord.ext.commands.errors.CommandInvokeError as e:
+        await ctx.message.channel.send("The user could not be DMed, they were still kicked regardless.",
+                                       embed=discord.Embed(description=repr(e)))
     log_embed = discord.Embed(
         title="Someone was kicked!",
         colour=hc
@@ -2177,27 +2185,33 @@ async def warn(ctx,user: discord.Member,*,reason):
     embed.add_field(name="Reason:",value=reason,inline=False)
     embed.set_image(url='https://i.imgur.com/1x4hFjz.gif')
     embed.set_footer(text=df)
-    await user.send(embed=embed)
-    log_embed = discord.Embed(
-        title="Someone was warned!",
-        colour=hc
-    )
-    log_embed.add_field(name="Person Warned:",value=user.display_name)
-    log_embed.add_field(name="Warned By:", value=ctx.message.author)
-    log_embed.add_field(name="User ID:", value=user.id)
-    log_embed.add_field(name="Reason:", value=reason, inline=False)
-    log_embed.set_footer(text=df)
-    await log_channel.send(embed=log_embed)
-    confirm_embed = discord.Embed(
-        title="Warn Succeeded",
-        colour=discord.Colour.green()
-    )
-    confirm_embed.add_field(name="Person Warned:", value=user.display_name)
-    confirm_embed.add_field(name="Warned By:", value=ctx.message.author)
-    confirm_embed.add_field(name="Reason:", value=reason, inline=False)
-    confirm_embed.set_footer(text=df)
-    confirm = await ctx.message.channel.send(embed=confirm_embed)
-    await confirm.delete(delay=7)
+    try:
+        await user.send(embed=embed)
+    except discord.ext.commands.CommandInvokeError as e:
+        await ctx.message.channel.send("The user could not be warned, they might have DM's disabled",
+                                       embed=discord.Embed(description=repr(e)))
+        return
+    else:
+        log_embed = discord.Embed(
+            title="Someone was warned!",
+            colour=hc
+        )
+        log_embed.add_field(name="Person Warned:",value=user.display_name)
+        log_embed.add_field(name="Warned By:", value=ctx.message.author)
+        log_embed.add_field(name="User ID:", value=user.id)
+        log_embed.add_field(name="Reason:", value=reason, inline=False)
+        log_embed.set_footer(text=df)
+        await log_channel.send(embed=log_embed)
+        confirm_embed = discord.Embed(
+            title="Warn Succeeded",
+            colour=discord.Colour.green()
+        )
+        confirm_embed.add_field(name="Person Warned:", value=user.display_name)
+        confirm_embed.add_field(name="Warned By:", value=ctx.message.author)
+        confirm_embed.add_field(name="Reason:", value=reason, inline=False)
+        confirm_embed.set_footer(text=df)
+        confirm = await ctx.message.channel.send(embed=confirm_embed)
+        await confirm.delete(delay=7)
 
 @client.command(aliases=['sleepy','sleep'])
 async def _sleep(ctx):
@@ -2660,7 +2674,11 @@ async def shadow(ctx,user: discord.Member,*,reason="N/A"):
     embed.add_field(name="Reason:",value=reason)
     embed.set_image(url='https://i.imgur.com/Vc2VRnp.png')
     embed.set_footer(text=df)
-    await user.send(embed=embed)
+    try:
+        await user.send(embed=embed)
+    except discord.ext.commands.errors.CommandInvokeError as e:
+        await ctx.message.channel.send("The user could not be DMed, they were still shadowed regardless.",
+                                       embed=discord.Embed(description=repr(e)))
     log_embed = discord.Embed(
         title="Someone was shadowed!",
         colour=hc
@@ -2695,7 +2713,11 @@ async def unshadow(ctx,user: discord.Member):
     )
     embed.add_field(name="Unshadowed By:",value=ctx.message.author.display_name)
     embed.set_footer(text=df)
-    await user.send(embed=embed)
+    try:
+        await user.send(embed=embed)
+    except discord.ext.commands.errors.CommandInvokeError as e:
+        await ctx.message.channel.send("The user could not be DMed, they were still unshadowed regardless.",
+                                       embed=discord.Embed(description=repr(e)))
     log_embed = discord.Embed(
         title="Someone was unshadowed!",
         colour=hc
@@ -2791,7 +2813,11 @@ async def mute(ctx,user: discord.Member,*,reason="N/A"):
     embed.add_field(name="Reason:",value=reason)
     embed.set_image(url='https://i.imgur.com/q1zwHO8.png')
     embed.set_footer(text=df)
-    await user.send(embed=embed)
+    try:
+        await user.send(embed=embed)
+    except discord.ext.commands.errors.CommandInvokeError as e:
+        await ctx.message.channel.send("The user could not be DMed, they were still muted regardless.",
+                                       embed=discord.Embed(description=repr(e)))
     log_embed = discord.Embed(
         title="Someone was muted!",
         colour=hc
@@ -2826,7 +2852,11 @@ async def unmute(ctx,user: discord.Member):
     )
     embed.add_field(name="Unmuted By:",value=ctx.message.author.display_name)
     embed.set_footer(text=df)
-    await user.send(embed=embed)
+    try:
+        await user.send(embed=embed)
+    except discord.ext.commands.errors.CommandInvokeError as e:
+        await ctx.message.channel.send("The user could not be DMed, they were still unmuted regardless.",
+                                       embed=discord.Embed(description=repr(e)))
     log_embed = discord.Embed(
         title="Someone was unmuted!",
         colour=hc
@@ -2846,7 +2876,6 @@ async def unmute(ctx,user: discord.Member):
     confirm = await ctx.message.channel.send(embed=confirm_embed)
     await user.remove_roles(role)
     await confirm.delete(delay=7)
-
 @client.command()
 async def code(ctx):
     code_embed = discord.Embed(
