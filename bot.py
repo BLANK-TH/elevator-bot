@@ -26,7 +26,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.39.175 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.40.175 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -2102,7 +2102,7 @@ async def ban(ctx,user: discord.Member,*,reason=None):
     embed.set_footer(text=df)
     try:
         await user.send(embed=embed)
-    except discord.ext.commands.errors.CommandInvokeError as e:
+    except discord.errors.Forbidden as e:
         await ctx.message.channel.send("The user could not be DMed, they were still banned regardless.",
                                        embed=discord.Embed(description=repr(e)))
     log_embed = discord.Embed(
@@ -2145,7 +2145,7 @@ async def kick(ctx,user: discord.Member,*,reason="None"):
     embed.set_footer(text=df)
     try:
         await user.send(embed=embed)
-    except discord.ext.commands.errors.CommandInvokeError as e:
+    except discord.errors.Forbidden as e:
         await ctx.message.channel.send("The user could not be DMed, they were still kicked regardless.",
                                        embed=discord.Embed(description=repr(e)))
     log_embed = discord.Embed(
@@ -2187,7 +2187,7 @@ async def warn(ctx,user: discord.Member,*,reason):
     embed.set_footer(text=df)
     try:
         await user.send(embed=embed)
-    except discord.ext.commands.CommandInvokeError as e:
+    except discord.errors.Forbidden as e:
         await ctx.message.channel.send("The user could not be warned, they might have DM's disabled",
                                        embed=discord.Embed(description=repr(e)))
         return
@@ -2676,7 +2676,7 @@ async def shadow(ctx,user: discord.Member,*,reason="N/A"):
     embed.set_footer(text=df)
     try:
         await user.send(embed=embed)
-    except discord.ext.commands.errors.CommandInvokeError as e:
+    except discord.errors.Forbidden as e:
         await ctx.message.channel.send("The user could not be DMed, they were still shadowed regardless.",
                                        embed=discord.Embed(description=repr(e)))
     log_embed = discord.Embed(
@@ -2715,7 +2715,7 @@ async def unshadow(ctx,user: discord.Member):
     embed.set_footer(text=df)
     try:
         await user.send(embed=embed)
-    except discord.ext.commands.errors.CommandInvokeError as e:
+    except discord.errors.Forbidden as e:
         await ctx.message.channel.send("The user could not be DMed, they were still unshadowed regardless.",
                                        embed=discord.Embed(description=repr(e)))
     log_embed = discord.Embed(
@@ -2815,7 +2815,7 @@ async def mute(ctx,user: discord.Member,*,reason="N/A"):
     embed.set_footer(text=df)
     try:
         await user.send(embed=embed)
-    except discord.ext.commands.errors.CommandInvokeError as e:
+    except discord.errors.Forbidden as e:
         await ctx.message.channel.send("The user could not be DMed, they were still muted regardless.",
                                        embed=discord.Embed(description=repr(e)))
     log_embed = discord.Embed(
@@ -2854,7 +2854,7 @@ async def unmute(ctx,user: discord.Member):
     embed.set_footer(text=df)
     try:
         await user.send(embed=embed)
-    except discord.ext.commands.errors.CommandInvokeError as e:
+    except discord.errors.Forbidden as e:
         await ctx.message.channel.send("The user could not be DMed, they were still unmuted regardless.",
                                        embed=discord.Embed(description=repr(e)))
     log_embed = discord.Embed(
