@@ -26,7 +26,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.40.175 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.40.176 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -1222,7 +1222,7 @@ async def google(ctx,*,question):
 @client.command()
 async def translate(ctx,*,text):
     LANGUAGES = json.loads(urllib.request.urlopen(
-        "https://raw.githubusercontent.com/TheodoreHua/elevator-bot-resources/master/languages.json").read())
+        "https://raw.githubusercontent.com/BLANK-TH/elevator-bot-resources/bot-storage/languages.json").read())
     translator = Translator()
     translated = translator.translate(text)
     embed = discord.Embed(
@@ -1240,7 +1240,7 @@ async def translate(ctx,*,text):
 @client.command()
 async def translateto(ctx,languageto,*,text):
     LANGUAGES = json.loads(urllib.request.urlopen(
-        "https://raw.githubusercontent.com/TheodoreHua/elevator-bot-resources/master/languages.json").read())
+        "https://raw.githubusercontent.com/BLANK-TH/elevator-bot-resources/bot-storage/languages.json").read())
     translator = Translator()
     try:
         translated = translator.translate(text,dest=languageto)
@@ -1265,7 +1265,7 @@ async def translateto(ctx,languageto,*,text):
 @client.command()
 async def translatefrom(ctx,languagefrom,*,text):
     LANGUAGES = json.loads(urllib.request.urlopen(
-        "https://raw.githubusercontent.com/TheodoreHua/elevator-bot-resources/master/languages.json").read())
+        "https://raw.githubusercontent.com/BLANK-TH/elevator-bot-resources/bot-storage/languages.json").read())
     translator = Translator()
     try:
         translated = translator.translate(text,src=languagefrom)
