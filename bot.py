@@ -26,7 +26,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.40.177 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.40.178 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -2887,5 +2887,80 @@ async def code(ctx):
     )
     code_embed.set_footer(text=df)
     await ctx.message.channel.send(embed=code_embed)
+
+@client.command(aliases=["color","colour"])
+async def _colour(ctx,*,colour_name:str):
+    colour_name = colour_name.lower()
+    active_role = get(ctx.guild.roles, id=740030930021908570)
+    colours = {"pastel pink":686702267130314808,
+               "hot pink":686702466691366976,
+               "pink":686702499058810943,
+               "red":686702505543073893,
+               "coral":686709079132995635,
+               "orange":686709080114724866,
+               "pastel yellow":686709081523617831,
+               "yellow":686709082270203910,
+               "pastel green":686709082685440023,
+               "green":686709083465973790,
+               "dark green":686709084254240772,
+               "turquoise":687758351337127956,
+               "pastel blue":686709084979855362,
+               "blue":686709085877698560,
+               "dark blue":686709086527553579,
+               "pastel purple":686709087387648043,
+               "purple":686709087983239199,
+               "dark purple":686709088628899877}
+    active_colours = {"mango":740935054305394749,
+                      "sky blue":740934645742436372,
+                      "blueberry":740934756119609454,
+                      "light teal":740934939159035945,
+                      "mint":740935184744054804}
+    if colour_name == "none":
+        prev_colour = None
+        for name, role_id in colours:
+            role = get(ctx.guild.roles, id=role_id)
+            if role in ctx.message.author.roles:
+                await ctx.message.author.remove_roles(role)
+                prev_colour = name
+        for name, role_id in active_colours:
+            role = get(ctx.guild.roles, id=role_id)
+            if role in ctx.message.author.roles:
+                await ctx.message.author.remove_roles(role)
+                prev_colour = name
+        await ctx.message.channel.send("The colour role `{}` has been removed successfully".format(prev_colour.title()))
+    elif colour_name in active_colours.keys():
+        if active_role not in ctx.message.author.roles:
+            await ctx.message.channel.send("You are trying to get a Active Role only colour when you don't have the Active Member role.")
+            return
+    elif colour_name not in colours.keys() and colour_name not in active_colours.keys():
+        await ctx.message.channel.send("You are trying to get a colour that doesnt' exist. "
+                                       "Here are the viable colour names: \nColours: {} \n\n Active Colours: {}".format(
+            "\n".join(x for x,y in colours),"\n".join(x for x,y in active_colours)
+        ))
+        return
+    else:
+        prev_colour = None
+        for name,role_id in colours:
+            role = get(ctx.guild.roles,id=role_id)
+            if role in ctx.message.author.roles:
+                await ctx.message.author.remove_roles(role)
+                prev_colour = name
+        for name,role_id in active_colours:
+            role = get(ctx.guild.roles, id=role_id)
+            if role in ctx.message.author.roles:
+                await ctx.message.author.remove_roles(role)
+                prev_colour = name
+        if colour_name in active_colours.keys():
+            role = get(ctx.guild.roles,id=active_colours[colour_name])
+        else:
+            role = get(ctx.guild.roles, id=colours[colour_name])
+        await ctx.message.author.add_roles(role)
+        if prev_colour is None:
+            await ctx.message.channel.send(
+                "The colour role `{}` has been added successfully.".format(colour_name.title()))
+        else:
+            await ctx.message.channel.send(
+                "The colour role `{}` has been added successfully. `{}` has been removed successfully.".format(
+                    colour_name.title(),prev_colour.title()))
 
 client.run(BOT_TOKEN)

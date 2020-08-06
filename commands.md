@@ -339,6 +339,10 @@ Posts a reference to the punishment layout that you specified. If none are speci
 #### Command: `report <user> <reason>` **OR** `r <user> <reason>`
 Report a member of the server to the staff team.
 
+### Get a Colour
+#### Command: `colour <colour name>` **OR** `color <color name>`
+Get a colour role or if you already have one, replace it. Enter `none` as the colour role to remove it.
+
 [//]: # (new server commands goes here)
 
 ## Minigame Commands
