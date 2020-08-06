@@ -26,7 +26,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.40.184 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.40.185 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -2970,11 +2970,16 @@ async def promoteactive(ctx,user:discord.Member):
         description="You have been promoted to Active Member by **{}**! You now have access to the active-chat, "
                     "active member colours, a higher spot in the member list on the right, "
                     "and other special perks that will be coming soon in the future. If there "
-                    "is a colour you think should be added to the active colour list, message BLANK in suggestions",
+                    "is a colour you think should be added to the active colour list, message BLANK in suggestions".format(
+            ctx.message.author.display_name
+        ),
         colour=hc
     )
     embed.set_footer(text=df)
     active_role = get(ctx.guild.roles, id=740030930021908570)
+    if active_role in user.roles:
+        await ctx.message.channel.send("The user already has the Active Member role. Ain't no such thing as double active member!")
+        return
     try:
         await user.send(embed=embed)
     except Exception as e:
