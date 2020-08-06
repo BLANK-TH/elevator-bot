@@ -2968,7 +2968,8 @@ async def _colour(ctx,*,colour_name:str):
 async def promoteactive(ctx,user:discord.Member):
     embed = discord.Embed(
         description="You have been promoted to Active Member by **{}**! You now have access to the active-chat, "
-                    "active member colours, and other special perks that will be coming soon in the future. If there "
+                    "active member colours, a higher spot in the member list on the right, "
+                    "and other special perks that will be coming soon in the future. If there "
                     "is a colour you think should be added to the active colour list, message BLANK in suggestions",
         colour=hc
     )
