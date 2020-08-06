@@ -463,6 +463,10 @@ anything you want after the command (it only checks if something is there not wh
 if you do count message intensive channels the amount of time it takes to calculate may increase drastically.
 You may see that the bot will be typing throughout this proccess, that is explained [here](#Typing)
 
+### Promote to Active Member
+#### Command: `promoteactive <user>`
+Give a user the active member role and DM them some basic information.
+
 [//]: # (new moderation commands goes here)
 
 ## Bot Development Commands
