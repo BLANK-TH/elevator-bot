@@ -328,7 +328,7 @@ such a feature is mostly not needed.
 Posts a reference to the rule number you specified, if no rule number was specified then it will show all rules.
 
 ### Punishments Reference
-#### Command: `punishments [strikes/info/shadow/report/appeal/full]`
+#### Command: `punishments [strikes/info/shadow/report/appeal/logging/exempt/full]`
 Posts a reference to the punishment layout that you specified. If none are specified then the default is strikes.
 
 [//]: # (new utility commands goes here)
