@@ -41,8 +41,9 @@ Run `setx GITHUB_TOKEN your_github_personal_access_token_here`. Replace
 `your_github_personal_access_token_here` with a GitHub personal access token for
 your account. To learn how to get that token,
 [Click Here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
-Make sure that token has the following permissions: `repo` AND `read:packages`
-AND `write:packages`.
+Make sure that token has the following permissions: `repo` AND `read:packages` AND `write:packages`.
+Run `setx KRAKEN_TOKEN your_gitkraken_boards_pat_here`. Replace `your_gitkraken_boards_pat_here` with
+a GitKraken account person access token with read + write permissions for both board and user.
 
 ##### OPTION 2: Create a .env file
 In the folder in which you are storing the project files (make sure it's the
@@ -51,12 +52,14 @@ same folder as the one with `bot.py` in it) create a new file called `.env`
 ```
 GITHUB_TOKEN="your_github_personal_access_token_here"
 BOT_TOKEN="your_discord_token_here"
+KRAKEN_TOKEN="your_gitkraken_boards_pat_here"
 ```
-Replace your_discord_token_here with your discord bot token. Replace
-your_github_personal_access_token_here with a GitHub personal access token for
+Replace `your_discord_token_here` with your discord bot token. Replace
+`your_github_personal_access_token_here` with a GitHub personal access token for
 your account. To learn how to get that token,
 [Click Here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
 Make sure that token has the following permissions: `repo` AND `read:packages`
-AND `write:packages`.
+AND `write:packages`. Replace `your_gitkraken_boards_pat_here` with
+a GitKraken account person access token with read + write permissions for both board and user.
 
 #### DONE!

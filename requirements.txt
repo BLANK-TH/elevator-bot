@@ -12,3 +12,4 @@ minesweeperPy==1.8
 captcha==0.3
 Python-Trivia-API
 python-dotenv==0.14.0
+py-glo-board==1.0.2

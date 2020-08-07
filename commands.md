@@ -483,9 +483,35 @@ Displays the current ping of the bot.
 #### Command: `version`
 Tells you the current version number of the bot.
 
+### Command Suggestion
+#### Command: `suggestcommand <idea title> [| idea description]` **OR** `rp!sco <idea title> [| idea description]`
+Request/Suggest a new command for the bot. Example without description: `s!sco b message`. 
+Example with description: `s!sco b message | convert all B's in the message into the b emoji`.
+
+### Feature Update Suggestion
+#### Command: `featureupdate <command name> | <feature update title> [| feature update description]` **OR** `fu <command name> | <feature update title> [| feature update description]`
+Request/Suggest a update for a existing command in the bot. Example without description: 
+`s!fu emojitype | change blue b to red b`. 
+Example with description: `s!fu emojitype | change blue b to red b | change all B's in the emojitype
+command to red b's instead of blue b's`.
+
+### Bug Report
+#### Command: `bugreport <bug title> [| bug description]` **OR** `rp!br <bug title> [| bug description]`
+Report a bug in the bot. Example without description: `s!br doesn't use b emoji`. Example with description: 
+`s!br doesn't use b emoji | should replace all B's in all of the messages with the b emoji`.
+
 [//]: # (new bot development commands go here)
 
 ## Info
+
+### Report Bugs
+Report bugs in the bot by using `s!bugreport Bug In <command> | <more accurate description and how to reproduce>`
+
+### Report Typos
+Report typos by using `s!bugreport Typo In <command> | <more accurate description>`
+
+### Suggest Command
+Suggest a new command by using `s!suggestcommand <command name> | <description of command>`
 
 ### Typing
 When the bot is typing, that signals that the bot is currently running your command and that it might take a while.

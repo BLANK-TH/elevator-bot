@@ -16,6 +16,7 @@ from pytrivia import Trivia,Type
 from os import urandom,environ,getenv
 from dotenv import load_dotenv
 from pathlib import Path
+from py_glo_boards_api import GloBoard, types
 import urllib
 import urllib.request
 import json
@@ -26,20 +27,27 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.40.188 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.41.188 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
-if "GITHUB_TOKEN" not in environ.keys() and "BOT_TOKEN" not in environ.keys():
+if "GITHUB_TOKEN" not in environ.keys() and "BOT_TOKEN" not in environ.keys() and "KRAKEN_TOKEN" not in environ.keys():
     env_path = Path(".") / ".env"
     load_dotenv(dotenv_path=env_path)
 GITHUB_TOKEN = getenv("GITHUB_TOKEN")
 BOT_TOKEN = getenv("BOT_TOKEN")
-if GITHUB_TOKEN is None or BOT_TOKEN is None:
-    print("Cannot get either the github token or bot token, make sure they are in environment variable OR .env file")
+KRAKEN_TOKEN = getenv("KRAKEN_TOKEN")
+if GITHUB_TOKEN is None or BOT_TOKEN is None or KRAKEN_TOKEN is None:
+    print("Cannot get either the github token or bot token or gitkraken token, make sure they are in environment variable OR .env file")
     exit()
 github = Github(GITHUB_TOKEN)
 repo = github.get_repo("BLANK-TH/elevator-bot-resources")
+globoard = GloBoard(KRAKEN_TOKEN)
+board_id = "5f2ae8cf15d46100116b20a5"
+queue_column_id = "5f2ae8cf15d46100116b20ac"
+approval_column_id = "5f2d4a30ab0eea0011aa048f"
+all_labels = json.loads(urllib.request.urlopen(
+    "https://raw.githubusercontent.com/BLANK-TH/elevator-bot-resources/bot-storage/labels.json").read())
 
 @client.event
 async def on_ready():
@@ -2994,5 +3002,161 @@ async def promoteactive(ctx,user:discord.Member):
     await user.add_roles(active_role)
     await ctx.message.channel.send(embed=discord.Embed(
         description="{} has been successfully promoted to active member!".format(user.mention)))
+
+@client.command(aliases=['devadd','devtodo'])
+async def _developeraddtodo(ctx,type,priority,bot,difficulty,*,title_description):
+    if not ctx.message.author.id == 616032766974361640:
+        await ctx.message.channel.send("You do not have permissions to do this, this is for the bot developer only. You "
+                                       "can try the `suggestcommand` or `bugreport` command.")
+        return
+    if "|" in title_description:
+        title = title_description.split("|")[0].strip()
+        description = title_description.split("|")[1].strip()
+    else:
+        title = title_description.strip()
+        description = None
+    async with ctx.message.channel.typing():
+        prioritys = all_labels["priority"]
+        types = all_labels["type"]
+        bots = all_labels["bot"]
+        difficultys = all_labels["difficulty"]
+        difficultys["none"] = None
+        if priority.lower() not in prioritys.keys() and type.lower() not in types.keys() and \
+            bot.lower() not in bots.keys() and difficulty.lower() not in difficultys.keys():
+                await ctx.message.channel.send("Invalid Type/Priority/Bot/Difficulty")
+                return
+        lab = [{"id":prioritys[priority.lower()]},{"id":types[type.lower()]},{"id":bots[bot.lower()]}]
+        if difficultys[difficulty] is not None:
+            lab.append({"id":difficultys[difficulty.lower()]})
+        if description is not None:
+            card = globoard.create_card(board_id,queue_column_id,title,description=description,labels=lab)
+        else:
+            card = globoard.create_card(board_id, queue_column_id, title, labels=lab)
+        globoard.create_comment(board_id, card.id,
+                                "Long Link: https://app.gitkraken.com/glo/board/{}/card/{}\nID: {}".format(board_id,
+                                                                                                         card.id,
+                                                                                                         card.id))
+    confirm_embed = discord.Embed(title="Developer Queue Addition Succeeded!",
+                                  description='To view the card, visit this link:\n'
+                                              + "https://app.gitkraken.com/glo/board/{}/card/{}".format(board_id,card.id),
+                                  colour=discord.Colour.green())
+    confirm_embed.add_field(name='Title:', value=title)
+    confirm_embed.add_field(name='Description:', value=str(description))
+    confirm_embed.add_field(name='Type:', value=type.title())
+    confirm_embed.add_field(name='Priority:', value=priority.title())
+    confirm_embed.add_field(name="Bot", value=bot.title())
+    confirm_embed.add_field(name="Difficulty", value=difficulty.title())
+    confirm_embed.add_field(name='Requester', value=ctx.message.author)
+    confirm_embed.set_footer(text=df)
+    await ctx.message.channel.send(embed=confirm_embed)
+
+@client.command(aliases=['bugreport','br'])
+async def _bugreport(ctx,*,title_description):
+    if "|" in title_description:
+        bug_title = title_description.split("|")[0].strip()
+        bug_description = title_description.split("|")[1].strip()
+    else:
+        bug_title = title_description.strip()
+        bug_description = "None"
+    async with ctx.message.channel.typing():
+        types = all_labels["type"]
+        info = f"Bug Description: {str(bug_description)} | Reporter Name + Discriminator: {ctx.message.author.name}#" \
+           f"{ctx.message.author.discriminator} | Reporter Nickname: {ctx.message.author.nick} | Reporter ID: " \
+           f'{str(ctx.message.author.id)} | Reported At: {ctx.message.created_at.strftime("%Y-%m-%d %H:%M UTC")} | ' \
+           f'Message Link: {ctx.message.jump_url} | Message ID: {str(ctx.message.id)} | Channel Name: ' \
+           f'{ctx.message.channel.name} | Channel ID: {str(ctx.message.channel.id)}'
+        card = globoard.create_card(board_id,approval_column_id,bug_title,description=info,labels=[{"id":types["bug"]}])
+        globoard.create_comment(board_id, card.id,
+                                "Long Link: https://app.gitkraken.com/glo/board/{}/card/{}\nID: {}".format(board_id,
+                                                                                                         card.id,
+                                                                                                         card.id))
+    confirm_embed = discord.Embed(title="Bug Report Succeeded!",
+                                  description='To track the progress/state of your bug report, visit this link:\n'
+                                              + "https://app.gitkraken.com/glo/board/{}/card/{}".format(board_id,card.id),
+                                  colour=discord.Colour.green())
+    confirm_embed.add_field(name='Bug Title:', value=bug_title)
+    confirm_embed.add_field(name='Bug Description:', value=str(bug_description))
+    confirm_embed.add_field(name='Requester', value=ctx.message.author)
+    confirm_embed.set_footer(text=df)
+    await ctx.message.channel.send(embed=confirm_embed)
+
+@client.command(aliases=['sco','suggestcommand'])
+async def _suggestcommand(ctx,*,title_description):
+    if "|" in title_description:
+        command_title = title_description.split("|")[0].strip()
+        command_description = title_description.split("|")[1].strip()
+    else:
+        command_title = title_description.strip()
+        command_description = "None"
+    async with ctx.message.channel.typing():
+        types = all_labels["type"]
+        info = f"Command Description: {str(command_description)} | Requester Name + Discriminator: {ctx.message.author.name}#" \
+           f"{ctx.message.author.discriminator} | Requester Nickname: {ctx.message.author.nick} | Requester ID: " \
+           f'{str(ctx.message.author.id)} | Requested At: {ctx.message.created_at.strftime("%Y-%m-%d %H:%M UTC")} | ' \
+           f'Message Link: {ctx.message.jump_url} | Message ID: {str(ctx.message.id)} | Channel Name: ' \
+           f'{ctx.message.channel.name} | Channel ID: {str(ctx.message.channel.id)}'
+        card = globoard.create_card(board_id, approval_column_id, command_title, description=info,
+                                    labels=[{"id": types["request"]}])
+        globoard.create_comment(board_id, card.id,
+                                "Long Link: https://app.gitkraken.com/glo/board/{}/card/{}\nID: {}".format(board_id,
+                                                                                                         card.id,
+                                                                                                         card.id))
+    confirm_embed = discord.Embed(title="Command Suggestion Succeeded!",
+                                  description='To track the progress/state of your suggestion, visit this link:\n'
+                                              +card.short_url,
+                                  colour=discord.Colour.green())
+    confirm_embed.add_field(name='Command Title:', value=command_title)
+    confirm_embed.add_field(name='Command Description:', value=str(command_description))
+    confirm_embed.add_field(name='Requester', value=ctx.message.author)
+    confirm_embed.set_footer(text=df)
+    await ctx.message.channel.send(embed=confirm_embed)
+
+@client.command(aliases=['featureupdate','fu'])
+async def _featureupdate(ctx,*,title_description_original):
+    blacklist_role = get(ctx.guild.roles, id=697556111292629012)
+    if blacklist_role in ctx.message.author.roles:
+        await ctx.message.channel.send("You are blacklisted from using this command!")
+        return
+    counter = 0
+    for x in title_description_original:
+        if "|" in x:
+            counter += 1
+    if counter >= 2:
+        original_command = title_description_original.split("|")[0].strip()
+        feature_title = title_description_original.split("|")[1].strip()
+        feature_description = title_description_original.split("|")[2].strip()
+    elif counter == 1:
+        original_command = title_description_original.split("|")[0].strip()
+        feature_title = title_description_original.split("|")[1].strip()
+        feature_description = "None"
+    else:
+        await ctx.message.channel.send("You need to provide at least the command name and the feature you want to add."
+                                       " In this format `s!featureupdate <command name> | <update title> [| update description]`"
+                                       ". The update description is optional.")
+        return
+    async with ctx.message.channel.typing():
+        types = all_labels["type"]
+        info = f"Original Command: {original_command} | Feature Update Description: {str(feature_description)}" \
+               f" | Reporter Name + Discriminator: {ctx.message.author.name}#" \
+           f"{ctx.message.author.discriminator} | Reporter Nickname: {ctx.message.author.nick} | Reporter ID: " \
+           f'{str(ctx.message.author.id)} | Reported At: {ctx.message.created_at.strftime("%Y-%m-%d %H:%M UTC")} | ' \
+           f'Message Link: {ctx.message.jump_url} | Message ID: {str(ctx.message.id)} | Channel Name: ' \
+           f'{ctx.message.channel.name} | Channel ID: {str(ctx.message.channel.id)}'
+        card = globoard.create_card(board_id, approval_column_id, feature_title, description=info,
+                                    labels=[{"id": types["request"]}])
+        globoard.create_comment(board_id, card.id,
+                                "Long Link: https://app.gitkraken.com/glo/board/{}/card/{}\nID: {}".format(board_id,
+                                                                                                         card.id,
+                                                                                                         card.id))
+    confirm_embed = discord.Embed(title="Feature Update Suggestion Succeeded!",
+                                  description='To track the progress/state of your bug report, visit this link:\n'
+                                              +card.short_url,
+                                  colour=discord.Colour.green())
+    confirm_embed.add_field(name="Original Command:",value=original_command)
+    confirm_embed.add_field(name='Feature Update Title:', value=feature_title)
+    confirm_embed.add_field(name='Feature Update Description:', value=str(feature_description))
+    confirm_embed.add_field(name='Requester', value=ctx.message.author)
+    confirm_embed.set_footer(text=df)
+    await ctx.message.channel.send(embed=confirm_embed)
 
 client.run(BOT_TOKEN)
