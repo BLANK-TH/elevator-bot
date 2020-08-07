@@ -26,7 +26,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.40.186 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.40.187 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -2783,15 +2783,21 @@ async def punishments(ctx,type="strikes"):
                   "\n\nA \"shadow\" essentially revokes all permissions to view or write in any channel except an " \
                   "\"interrogation\" channel for talking to the Staff and the rules channel for reference. This may be " \
                   "used to give a formal warning, or just to talk to Staff in private. (It could even be a good thing, " \
-                  "for example a promotion).\n\nIf you would like to appeal any formal punishment, you can message " \
+                  "for example a promotion).\n\nDo not try and delete a message thinking no-one will see it. There are " \
+                  "logs and Staff (at least me) actively monitor it.\n\nStaff may be exempt from certain rules " \
+                  "(but staff definitely have to follow rule 4).\n\nIf you would like to appeal any formal punishment, you can message " \
                   "one of the Staff members or send me (BLANK) an email at `blankdev.th@gmail.com`. Generally if you're" \
                   " in the server, you should send a DM instead of an email, the email is to be used if you got kicked or" \
                   " banned.\n\nIf you would like to report someone you can use the report command, the " \
                   "general formatting is " \
                   "`s!report <user> <reason>`. More information about this command here: " \
                   "https://github.com/BLANK-TH/elevator-bot-resources/blob/info/commands.md#report-a-user"
+    elif type == "logging":
+        descrip = "Do not try and delete a message thinking no-one will see it. There are logs and Staff (at least me) actively monitor it."
+    elif type == "exempt":
+        descrip = "Staff may be exempt from certain rules."
     else:
-        descrip = "Please enter a valid parameter, the options are `strikes`, `info`, `shadow`, `report`, `appeal`, `full`"
+        descrip = "Please enter a valid parameter, the options are `strikes`, `info`, `shadow`, `report`, `appeal`, `full`, `logging`, `exempt`"
     embed = discord.Embed(description=descrip,colour=hc)
     embed.set_footer(text=df)
     await ctx.message.channel.send(embed=embed)
