@@ -3029,7 +3029,7 @@ async def _developeraddtodo(ctx,type,priority,bot,difficulty,*,title_description
         if difficultys[difficulty] is not None:
             lab.append({"id":difficultys[difficulty.lower()]})
         if description is not None:
-            card = globoard.create_card(board_id,queue_column_id,title,description=description,labels=lab)
+            card = globoard.create_card(board_id,queue_column_id,title,description={"text":description},labels=lab)
         else:
             card = globoard.create_card(board_id, queue_column_id, title, labels=lab)
         globoard.create_comment(board_id, card.id,
@@ -3065,7 +3065,7 @@ async def _bugreport(ctx,*,title_description):
            f'{str(ctx.message.author.id)} | Reported At: {ctx.message.created_at.strftime("%Y-%m-%d %H:%M UTC")} | ' \
            f'Message Link: {ctx.message.jump_url} | Message ID: {str(ctx.message.id)} | Channel Name: ' \
            f'{ctx.message.channel.name} | Channel ID: {str(ctx.message.channel.id)}'
-        card = globoard.create_card(board_id,approval_column_id,bug_title,description=info,labels=[{"id":types["bug"]}])
+        card = globoard.create_card(board_id,approval_column_id,bug_title,description={"text":info},labels=[{"id":types["bug"]}])
         globoard.create_comment(board_id, card.id,
                                 "Long Link: https://app.gitkraken.com/glo/board/{}/card/{}\nID: {}".format(board_id,
                                                                                                          card.id,
@@ -3095,7 +3095,7 @@ async def _suggestcommand(ctx,*,title_description):
            f'{str(ctx.message.author.id)} | Requested At: {ctx.message.created_at.strftime("%Y-%m-%d %H:%M UTC")} | ' \
            f'Message Link: {ctx.message.jump_url} | Message ID: {str(ctx.message.id)} | Channel Name: ' \
            f'{ctx.message.channel.name} | Channel ID: {str(ctx.message.channel.id)}'
-        card = globoard.create_card(board_id, approval_column_id, command_title, description=info,
+        card = globoard.create_card(board_id, approval_column_id, command_title, description={"text":info},
                                     labels=[{"id": types["request"]}])
         globoard.create_comment(board_id, card.id,
                                 "Long Link: https://app.gitkraken.com/glo/board/{}/card/{}\nID: {}".format(board_id,
@@ -3142,7 +3142,7 @@ async def _featureupdate(ctx,*,title_description_original):
            f'{str(ctx.message.author.id)} | Reported At: {ctx.message.created_at.strftime("%Y-%m-%d %H:%M UTC")} | ' \
            f'Message Link: {ctx.message.jump_url} | Message ID: {str(ctx.message.id)} | Channel Name: ' \
            f'{ctx.message.channel.name} | Channel ID: {str(ctx.message.channel.id)}'
-        card = globoard.create_card(board_id, approval_column_id, feature_title, description=info,
+        card = globoard.create_card(board_id, approval_column_id, feature_title, description={"text":info},
                                     labels=[{"id": types["request"]}])
         globoard.create_comment(board_id, card.id,
                                 "Long Link: https://app.gitkraken.com/glo/board/{}/card/{}\nID: {}".format(board_id,
