@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.41.188 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.41.189 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3103,7 +3103,7 @@ async def _suggestcommand(ctx,*,title_description):
                                                                                                          card.id))
     confirm_embed = discord.Embed(title="Command Suggestion Succeeded!",
                                   description='To track the progress/state of your suggestion, visit this link:\n'
-                                              +card.short_url,
+                                              + "https://app.gitkraken.com/glo/board/{}/card/{}".format(board_id,card.id),
                                   colour=discord.Colour.green())
     confirm_embed.add_field(name='Command Title:', value=command_title)
     confirm_embed.add_field(name='Command Description:', value=str(command_description))
