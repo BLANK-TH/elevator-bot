@@ -333,7 +333,8 @@ Posts a reference to the punishment layout that you specified. If none are speci
 
 ### Compile One Word Story
 #### Command: `compilestory [limit]`
-Compile the words in one-word-story into an actual text document. The limit is how far back it goes. Default limit is 25.
+Compile the words in one-word-story into an actual text document. The limit is how far back it goes. Default limit is 100.
+If you do a large limit, it may take a while.
 
 [//]: # (new utility commands goes here)
 

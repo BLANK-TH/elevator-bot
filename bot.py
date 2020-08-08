@@ -3233,13 +3233,15 @@ async def _featureupdate(ctx,*,title_description_original):
     await ctx.message.channel.send(embed=confirm_embed)
 
 @client.command()
-async def compilestory(ctx,limit:int=25):
+async def compilestory(ctx,limit:int=100):
     async with ctx.message.channel.typing():
         story_channel = client.get_channel(740675095005102153)
         words = []
         async for word in story_channel.history(limit=limit):
-            if "//" != word[:2]:
-                words.append(word)
+            if "//" != word.content[:2]:
+                if "." in word.content:
+                    words.append("\n")
+                words.append(word.content)
         words.reverse()
         story = " ".join(words)
         story_url = repo.create_file("CompiledStoryForCompileStoryCmdMSG{}.txt".format(
