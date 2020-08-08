@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.44.195 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.44.196 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -96,7 +96,7 @@ async def on_message(message):
             await message.channel.send("An error has occurred! Everyone else ignore this message and keep counting! "
                                        "<@616032766974361640>",embed=discord.Embed(description=repr(e)))
             return
-        if last_num >= cur_num >= last_num + 1:
+        if cur_num <= last_num or cur_num > last_num + 1:
             embed = discord.Embed(
                 title="Incorrect Number",
                 colour=hc
@@ -115,7 +115,7 @@ async def on_message(message):
         else:
             return
         await message.delete()
-        m = await message.channel.send(embed=embed)
+        m = await message.channel.send("Sigh, I'm disappointed in you!",embed=embed)
         await m.delete(delay=5)
         return
     if message.channel.id == 740675095005102153 and not message.author.bot:
@@ -148,7 +148,7 @@ async def on_message(message):
         else:
             return
         await message.delete()
-        msg = await message.channel.send(embed=embed)
+        msg = await message.channel.send("Sigh, I'm disappointed in you!",embed=embed)
         await msg.delete(delay=5)
         return
     await client.process_commands(message)
