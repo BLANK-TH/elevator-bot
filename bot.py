@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.41.191 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.42.191 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -67,6 +67,8 @@ async def on_message(message):
             await msg.delete(delay=15)
             break
     if message.channel.id == 689077082609025089 and not message.author.bot:
+        if "//" == message.content[:2]:
+            return
         try:
             cur_num = int(message.content)
         except:
@@ -79,6 +81,44 @@ async def on_message(message):
             msg = await message.channel.send(embed=embed)
             await msg.delete(delay=5)
             return
+        last_message = ""
+        limit = 2
+        while True:
+            async for mes in message.channel.history(limit=limit):
+                last_message = mes
+                msg = mes.content
+            if "//" == msg[:2] or last_message.author.bot:
+                limit += 1
+            else:
+                break
+        try:
+            last_num = int(last_message.content)
+        except Exception as e:
+            await message.channel.send("An error has occurred! Everyone else ignore this message and keep counting! "
+                                       "<@616032766974361640>",embed=discord.Embed(description=repr(e)))
+            return
+        if last_num >= cur_num >= last_num + 1:
+            embed = discord.Embed(
+                title="Incorrect Number",
+                colour=hc
+            )
+            embed.set_footer(text=df)
+            embed.add_field(name="Number You Entered:",value=str(cur_num))
+            embed.add_field(name="Number You Should Have Entered:",value=str(last_num+1))
+        elif message.author.id == last_message.author.id:
+            embed = discord.Embed(
+                title="Don't count by yourself",
+                colour=hc
+            )
+            embed.set_footer(text=df)
+            embed.add_field(name="Your User ID:",value=message.author.id)
+            embed.add_field(name="Last User ID:",value=last_message.author.id)
+        else:
+            return
+        await message.delete()
+        m = await message.channel.send(embed=embed)
+        await m.delete(delay=5)
+        return
     await client.process_commands(message)
 
 @client.event
