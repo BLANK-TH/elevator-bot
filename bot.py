@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.43.192 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.43.193 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3077,8 +3077,9 @@ async def promoteactive(ctx,user:discord.Member):
 
 @client.command(aliases=['devadd','devtodo'])
 async def _developeraddtodo(ctx,type,priority,bot,difficulty,*,title_description):
-    if not ctx.message.author.id == 616032766974361640:
-        await ctx.message.channel.send("You do not have permissions to do this, this is for the bot developer only. You "
+    dev_role = get(ctx.guild.roles,id=733854432978141227)
+    if not dev_role in ctx.message.author.roles:
+        await ctx.message.channel.send("You do not have permissions to do this, this is for the bot developers only. You "
                                        "can try the `suggestcommand` or `bugreport` command.")
         return
     if "|" in title_description:
