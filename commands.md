@@ -331,6 +331,10 @@ Posts a reference to the rule number you specified, if no rule number was specif
 #### Command: `punishments [strikes/info/shadow/report/appeal/logging/exempt/full]`
 Posts a reference to the punishment layout that you specified. If none are specified then the default is strikes.
 
+### Compile One Word Story
+#### Command: `compilestory [limit]`
+Compile the words in one-word-story into an actual text document. The limit is how far back it goes. Default limit is 25.
+
 [//]: # (new utility commands goes here)
 
 ## Server Interaction Commands

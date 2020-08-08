@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.43.193 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.44.193 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3231,5 +3231,27 @@ async def _featureupdate(ctx,*,title_description_original):
     confirm_embed.add_field(name='Requester', value=ctx.message.author)
     confirm_embed.set_footer(text=df)
     await ctx.message.channel.send(embed=confirm_embed)
+
+@client.command()
+async def compilestory(ctx,limit:int=25):
+    async with ctx.message.channel.typing():
+        story_channel = client.get_channel(740675095005102153)
+        words = []
+        async for word in story_channel.history(limit=limit):
+            if "//" != word[:2]:
+                words.append(word)
+        words.reverse()
+        story = " ".join(words)
+        story_url = repo.create_file("CompiledStoryForCompileStoryCmdMSG{}.txt".format(
+        str(ctx.message.id)),
+        "Requester ID: {} | Requester Name + Discriminator {}#{} | Message ID: {} | Message Link: {} | At: {}".format(
+            str(ctx.message.author.id), ctx.message.author.name,
+            ctx.message.author.discriminator, str(ctx.message.id), ctx.message.jump_url,
+            ctx.message.created_at.strftime("%b %d %Y %H:%M UTC")),
+        story,branch="commands")['content'].html_url
+        embed = discord.Embed(title="Compiled One Word Story",description="[CLICK HERE]({})".format(story_url),colour=hc)
+        embed.set_footer(text=df)
+        embed.add_field(name="Limit",value=str(limit))
+        await ctx.message.channel.send(embed=embed)
 
 client.run(BOT_TOKEN)
