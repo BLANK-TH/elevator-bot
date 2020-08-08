@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.44.193 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.44.194 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -1504,13 +1504,22 @@ async def rankthot(ctx,*,user:discord.Member=None):
     await ctx.message.channel.send(embed=embed)
 
 @client.command()
-async def deathbattle(ctx,user:discord.Member):
-    p1tup = (ctx.message.author.display_name, 100)
-    p2tup = (user.display_name, 100)
-    turn = 1
+async def deathbattle(ctx,user1,user2=None):
+    if user2 is None:
+        user2 = ctx.guild.get_member(int(user1.replace("<@", "").replace(">", "").replace("!",""))).display_name
+        user1 = ctx.message.author.display_name
+    else:
+        try:
+            user1 = ctx.guild.get_member(int(user1.replace("<@","").replace(">","").replace("!",""))).display_name
+            user2 = ctx.guild.get_member(int(user2.replace("<@","").replace(">","").replace("!",""))).display_name
+        except:
+            pass
+    p1tup = (user1, 100)
+    p2tup = (user2, 100)
+    turn = randint(1,2)
     embed = discord.Embed(
         title="Deathbattle Time!!!",
-        description=f"Deathbattle between {ctx.message.author.mention} and {user.mention}!",
+        description=f"Deathbattle between **{user1}** and **{user2}**! {p1tup[0] if turn == 1 else p2tup[0]} goes first.",
         colour=discord.Colour.blue()
     )
     embed.set_footer(text=df)
@@ -1601,7 +1610,7 @@ async def deathbattle(ctx,user:discord.Member):
         winner = p1tup[0]
     else:
         winner = p2tup[0]
-    past_responses.append(f"🏆 {winner} has won!")
+    past_responses.append(f"🏆 **{winner}** has won!")
     if len(past_responses) > 3:
         del past_responses[0]
     msg = '\n'.join(x for x in past_responses)
