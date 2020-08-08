@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.42.191 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.43.192 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -86,8 +86,7 @@ async def on_message(message):
         while True:
             async for mes in message.channel.history(limit=limit):
                 last_message = mes
-                msg = mes.content
-            if "//" == msg[:2] or last_message.author.bot:
+            if "//" == last_message.content[:2] or last_message.author.bot:
                 limit += 1
             else:
                 break
@@ -107,7 +106,7 @@ async def on_message(message):
             embed.add_field(name="Number You Should Have Entered:",value=str(last_num+1))
         elif message.author.id == last_message.author.id:
             embed = discord.Embed(
-                title="Don't count by yourself",
+                title="Don't count by yourself!",
                 colour=hc
             )
             embed.set_footer(text=df)
@@ -118,6 +117,39 @@ async def on_message(message):
         await message.delete()
         m = await message.channel.send(embed=embed)
         await m.delete(delay=5)
+        return
+    if message.channel.id == 740675095005102153 and not message.author.bot:
+        if "//" == message.content[:2]:
+            return
+        last_message = ""
+        limit = 2
+        while True:
+            async for mes in message.channel.history(limit=limit):
+                last_message = mes
+            if "//" == last_message.content[:2] or last_message.author.bot:
+                limit += 1
+            else:
+                break
+        if " " in message.content:
+            embed = discord.Embed(
+                title="One Word Only!",
+                colour=hc
+            )
+            embed.set_footer(text=df)
+            embed.add_field(name="Message You Entered:",value=message.content)
+        elif message.author.id == last_message.author.id:
+            embed = discord.Embed(
+                title="Don't make the story by yourself!",
+                colour=hc
+            )
+            embed.set_footer(text=df)
+            embed.add_field(name="Your User ID:", value=message.author.id)
+            embed.add_field(name="Last User ID:", value=last_message.author.id)
+        else:
+            return
+        await message.delete()
+        msg = await message.channel.send(embed=embed)
+        await msg.delete(delay=5)
         return
     await client.process_commands(message)
 
