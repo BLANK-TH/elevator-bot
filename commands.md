@@ -179,6 +179,10 @@ Posts a link to the celebrate good times song.
 #### Command: `fr` **OR** `finerant`
 Posts a link to the "i'm fine but not really fine" rant.
 
+### No One Cares
+#### Command: `noonecares` **OR** `nc` 
+Posts a link to the "no one cares" movie intro.
+
 ### Backwards Name
 #### Command: `backwardsname [user]` **OR** `backname [user]` **OR** `bn [user]`
 Posts the your/the user you mentioned's name backwards.

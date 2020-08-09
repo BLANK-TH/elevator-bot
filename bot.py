@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.44.197 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.44.198 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3289,5 +3289,8 @@ async def _animatedemojiuser(ctx,*,emoji_name):
         webhook = await ctx.message.channel.create_webhook(name="Elevator Bot Webhook")
     await webhook.send(content="<a:{}:{}>".format(highest_emoji[1].name,str(highest_emoji[1].id)),
                        username=ctx.message.author.display_name, avatar_url=ctx.message.author.avatar_url)
+@client.command(aliases=["noonecares","nc"])
+async def _noonecares(ctx):
+    await ctx.message.channel.send("https://www.youtube.com/watch?v=BLUkgRAy_Vo")
 
 client.run(BOT_TOKEN)
