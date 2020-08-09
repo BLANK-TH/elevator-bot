@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.44.196 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.44.197 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3267,5 +3267,27 @@ async def compilestory(ctx,limit:int=100):
         embed.set_footer(text=df)
         embed.add_field(name="Limit",value=str(limit))
         await ctx.message.channel.send(embed=embed)
+
+@client.command(aliases=['animatedemojiuser','animemojiuser','aeu'])
+async def _animatedemojiuser(ctx,*,emoji_name):
+    def similar(a,b):
+        return SequenceMatcher(None,a,b).ratio()
+    emoji_similaritys = {}
+    for emoji in ctx.guild.emojis:
+        if emoji.animated:
+            emoji_similaritys[similar(emoji_name,emoji.name)] = emoji
+    highest_emoji = max([*emoji_similaritys]),emoji_similaritys[max([*emoji_similaritys])]
+    if highest_emoji[0] < 0.1:
+        await ctx.message.channel.send("Could not find any emojis that match `{}`".format(emoji_name))
+        return
+    webhook = None
+    for hook in await ctx.message.channel.webhooks():
+        if hook.user.id == 699677108607123548:
+            webhook = hook
+            break
+    if webhook is None:
+        webhook = await ctx.message.channel.create_webhook(name="Elevator Bot Webhook")
+    await webhook.send(content="<a:{}:{}>".format(highest_emoji[1].name,str(highest_emoji[1].id)),
+                       username=ctx.message.author.display_name, avatar_url=ctx.message.author.avatar_url)
 
 client.run(BOT_TOKEN)
