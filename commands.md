@@ -301,8 +301,15 @@ add the parameter `dns` to the command.
 ### Animated Emoji Sender
 #### Command: `animatedemoji <emoji name>` **OR** `animemoji <emoji name>` **OR** `ae <emoji name>`
 If you don't have nitro and you want to send an animated emoji, you can use this command. It will search a
-list of the server's animated emoji's and return the most emoji that is the most similar to the name you
+list of the server's animated emoji's and return the emoji that is the most similar to the name you
 gave that is at least a 10% match.
+
+### Animated Emoji User Sender
+#### Command: `animatedemojiuser <emoji name>` **OR** `animemojiuser <emoji name>` **OR** `aeu <emoji name>`
+If you don't have nitro and you want to send an animated emoji, you can use this command. It will search a
+list of the server's animated emoji's and send the emoji that is the most similar to the name you
+gave that is at least a 10% match as you. Difference from [Animated Emoji Sender](#animated-emoji-sender) is that this
+one sends it as you instead of as the bot
 
 ### Impersonate
 #### Command: `impersonate <name/ping/userid> <message>`
