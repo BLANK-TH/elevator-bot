@@ -26,8 +26,8 @@ import arrow
 import minesweeperPy
 import typing
 
-client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.45.207 Developed By: BLANK"
+client = commands.Bot(command_prefix='s!')
+df = "Elevator Server Bot Ver.17.45.208 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3325,5 +3325,24 @@ async def _headsmashuser(ctx):
         webhook = await ctx.message.channel.create_webhook(name="Elevator Bot Webhook")
     await ctx.message.delete()
     await webhook.send(content=text,username=ctx.message.author.display_name, avatar_url=ctx.message.author.avatar_url)
+
+@client.command()
+async def welcome(ctx,user:discord.Member=None):
+    sr_channel = client.get_channel(692521137166614570)
+    c_channel = client.get_channel(686703151738519561)
+    r_channel = client.get_channel(686700028399452181)
+    b_channel = client.get_channel(690221900621676586)
+    if user is not None:
+        mem = user.mention
+    else:
+        mem = "there"
+    w_embed = discord.Embed(
+        description=f'Hey {mem}! Welcome to **elevator (F127)**! Make sure to read the {r_channel.mention} then head over to'
+                    f' {sr_channel.mention}, {c_channel.mention}, and {b_channel.mention}! We hope you enjoy your time '
+                    f'here :D',
+        colour=hc
+    )
+    w_embed.set_footer(text=df)
+    await ctx.message.channel.send(embed=w_embed)
 
 client.run(BOT_TOKEN)
