@@ -26,7 +26,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.45.205 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.45.206 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3108,15 +3108,18 @@ async def _developeraddtodo(ctx,type,priority,bot,difficulty,*,title_description
         prioritys = all_labels["priority"]
         types = all_labels["type"]
         bots = all_labels["bot"]
+        bots["none"] = None
         difficultys = all_labels["difficulty"]
         difficultys["none"] = None
         if priority.lower() not in prioritys.keys() and type.lower() not in types.keys() and \
             bot.lower() not in bots.keys() and difficulty.lower() not in difficultys.keys():
                 await ctx.message.channel.send("Invalid Type/Priority/Bot/Difficulty")
                 return
-        lab = [{"id":prioritys[priority.lower()]},{"id":types[type.lower()]},{"id":bots[bot.lower()]}]
+        lab = [{"id":prioritys[priority.lower()]},{"id":types[type.lower()]}]
         if difficultys[difficulty] is not None:
             lab.append({"id":difficultys[difficulty.lower()]})
+        if bots[bot] is not None:
+            lab.append({"id":bots[bot.lower()]})
         if description is not None:
             card = globoard.create_card(board_id,queue_column_id,title,description={"text":description},labels=lab)
         else:
