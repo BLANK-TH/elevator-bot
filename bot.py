@@ -17,7 +17,7 @@ from os import urandom,environ,getenv
 from dotenv import load_dotenv
 from pathlib import Path
 from py_glo_boards_api import GloBoard
-from string import ascii_letters
+from string import ascii_lowercase
 import urllib
 import urllib.request
 import json
@@ -3308,14 +3308,14 @@ async def _noonecares(ctx):
 async def _headsmash(ctx):
     text = ""
     for x in range(0,randint(5,20)):
-        text += choice(ascii_letters)
+        text += choice(ascii_lowercase)
     await ctx.message.channel.send(text)
 
 @client.command(aliases=["headsmashuser","hsu"])
 async def _headsmashuser(ctx):
     text = ""
     for x in range(0,randint(5,20)):
-        text += choice(ascii_letters)
+        text += choice(ascii_lowercase)
     webhook = None
     for hook in await ctx.message.channel.webhooks():
         if hook.user.id == 699677108607123548:
