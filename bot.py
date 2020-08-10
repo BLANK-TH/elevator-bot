@@ -17,6 +17,7 @@ from os import urandom,environ,getenv
 from dotenv import load_dotenv
 from pathlib import Path
 from py_glo_boards_api import GloBoard
+from string import ascii_letters
 import urllib
 import urllib.request
 import json
@@ -26,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.45.206 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.45.207 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3302,5 +3303,27 @@ async def _animatedemojiuser(ctx,*,emoji_name):
 @client.command(aliases=["noonecares","nc"])
 async def _noonecares(ctx):
     await ctx.message.channel.send("https://www.youtube.com/watch?v=BLUkgRAy_Vo")
+
+@client.command(aliases=["headsmash","hs"])
+async def _headsmash(ctx):
+    text = ""
+    for x in range(0,randint(5,20)):
+        text += choice(ascii_letters)
+    await ctx.message.channel.send(text)
+
+@client.command(aliases=["headsmashuser","hsu"])
+async def _headsmashuser(ctx):
+    text = ""
+    for x in range(0,randint(5,20)):
+        text += choice(ascii_letters)
+    webhook = None
+    for hook in await ctx.message.channel.webhooks():
+        if hook.user.id == 699677108607123548:
+            webhook = hook
+            break
+    if webhook is None:
+        webhook = await ctx.message.channel.create_webhook(name="Elevator Bot Webhook")
+    await ctx.message.delete()
+    await webhook.send(content=text,username=ctx.message.author.display_name, avatar_url=ctx.message.author.avatar_url)
 
 client.run(BOT_TOKEN)
