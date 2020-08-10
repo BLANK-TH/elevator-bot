@@ -26,7 +26,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.45.204 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.45.205 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -2721,7 +2721,7 @@ async def verify(ctx):
         captcha_text = ''.join(sample([x for x in captcha_list if x not in ["0","o","l","1","7"]], 5))
         img_gen = ImageCaptcha()
         captcha_img = img_gen.generate(captcha_text)
-    msg_list.append(await ctx.channel.send("Please solve the attached captcha. If you wish to get a new captcha, enter cancel then run"
+    msg_list.append(await ctx.channel.send("Please solve the attached captcha. If you wish to get a new captcha, enter `cancel` then run"
                            " the command again. You have 30 seconds to answer",file=discord.File(captcha_img,'captcha.png')))
     def check(msg):
         if msg.author == ctx.message.author:
