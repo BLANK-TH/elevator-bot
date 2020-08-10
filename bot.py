@@ -26,7 +26,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix = 's!')
-df = "Elevator Server Bot Ver.17.45.202 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.45.204 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -65,7 +65,7 @@ async def on_message(message):
             msg = await message.channel.send("<a:angryping:725393149484335165>")
             await msg.delete(delay=15)
             break
-    if message.channel.id == 689077082609025089 and not message.author.bot and message.webhook_id is None:
+    if message.channel.id == 689077082609025089 and not message.author.bot:
         if "//" == message.content[:2]:
             return
         try:
@@ -85,7 +85,7 @@ async def on_message(message):
         while True:
             async for mes in message.channel.history(limit=limit):
                 last_message = mes
-            if "//" == last_message.content[:2] or (last_message.author.bot and message.webhook_id is None):
+            if "//" == last_message.content[:2] or (last_message.author.bot and mes.webhook_id is None):
                 limit += 1
             else:
                 break
@@ -117,7 +117,7 @@ async def on_message(message):
         m = await message.channel.send("Sigh, I'm disappointed in you!",embed=embed)
         await m.delete(delay=5)
         return
-    if message.channel.id == 740675095005102153 and not message.author.bot and message.webhook_id is None:
+    if message.channel.id == 740675095005102153 and not message.author.bot:
         if "//" == message.content[:2]:
             return
         last_message = ""
@@ -125,7 +125,7 @@ async def on_message(message):
         while True:
             async for mes in message.channel.history(limit=limit):
                 last_message = mes
-            if "//" == last_message.content[:2] or (last_message.author.bot and message.webhook_id is None):
+            if "//" == last_message.content[:2] or (last_message.author.bot and mes.webhook_id is None):
                 limit += 1
             else:
                 break
