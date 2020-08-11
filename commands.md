@@ -226,6 +226,12 @@ Send a random string of characters that emulate a headsmash on a keyboard as the
 #### Command: `headsmashuser` **OR** `hsu`
 Send a random string of characters that emulate a headsmash on a keyboard as you.
 
+### Bear Spray
+#### Command: `bearspray [user]`
+Spray a can at bear spray at the mentioned user (or yourself if you don't mention).  
+**WARNING:** Spraying bear spray at a user that is not a bear (doesn't have bear in their name)
+will not end well
+
 [//]: # (new fun commands goes here)
 
 ## Utility Commands
