@@ -344,7 +344,7 @@ message then you can replace `|` with `\|`. For example `s!usersend Name | This 
 `This is a | straight line`.
 
 ### Calculate
-#### Command: `calculate <equation>`
+#### Command: `calculate <equation>` **OR** `c <equation>`
 Calculates the equation you gave and returns the answer. It can use some Python built-in functions like `int()` but
 such a feature is mostly not needed.
 
