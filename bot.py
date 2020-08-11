@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.45.208 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.45.209 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3344,5 +3344,21 @@ async def welcome(ctx,user:discord.Member=None):
     )
     w_embed.set_footer(text=df)
     await ctx.message.channel.send(embed=w_embed)
+
+@client.command()
+async def bearspray(ctx,user:discord.Member=None):
+    if user is None:
+        msg = "{} didn't know who to spray so they just sprayed themself. They're now writhing in pain while coughing.".format(ctx.message.author.mention)
+    else:
+        if "bear" in user.display_name.lower():
+            msg = "{} sprays their can of bear spray straight at {}, it works and the bear retreats and ends up ||dying|| " \
+                  "a few hours later.".format(ctx.message.author.mention,user.mention)
+        else:
+            msg = "{} sprays their can of bear spray at {}, it didn't work because they aren't a bear. {} shoots {}" \
+                  " with a ||gun|| and they ||die||.".format(ctx.message.author.mention,user.mention,user.mention,ctx.message.author.mention)
+    embed = discord.Embed(description=msg,colour=hc)
+    embed.set_footer(text=df)
+    embed.set_image(url="https://i.imgur.com/YVuheFh.jpg")
+    await ctx.message.channel.send(embed=embed)
 
 client.run(BOT_TOKEN)
