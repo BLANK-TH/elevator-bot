@@ -365,6 +365,10 @@ Posts a reference to the punishment layout that you specified. If none are speci
 Compile the words in one-word-story into an actual text document. The limit is how far back it goes. Default limit is 100.
 If you do a large limit, it may take a while.
 
+### Welcome Reference
+#### Command: `welcome [user]`
+Welcome a optional user with information about the things that a new user should do as detailed in their original welcome message.
+
 [//]: # (new utility commands goes here)
 
 ## Server Interaction Commands
