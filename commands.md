@@ -20,6 +20,10 @@ If you see quotation marks in a command, make sure the quotation marks are there
 #### Command: `kill <user> [reason]`
 Posts a image and message killing the person.
 
+### Revive
+#### Revive: `revive <user>`
+Posts a image and message about reviving the dead person.
+
 ### Laugh
 #### Command: `laugh`
 Posts a image and message showing that you are laughing.
