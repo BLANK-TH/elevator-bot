@@ -3326,7 +3326,7 @@ async def bearspray(ctx,user:discord.Member=None):
 
 @client.command()
 async def revive(ctx,user:discord.Member):
-    embed = discord.Embed(description="{} has revived {}!".format(ctx.message.author.mention,user.mention))
+    embed = discord.Embed(description="{} has revived {}!".format(ctx.message.author.mention,user.mention),colour=hc)
     embed.set_footer(text=df)
     embed.set_image(url="https://media.giphy.com/media/3o7TKSM3u36i6yG4CI/giphy.gif")
     await ctx.message.channel.send(embed=embed)
