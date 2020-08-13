@@ -187,6 +187,10 @@ Posts a link to the "i'm fine but not really fine" rant.
 #### Command: `noonecares` **OR** `nc` 
 Posts a link to the "no one cares" movie intro.
 
+### Ping Music
+#### Command: `pingmusic`
+Posts a link to the song called `Ping` made by Exyl.
+
 ### Backwards Name
 #### Command: `backwardsname [user]` **OR** `backname [user]` **OR** `bn [user]`
 Posts the your/the user you mentioned's name backwards.
