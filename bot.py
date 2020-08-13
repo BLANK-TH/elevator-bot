@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.45.219 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.45.220 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -1504,7 +1504,6 @@ async def deathbattle(ctx,user1,user2=None):
         "__{}__ slaps __{}__ for __{}__ dmg!",
         "__{}__ punches __{}__ for __{}__ dmg!",
         "__{}__ smacks __{}__ with a chair for __{}__ dmg!",
-        "__{}__ stabs __{}__ with knife for __{}__ dmg!",
         "__{}__ bonks __{}__ with a bat for __{}__ dmg!",
         "__{}__ tortures __{}__ for __{}__ dmg!",
         "__{}__ karate chops __{}__ for __{}__ dmg!",
@@ -3256,7 +3255,7 @@ async def bearspray(ctx,user:discord.Member=None):
             msg = "{} sprays their can of bear spray straight at {}, it works and the bear retreats and ends up ||dying|| " \
                   "a few hours later.".format(ctx.message.author.mention,user.mention)
         else:
-            msg = "{} sprays their can of bear spray at {}, it didn't work because they aren't a bear. {} shoots {}" \
+            msg = "{} sprays their can of bear spray at {}, it didn't work because they aren't a bear. {} ||shoots|| {}" \
                   " with a ||gun|| and they ||die||.".format(ctx.message.author.mention,user.mention,user.mention,ctx.message.author.mention)
     embed = discord.Embed(description=msg,colour=hc)
     embed.set_footer(text=df)
