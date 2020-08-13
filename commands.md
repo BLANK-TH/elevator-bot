@@ -60,6 +60,11 @@ Posts a image and message showing that you think that the user you mentioned is 
 #### Command: `sleep`  **OR** `sleepy`
 Posts a image and message showing that you are sleepy/going to sleep.
 
+### Good Night
+#### Command: `goodnight [user]` **OR** `gn [user]`
+Posts a image and message saying that you're saying goodnight to the user you mentioned. Or if no user is specified, say
+that someone is wishing you goodnight.
+
 ### Say
 #### Command: `say <message>`
 Says something as if the bot were speaking.
