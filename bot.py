@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.45.212 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.45.213 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3285,6 +3285,21 @@ async def revive(ctx,user:discord.Member):
     embed = discord.Embed(description="{} has revived {}!".format(ctx.message.author.mention,user.mention),colour=hc)
     embed.set_footer(text=df)
     embed.set_image(url="https://media.giphy.com/media/3o7TKSM3u36i6yG4CI/giphy.gif")
+    await ctx.message.channel.send(embed=embed)
+
+@client.command()
+async def smallbrain(ctx,user:discord.Member=None):
+    if user is None:
+        user = ctx.message.author
+    if user.id == 405498995520176140:
+        brain_size = 0
+    elif user.id == 616032766974361640:
+        brain_size = 100
+    else:
+        brain_size = randint(0,100)
+    embed = discord.Embed(description="{}'s Brain Size:\n{}%".format(user.mention,str(brain_size)),
+                          colour=hc)
+    embed.set_footer(text=df)
     await ctx.message.channel.send(embed=embed)
 
 client.run(BOT_TOKEN)
