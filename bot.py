@@ -3325,5 +3325,6 @@ async def _goodnight(ctx,user:discord.Member=None):
     embed = discord.Embed(description="{} wishes goodnight to {}!".format(say_user,user.mention))
     embed.set_footer(text=df)
     embed.set_image(url="https://i.imgur.com/3RxNRwV.gif")
+    await ctx.message.channel.send(embed=embed)
 
 client.run(BOT_TOKEN)
