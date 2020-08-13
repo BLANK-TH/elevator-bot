@@ -236,6 +236,10 @@ Spray a can at bear spray at the mentioned user (or yourself if you don't mentio
 **WARNING:** Spraying bear spray at a user that is not a bear (doesn't have bear in their name)
 will not end well
 
+### Brain Size Calculator
+#### Command: `smallbrain [user]`
+Calculate the user's brain size. If no user was provided, the default is yourself.
+
 [//]: # (new fun commands goes here)
 
 ## Utility Commands

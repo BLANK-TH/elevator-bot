@@ -3297,7 +3297,7 @@ async def smallbrain(ctx,user:discord.Member=None):
         brain_size = 100
     else:
         brain_size = randint(0,100)
-    embed = discord.Embed(description="{}'s Brain Size:\n{}%".format(user.mention,str(brain_size)),
+    embed = discord.Embed(description="**{}'s Brain Size:**\n{}%".format(user.mention,str(brain_size)),
                           colour=hc)
     embed.set_footer(text=df)
     await ctx.message.channel.send(embed=embed)
