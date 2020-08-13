@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.45.223 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.45.224 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3331,6 +3331,20 @@ async def roleinfo(ctx,role:discord.Role):
         embed.add_field(name="Members With Role:", value=f"[CLICK HERE]({member_url})", inline=False)
     else:
         embed.add_field(name="Members With Role:", value=", ".join(x.mention for x in role.members), inline=False)
+    await ctx.message.channel.send(embed=embed)
+
+@client.command()
+async def torture(ctx,user:discord.Member=None):
+    if user is None:
+        user = ctx.message.author
+        action_user = "Someone"
+    else:
+        action_user = ctx.message.author.mention
+    embed = discord.Embed(description="{} is torturing {}...".format(action_user,user.mention))
+    embed.add_field(name="Disclaimer",value="No intense/extremely graphic images were used in this command to avoid "
+                                            "triggering panic attacks and other similar events.")
+    embed.set_footer(text=df)
+    embed.set_image(url="https://i.imgur.com/Hsbd7jo.gif")
     await ctx.message.channel.send(embed=embed)
 
 client.run(BOT_TOKEN)

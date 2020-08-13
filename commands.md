@@ -113,6 +113,11 @@ Posts a image and message showing that you are stealing something from the user 
 #### Command: `punish <user> [reason]`
 Posts a image and message showing that you are punishing the user you mentioned.
 
+### Torture
+#### Command: `torture [user]`
+Posts a (non graphic) image and message showing that you are torturing the user you mentioned. If no user is mentioned,
+it will by yourself.
+
 ### Insult
 #### Command: `insult <user> [reason]`
 Posts a image and message showing that you are insulting the user you mentioned.
