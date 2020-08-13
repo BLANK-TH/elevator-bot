@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.46.228 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.46.229 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3366,8 +3366,8 @@ async def lyrics(ctx,*,song_name):
                                         " him take a look at the (attached) error.",embed=discord.Embed(description=repr(e)))
         else:
             if len(data["lyrics"]) >= 2048:
-                wrapper = TextWrapper(width=2048,break_long_words=False,replace_whitespace=False,placeholder="\n...")
-                wrapped_lyric = wrapper.wrap(data["lyrics"])[0]
+                wrapper = TextWrapper(width=2044,break_long_words=False,replace_whitespace=False)
+                wrapped_lyric = wrapper.wrap(data["lyrics"])[0] + "\n..."
                 embed = discord.Embed(title=data["title"],description=wrapped_lyric,colour=hc)
             else:
                 embed = discord.Embed(title=data["title"],description=data["lyrics"].replace("\n","\n\n"),colour=hc)
