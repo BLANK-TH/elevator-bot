@@ -18,6 +18,9 @@ from dotenv import load_dotenv
 from pathlib import Path
 from py_glo_boards_api import GloBoard
 from string import ascii_lowercase
+from lyrics_extractor import SongLyrics
+from lyrics_extractor.lyrics import LyricScraperException
+from textwrap import wrap
 import urllib
 import urllib.request
 import json
@@ -27,18 +30,21 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.45.224 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.46.224 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
-if "GITHUB_TOKEN" not in environ.keys() and "BOT_TOKEN" not in environ.keys() and "KRAKEN_TOKEN" not in environ.keys():
+if "GITHUB_TOKEN" not in environ.keys() and "BOT_TOKEN" not in environ.keys() and "KRAKEN_TOKEN" not in environ.keys()\
+        and "GCS_TOKEN" not in environ.keys():
     env_path = Path(".") / ".env"
     load_dotenv(dotenv_path=env_path)
 GITHUB_TOKEN = getenv("GITHUB_TOKEN")
 BOT_TOKEN = getenv("BOT_TOKEN")
 KRAKEN_TOKEN = getenv("KRAKEN_TOKEN")
-if GITHUB_TOKEN is None or BOT_TOKEN is None or KRAKEN_TOKEN is None:
-    print("Cannot get either the github token or bot token or gitkraken token, make sure they are in environment variable OR .env file")
+GCS_TOKEN = getenv("GCS_TOKEN")
+if GITHUB_TOKEN is None or BOT_TOKEN is None or KRAKEN_TOKEN is None or GCS_TOKEN is None:
+    print("Cannot get either the github token or bot token or gitkraken token or the gcs token, make sure they are in "
+          "environment variable OR .env file")
     exit()
 github = Github(GITHUB_TOKEN)
 repo = github.get_repo("BLANK-TH/elevator-bot-resources")
@@ -48,6 +54,7 @@ queue_column_id = "5f2ae8cf15d46100116b20ac"
 approval_column_id = "5f2d4a30ab0eea0011aa048f"
 all_labels = json.loads(urllib.request.urlopen(
     "https://raw.githubusercontent.com/BLANK-TH/elevator-bot-resources/bot-storage/labels.json").read())
+lyrics_extractor = SongLyrics(GCS_TOKEN,"015568929789699384240:dwqehllbwrs")
 
 @client.event
 async def on_ready():
@@ -3347,5 +3354,21 @@ async def torture(ctx,user:discord.Member=None):
     embed.set_footer(text=df)
     embed.set_image(url="https://i.imgur.com/Hsbd7jo.gif")
     await ctx.message.channel.send(embed=embed)
+
+@client.command()
+async def lyrics(ctx,*,song_name):
+    try:
+        data = lyrics_extractor.get_lyrics(song_name)
+    except LyricScraperException as e:
+        await ctx.message.channel.send("An error has occurred, the most likely reason is that you entered a non-existent"
+                                       " song name. If you are sure that the name is correct, please contact BLANK to have"
+                                       " him take a look at the (attached) error.",embed=discord.Embed(description=repr(e)))
+    else:
+        if len(data["lyrics"]) >= 2048:
+            wrapped_lyric = wrap(data["lyrics"],2042)[0] + "\n...."
+            embed = discord.Embed(title=data["title"],description=wrapped_lyric,colour=hc)
+        else:
+            embed = discord.Embed(title=data["title"],description=data["lyrics"],colour=hc)
+        await ctx.message.channel.send(embed=embed)
 
 client.run(BOT_TOKEN)

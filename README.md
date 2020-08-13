@@ -44,6 +44,7 @@ your account. To learn how to get that token,
 Make sure that token has the following permissions: `repo` AND `read:packages` AND `write:packages`.
 Run `setx KRAKEN_TOKEN your_gitkraken_boards_pat_here`. Replace `your_gitkraken_boards_pat_here` with
 a GitKraken account person access token with read + write permissions for both board and user.
+Run `setx GCS_TOKEN your_gcs_token_here`. Replace `your_gcs_token_here` with your Google Custom Search token.
 
 ##### OPTION 2: Create a .env file
 In the folder in which you are storing the project files (make sure it's the
@@ -53,6 +54,7 @@ same folder as the one with `bot.py` in it) create a new file called `.env`
 GITHUB_TOKEN="your_github_personal_access_token_here"
 BOT_TOKEN="your_discord_token_here"
 KRAKEN_TOKEN="your_gitkraken_boards_pat_here"
+GCS_TOKEN="your_gcs_token_here"
 ```
 Replace `your_discord_token_here` with your discord bot token. Replace
 `your_github_personal_access_token_here` with a GitHub personal access token for
@@ -61,5 +63,6 @@ your account. To learn how to get that token,
 Make sure that token has the following permissions: `repo` AND `read:packages`
 AND `write:packages`. Replace `your_gitkraken_boards_pat_here` with
 a GitKraken account person access token with read + write permissions for both board and user.
+Replace `your_gcs_token_here` with your Google Custom Search token.
 
 #### DONE!

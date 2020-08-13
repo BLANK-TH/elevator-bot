@@ -391,6 +391,10 @@ If you do a large limit, it may take a while.
 #### Command: `welcome [user]`
 Welcome a optional user with information about the things that a new user should do as detailed in their original welcome message.
 
+### Lyrics Finder
+#### Command: `lyrics <song name>`
+Finds and shows the lyrics of the provided song name. If the lyrics is longer than 20148 characters, it will be cut off.
+
 [//]: # (new utility commands goes here)
 
 ## Server Interaction Commands
