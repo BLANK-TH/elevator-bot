@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.45.221 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.45.222 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3320,7 +3320,7 @@ async def roleinfo(ctx,role:discord.Role):
     embed.add_field(name="Mentionable:",value=str(role.mentionable))
     embed.add_field(name="Colour/Color:",value=f"RGB: {role.colour.to_rgb()}\nHEX: {str(role.colour)}")
     embed.add_field(name="Created At:",value=role.created_at.strftime("%Y-%m-%d %H:%M UTC"))
-    if len(", ".join(x.mention for x in role.members)) <= 1024:
+    if len(", ".join(x.mention for x in role.members)) >= 1024:
         member_url = repo.create_file("RoleMemberListMSG{}.txt".format(
             str(ctx.message.id)),
             "Author ID: {} | Author Name + Discriminator {}#{} | Message ID: {} | Message Link: {} | At: {}".format(
