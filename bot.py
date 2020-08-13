@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.45.218 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.45.219 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -2915,29 +2915,11 @@ async def code(ctx):
 async def _colour(ctx,*,colour_name:str):
     colour_name = colour_name.lower()
     active_role = get(ctx.guild.roles, id=740030930021908570)
-    colours = {"pastel pink":686702267130314808,
-               "hot pink":686702466691366976,
-               "pink":686702499058810943,
-               "red":686702505543073893,
-               "coral":686709079132995635,
-               "orange":686709080114724866,
-               "pastel yellow":686709081523617831,
-               "yellow":686709082270203910,
-               "pastel green":686709082685440023,
-               "green":686709083465973790,
-               "dark green":686709084254240772,
-               "turquoise":687758351337127956,
-               "pastel blue":686709084979855362,
-               "blue":686709085877698560,
-               "dark blue":686709086527553579,
-               "pastel purple":686709087387648043,
-               "purple":686709087983239199,
-               "dark purple":686709088628899877}
-    active_colours = {"mango":740935054305394749,
-                      "sky blue":740934645742436372,
-                      "blueberry":740934756119609454,
-                      "light teal":740934939159035945,
-                      "mint":740935184744054804}
+    url = urllib.request.urlopen(
+        "https://raw.githubusercontent.com/BLANK-TH/elevator-bot-resources/bot-storage/colourids.json")
+    all_colours = json.loads(url.read())
+    colours = all_colours["colours"]
+    active_colours = all_colours["active colours"]
     if colour_name == "none":
         prev_colour = None
         for name, role_id in colours.items():
