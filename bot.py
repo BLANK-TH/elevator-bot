@@ -3342,7 +3342,8 @@ async def torture(ctx,user:discord.Member=None):
         action_user = ctx.message.author.mention
     embed = discord.Embed(description="{} is torturing {}...".format(action_user,user.mention),colour=discord.Colour.red())
     embed.add_field(name="Disclaimer",value="No intense/extremely graphic images were used in this command to avoid "
-                                            "triggering panic attacks and other similar events.")
+                                            "triggering panic attacks and other similar events. If this comes anywhere "
+                                            "close to triggering any panic event, please contact <@616032766974361640>")
     embed.set_footer(text=df)
     embed.set_image(url="https://i.imgur.com/Hsbd7jo.gif")
     await ctx.message.channel.send(embed=embed)
