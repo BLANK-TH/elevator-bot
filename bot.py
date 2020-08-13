@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.45.217 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.45.218 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -2450,11 +2450,12 @@ async def messagecount(ctx,countintensive=None):
         return
     await ctx.message.channel.send("Processing....")
     channel_num = {}
-    intensive_channels = ["log-hell","developers-bot-hell","🖥-bots","📹pokemon-spam",
-                          "🕹-boxbot-arena","📞-userphone","🧞-akinator","bump","welcome","good-bye"]
+    intensive_channels = [725438062296826027,725085898160734271,685918906564608055,733442253669793902,
+                          688457344664731649,695741363244761139,723275389115564133,735895556093902911,685932859097350160,
+                          686693349545213977]
     async with ctx.message.channel.typing():
         for channel in ctx.guild.text_channels:
-            if countintensive is None and channel.name in intensive_channels:
+            if countintensive is None and channel.id in intensive_channels:
                 continue
             channel_num[channel.name] = 0
             async for x in channel.history(limit=None):
@@ -2463,7 +2464,7 @@ async def messagecount(ctx,countintensive=None):
         for x in channel_num.values():
             total += x
         val = "Total: {}\n".format(str(total)) + '\n'.join(x + " : " + str(y) for x,y in channel_num.items())
-        val += "\n\n\nExcluded Channels: {}".format(", ".join(x for x in intensive_channels))
+        val += "\n\n\nExcluded Channel IDs: {}".format(", ".join(str(x) for x in intensive_channels))
         url = repo.create_file("ChannelListForMessageCountRequestMSG{}.txt".format(
         str(ctx.message.id)),
         "Requester ID: {} | Requester Name + Discriminator {}#{} | Message ID: {} | Message Link: {} | At: {}".format(
