@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.45.220 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.45.221 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3307,6 +3307,30 @@ async def _goodnight(ctx,user:discord.Member=None):
     embed = discord.Embed(description="{} wishes goodnight to {}!".format(say_user,user.mention),colour=hc)
     embed.set_footer(text=df)
     embed.set_image(url="https://i.imgur.com/3RxNRwV.gif")
+    await ctx.message.channel.send(embed=embed)
+
+@client.command()
+async def roleinfo(ctx,role:discord.Role):
+    embed = discord.Embed(description=role.mention,colour=hc)
+    embed.set_footer(text=df)
+    embed.add_field(name="Role Name",value=role.name)
+    embed.add_field(name="Role ID:",value=str(role.id))
+    embed.add_field(name="Hoisted:",value=str(role.hoist))
+    embed.add_field(name="Managed:",value=str(role.managed))
+    embed.add_field(name="Mentionable:",value=str(role.mentionable))
+    embed.add_field(name="Colour/Color:",value=f"RGB: {role.colour.to_rgb()}\nHEX: {str(role.colour)}")
+    embed.add_field(name="Created At:",value=role.created_at.strftime("%Y-%m-%d %H:%M UTC"))
+    if len(", ".join(x.mention for x in role.members)) <= 1024:
+        member_url = repo.create_file("RoleMemberListMSG{}.txt".format(
+            str(ctx.message.id)),
+            "Author ID: {} | Author Name + Discriminator {}#{} | Message ID: {} | Message Link: {} | At: {}".format(
+                str(ctx.message.id), ctx.message.author.name,
+                ctx.message.author.discriminator, str(ctx.message.id), ctx.message.jump_url,
+                ctx.message.created_at.strftime("%b %d %y %H:%M UTC")),
+            ", ".join(x.display_name for x in role.members), branch="logs")['content'].html_url
+        embed.add_field(name="Members With Role:", value=f"[CLICK HERE]({member_url})", inline=False)
+    else:
+        embed.add_field(name="Members With Role:", value=", ".join(x.mention for x in role.members), inline=False)
     await ctx.message.channel.send(embed=embed)
 
 client.run(BOT_TOKEN)
