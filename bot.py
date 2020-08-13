@@ -3322,7 +3322,7 @@ async def _goodnight(ctx,user:discord.Member=None):
         user = ctx.message.author
     else:
         say_user = ctx.message.author.mention
-    embed = discord.Embed(description="{} wishes goodnight to {}!".format(say_user,user.mention))
+    embed = discord.Embed(description="{} wishes goodnight to {}!".format(say_user,user.mention),colour=hc)
     embed.set_footer(text=df)
     embed.set_image(url="https://i.imgur.com/3RxNRwV.gif")
     await ctx.message.channel.send(embed=embed)
