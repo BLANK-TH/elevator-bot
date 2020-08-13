@@ -244,6 +244,10 @@ will not end well
 #### Command: `smallbrain [user]`
 Calculate the user's brain size. If no user was provided, the default is yourself.
 
+### Command Ideas
+#### Command: `commandideas` **OR** `ci`
+Posts a image to the `I am once again asking for command ideas` meme.
+
 [//]: # (new fun commands goes here)
 
 ## Utility Commands
