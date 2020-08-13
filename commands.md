@@ -116,7 +116,7 @@ Posts a image and message showing that you are punishing the user you mentioned.
 ### Torture
 #### Command: `torture [user]`
 Posts a (non graphic) image and message showing that you are torturing the user you mentioned. If no user is mentioned,
-it will by yourself.
+it will be yourself.
 
 ### Insult
 #### Command: `insult <user> [reason]`
