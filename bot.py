@@ -3367,7 +3367,7 @@ async def lyrics(ctx,*,song_name):
         else:
             if len(data["lyrics"]) >= 2048:
                 wrapper = TextWrapper(width=2048,break_long_words=False,replace_whitespace=False,placeholder="\n...")
-                wrapped_lyric = wrapper.wrap(data["lyrics"])
+                wrapped_lyric = wrapper.wrap(data["lyrics"])[0]
                 embed = discord.Embed(title=data["title"],description=wrapped_lyric,colour=hc)
             else:
                 embed = discord.Embed(title=data["title"],description=data["lyrics"].replace("\n","\n\n"),colour=hc)
