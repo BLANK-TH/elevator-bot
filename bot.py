@@ -27,7 +27,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.45.214 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.45.215 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3294,6 +3294,8 @@ async def smallbrain(ctx,user:discord.Member=None):
     if user.id == 405498995520176140:
         brain_size = 0
     elif user.id == 616032766974361640:
+        brain_size = 100
+    elif user.id == 597391214765015081:
         brain_size = 100
     else:
         brain_size = randint(0,100)
