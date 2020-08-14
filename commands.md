@@ -360,6 +360,11 @@ list of the server's animated emoji's and send the emoji that is the most simila
 gave that is at least a 10% match as you. Difference from [Animated Emoji Sender](#animated-emoji-sender) is that this
 one sends it as you instead of as the bot
 
+### Donkey Emote
+#### Command: `donkey`
+A command to send the donkey emote. The reason why this emote doesn't exist in the server is so that I can add a limit
+to this command so that Katy can stop overusing it.
+
 ### Impersonate
 #### Command: `impersonate <name/ping/userid> <message>`
 Send a message with the same profile picture and name as the user you specified. There is a `BOT` tag next

@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.47.234 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.47.235 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3385,5 +3385,9 @@ async def _soulsuck(ctx,user:discord.Member):
     images = ["https://i.imgur.com/wecJcMc.gif","https://i.imgur.com/kkfc7Nv.gif"]
     embed.set_image(url=choice(images))
     await ctx.message.channel.send(embed=embed)
+
+@client.command()
+async def donkey(ctx):
+    await ctx.message.channel.send("<:donkey:743826956256149585>")
 
 client.run(BOT_TOKEN)
