@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.47.237 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.47.238 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3409,11 +3409,11 @@ async def toggledonkey(ctx):
     if ctx.message.author.id == user.id:
         await ctx.message.channel.send("You are not allowed to use this command!")
         return
-    if role in user.roles:
-        user.remove_roles(role)
+    if role not in user.roles:
+        user.add_roles(role)
         msg = "{} is no longer allowed to use the donkey emote!".format(user.mention)
     else:
-        user.add_roles(role)
+        user.remove_roles(role)
         msg = "{} is now allowed to use the donkey emote!".format(user.mention)
     embed = discord.Embed(description=msg,colour=hc)
     embed.set_footer(text=df)
