@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.47.238 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.47.239 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3388,9 +3388,11 @@ async def _soulsuck(ctx,user:discord.Member):
 
 @client.command()
 async def donkey(ctx):
+    await ctx.message.delete()
     role = get(ctx.guild.roles,id=743829242412007496)
     if role in ctx.message.author.roles and ctx.message.author.id != 616032766974361640:
-        await ctx.message.channel.send("{} you are not allowed to use the donkey emote!".format(ctx.message.author.mention))
+        msg = await ctx.message.channel.send("{} you are not allowed to use the donkey emote!".format(ctx.message.author.mention))
+        await msg.delete(delay=10)
         return
     webhook = None
     for hook in await ctx.message.channel.webhooks():
@@ -3399,7 +3401,6 @@ async def donkey(ctx):
             break
     if webhook is None:
         webhook = await ctx.message.channel.create_webhook(name="Elevator Bot Webhook")
-    await ctx.message.delete()
     await webhook.send(content="<:donkey:743826956256149585>", username=ctx.message.author.display_name,
                        avatar_url=ctx.message.author.avatar_url)
 
