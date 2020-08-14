@@ -3391,6 +3391,7 @@ async def donkey(ctx):
     role = get(ctx.guild.roles,id=743829242412007496)
     if role in ctx.message.author.roles and ctx.message.author.id != 616032766974361640:
         await ctx.message.channel.send("{} you are not allowed to use the donkey emote!".format(ctx.message.author.mention))
+        return
     webhook = None
     for hook in await ctx.message.channel.webhooks():
         if hook.user.id == 699677108607123548:
@@ -3410,10 +3411,10 @@ async def toggledonkey(ctx):
         await ctx.message.channel.send("You are not allowed to use this command!")
         return
     if role not in user.roles:
-        user.add_roles(role)
+        await user.add_roles(role)
         msg = "{} is no longer allowed to use the donkey emote!".format(user.mention)
     else:
-        user.remove_roles(role)
+        await user.remove_roles(role)
         msg = "{} is now allowed to use the donkey emote!".format(user.mention)
     embed = discord.Embed(description=msg,colour=hc)
     embed.set_footer(text=df)
