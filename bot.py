@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.46.232 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.47.232 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3368,5 +3368,21 @@ async def lyrics(ctx,*,song_name):
             else:
                 embed = discord.Embed(title=data["title"],description=data["lyrics"].replace("\n","\n\n"),colour=hc)
             await ctx.message.channel.send(embed=embed)
+
+@client.command(aliases=["soulsuck","ss"])
+async def _soulsuck(ctx,user:discord.Member):
+    if ctx.message.author.id not in []:
+        await ctx.message.channel.send(embed=discord.Embed(description="Sorry hun, this command only works for demons "
+                                                                       "and demon cult members (<@597391214765015081> "
+                                                                       "and <@616032766974361640>), try again when you"
+                                                                       " don't have a soul!",colour=hc))
+        return
+    embed = discord.Embed(description="I'm glad to inform you {}, you no longer have a soul! {} has sucked it. You no "
+                                      "longer have to feel the pain of life. Enjoy eternity!"
+                          .format(user.mention,ctx.message.author.mention),colour=0x8B0000)
+    embed.set_footer(text=df)
+    images = ["https://i.imgur.com/wecJcMc.gif","https://i.imgur.com/kkfc7Nv.gif"]
+    embed.set_image(url=choice(images))
+    await ctx.message.channel.send(embed=embed)
 
 client.run(BOT_TOKEN)

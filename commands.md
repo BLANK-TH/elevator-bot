@@ -258,6 +258,11 @@ Calculate the user's brain size. If no user was provided, the default is yoursel
 #### Command: `commandidea` **OR** `ci`
 Posts a image to the `I am once again asking for command ideas` meme.
 
+### Soul Suck
+#### Command: `soulsuck <user>` **OR** `ss <user>`
+Suck the mentioned users soul.
+**WARNING:** This command can only be used by demons (or demon cult members).
+
 [//]: # (new fun commands goes here)
 
 ## Utility Commands
