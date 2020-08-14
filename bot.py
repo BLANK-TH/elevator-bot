@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.46.231 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.46.232 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3116,10 +3116,6 @@ async def _suggestcommand(ctx,*,title_description):
 
 @client.command(aliases=['featureupdate','fu'])
 async def _featureupdate(ctx,*,title_description_original):
-    blacklist_role = get(ctx.guild.roles, id=697556111292629012)
-    if blacklist_role in ctx.message.author.roles:
-        await ctx.message.channel.send("You are blacklisted from using this command!")
-        return
     counter = 0
     for x in title_description_original:
         if "|" in x:
