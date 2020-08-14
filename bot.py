@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.47.236 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.47.237 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3388,6 +3388,9 @@ async def _soulsuck(ctx,user:discord.Member):
 
 @client.command()
 async def donkey(ctx):
+    role = get(ctx.guild.roles,id=743829242412007496)
+    if role in ctx.message.author.roles and ctx.message.author.id != 616032766974361640:
+        await ctx.message.channel.send("{} you are not allowed to use the donkey emote!".format(ctx.message.author.mention))
     webhook = None
     for hook in await ctx.message.channel.webhooks():
         if hook.user.id == 699677108607123548:
@@ -3398,5 +3401,22 @@ async def donkey(ctx):
     await ctx.message.delete()
     await webhook.send(content="<:donkey:743826956256149585>", username=ctx.message.author.display_name,
                        avatar_url=ctx.message.author.avatar_url)
+
+@client.command()
+async def toggledonkey(ctx):
+    role = get(ctx.guild.roles, id=743829242412007496)
+    user = ctx.guild.get_member(405498995520176140)
+    if ctx.message.author.id == user.id:
+        await ctx.message.channel.send("You are not allowed to use this command!")
+        return
+    if role in user.roles:
+        user.remove_roles(role)
+        msg = "{} is no longer allowed to use the donkey emote!".format(user.mention)
+    else:
+        user.add_roles(role)
+        msg = "{} is now allowed to use the donkey emote!".format(user.mention)
+    embed = discord.Embed(description=msg,colour=hc)
+    embed.set_footer(text=df)
+    await ctx.message.channel.send(embed=embed)
 
 client.run(BOT_TOKEN)

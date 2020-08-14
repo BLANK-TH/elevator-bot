@@ -365,6 +365,10 @@ one sends it as you instead of as the bot
 A command to send the donkey emote. The reason why this emote doesn't exist in the server is so that I can add a limit
 to this command so that Katy can stop overusing it.
 
+### Toggle Donkey Permissions
+#### Command: `toggledonkey`
+A command to toggle the permissions for Katy to use the donkey emote.
+
 ### Impersonate
 #### Command: `impersonate <name/ping/userid> <message>`
 Send a message with the same profile picture and name as the user you specified. There is a `BOT` tag next
