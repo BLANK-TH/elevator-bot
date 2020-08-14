@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.46.230 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.46.231 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3350,7 +3350,7 @@ async def torture(ctx,user:discord.Member=None):
     embed = discord.Embed(description="{} is torturing {}...".format(action_user,user.mention),colour=discord.Colour.red())
     embed.add_field(name="Disclaimer",value="No intense/extremely graphic images were used in this command to avoid "
                                             "triggering panic attacks and other similar events. If this comes anywhere "
-                                            "close to triggering any panic event, please contact <@616032766974361640>")
+                                            "close to triggering any panic attack, please contact <@616032766974361640>.")
     embed.set_footer(text=df)
     embed.set_image(url="https://i.imgur.com/Hsbd7jo.gif")
     await ctx.message.channel.send(embed=embed)
