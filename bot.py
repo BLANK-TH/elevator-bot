@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.47.240 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.47.241 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -1492,7 +1492,7 @@ async def deathbattle(ctx,user1,user2=None):
     embed.add_field(name=p1tup[0],value=f"{str(p1tup[1])}/100")
     embed.add_field(name=p2tup[0], value=f"{str(p2tup[1])}/100")
     show_msg = await ctx.message.channel.send(embed=embed)
-    if "blank" in p1tup[0].lower() or "blank" in p2tup.lower():
+    if "blank" in p1tup[0].lower() or "blank" in p2tup[0].lower():
         if "blank" in p1tup[0].lower():
             winner = p1tup[0]
             p2tup = (p2tup[0],0)
