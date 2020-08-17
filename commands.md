@@ -10,6 +10,7 @@ If you see quotation marks in a command, make sure the quotation marks are there
  - [Utility Commands](#utility-commands)
  - [Server Interaction Commands](#server-interaction-commands)
  - [Minigame Commands](#minigame-commands)
+ - [Multiplayer Game Commands](#multiplayer-game-commands)
  - [Moderation Commands](#moderation-commands)
  - [Bot Development Commands](#bot-development-commands)
  - [Info](#info)
@@ -463,6 +464,21 @@ over. Hit means to pull a card and stand means to stop, let the dealer play, the
 will get 2 cards to start off with. The dealer will also get 2 cards but you can only see one.
 
 [//]: # (new minigame commands goes here)
+
+## Multiplayer Game Commands
+### Tic Tac Toe
+#### Command: `tictactoe [user]` **OR** `ttt [user]`
+If you mention a user, that user will be given an option to accept the game by typing `accept`. If you don't mention
+a user then it will be a general game and anyone who wants to can type `accept` and join. If no-one joins after 1 minute
+the game will be canceled. If the game proceeds the bot will send a message then start preparing the game (give it a few
+seconds). While it's preparing the embed colour (colour on the rid edge of the embed) will be yellow. Once it's done it
+will be either blue or orange. Blue is corresponding to player 1 (requesting player) and orange is corresponding to 
+player 2 (requested player). The player that plays first is random, to see the current player, look at the Current
+Player embed field. All numbers in the game grid are playable slots. To play on a spot, click the corresponding number
+emoji. Continue taking turns playing until either of you ties or loses. If a player doesn't play for one minute then the
+game will be finished and the opposing player will have won. 
+
+[//]: # (new multiplayer game commands goes here)
 
 ## Moderation Commands
 ##### This commands can only be used by people with the co-responding permissions.

@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.47.241 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.48.241 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3457,5 +3457,177 @@ async def toggledonkey(ctx):
     embed = discord.Embed(description=msg,colour=hc)
     embed.set_footer(text=df)
     await ctx.message.channel.send(embed=embed)
+
+@client.command(aliases=["tictactoe","ttt"])
+async def _tictactoe(ctx,player2:discord.Member=None):
+    if player2 is None:
+        def check(message):
+            return message.channel.id == ctx.message.channel.id and message.content.lower() == "accept" and \
+                   message.author.id != ctx.message.author.id
+        await ctx.message.channel.send("Would anyone like to play tic tac toe with {}? Type `accept` to join the game."
+                                       .format(ctx.author.mention))
+        try:
+            msg = await client.wait_for("message",check=check,timeout=60)
+        except asyncio.TimeoutError:
+            await ctx.message.channel.send("No-one has joined, the game has been canceled.")
+            return
+        await ctx.message.channel.send("{}, {} has accepted the game will start soon.".format(
+            ctx.author.mention,msg.author.mention))
+        player2 = msg.author
+    else:
+        def check(message):
+            return message.channel.id == ctx.message.channel.id and message.content.lower() == "accept" and \
+                   message.author.id != ctx.message.author.id
+
+        await ctx.message.channel.send("{} would you like to play tic tac toe with {}? Type `accept` to join the game."
+                                       .format(player2.mention,ctx.author.mention))
+        try:
+            msg = await client.wait_for("message", check=check, timeout=60)
+        except asyncio.TimeoutError:
+            await ctx.message.channel.send("No-one has joined, the game has been canceled.")
+            return
+        await ctx.message.channel.send("{}, {} has accepted the game will start soon.".format(
+            ctx.author.mention, msg.author.mention))
+    def embed_gen(descrip,colour):
+        em = discord.Embed(description=descrip,colour=colour)
+        em.set_footer(text=df)
+        em.set_author(name="{} and {}'s Tic Tac Toe Game".format(p1[0].display_name, p2[0].display_name))
+        em.add_field(name="Instructions", value="The tic tac toe grid is in the description of the embed. All squares with"
+                                                " numbers are not taken. Click the corresponding number emoji reaction to"
+                                                " play that square. Once you click the emoji the number will be replaced"
+                                                " with your marked then the reaction will be removed."
+                                                " The first player is chosen at random and is noted in"
+                                                " the Current Player field. The requesting player is `X` and the requested"
+                                                " player is `O`. The rest is general tic tac toe rules."
+                     ,inline=False)
+        em.add_field(name="Current Player", value=cur_player.display_name)
+        em.add_field(name="Turn Number",value=str(turn_num))
+        return em
+    def descrip_gen():
+        counter = 1
+        descrip = ""
+        for square in grid:
+            descrip += square
+            if counter == 3:
+                counter = 0
+                descrip += "\n"
+            counter += 1
+        return descrip.rstrip()
+    def replace_val(emote, grid):
+        old_grid = grid
+        grid = []
+        for square in old_grid:
+            if square != emote:
+                grid.append(square)
+            else:
+                if cur_player.id == ctx.author.id:
+                    grid.append(emojis["x"])
+                else:
+                    grid.append(emojis["o"])
+        return grid
+    def get_other_player():
+        if cur_player == p1[0]:
+            return p2[0]
+        else:
+            return p1[0]
+    def check_win(emote):
+        sets = [[0,1,2],[3,4,5],[6,7,8],[0,4,8],[2,4,6],[0,3,6],[1,4,7],[2,5,8]]
+        for set in sets:
+            set_status = True
+            for index in set:
+                if grid[index] != emote:
+                    set_status = False
+                    break
+            if set_status:
+                return True
+        return False
+    def check_tie():
+        for square in grid:
+            if square != emojis["x"] and square != emojis["o"]:
+                return False
+        return True
+    p1 = [ctx.author]
+    p2 = [player2]
+    cur_player = choice([p1[0],p2[0]])
+    turn_num = 1
+    url = urllib.request.urlopen("https://raw.githubusercontent.com/BLANK-TH/elevator-bot-resources/bot-storage/"
+                                 "emojis.json")
+    emojis = json.loads(url.read())
+    emojis["x"] = ":x:"
+    emojis["o"] = ":o:"
+    grid = [emojis["1"],emojis["2"],emojis["3"],emojis["4"],emojis["5"],emojis["6"],emojis["7"],emojis["8"],emojis["9"]]
+    self_reacts = {}
+    game_embed = embed_gen(descrip_gen(),discord.Colour.gold())
+    game_message = await ctx.send(embed=game_embed)
+    for emoji in grid:
+        self_reacts[emoji] = await game_message.add_reaction(emoji)
+    if cur_player.id == ctx.author.id:
+        col = discord.Colour.blue()
+    else:
+        col = discord.Colour.orange()
+    await game_message.edit(embed=embed_gen(descrip_gen(),col))
+    winner = None
+    while True:
+        def chk(reaction, user):
+            if user.bot:
+                return False
+            if reaction.message.id != game_message.id:
+                return False
+            if user.id != cur_player.id:
+                return False
+            if reaction.emoji not in grid:
+                return False
+            return True
+        try:
+            react = await client.wait_for("reaction_add",check=chk,timeout=60)
+        except asyncio.TimeoutError:
+            em = discord.Embed(title="{} Wins".format(cur_player.display_name), description=descrip_gen(),
+                               colour=discord.Colour.blue())
+            em.set_footer(text=df)
+            em.set_author(name="{} and {}'s Tic Tac Toe Game".format(p1[0].display_name, p2[0].display_name))
+            em.add_field(name="Turn Number", value=str(turn_num))
+            await game_message.edit(embed=em)
+            await ctx.send("{} has abandoned the match, {} has won".format(cur_player.mention,get_other_player().mention))
+            return
+        grid = replace_val(react[0].emoji,grid)
+        async for user in react[0].users():
+            await react[0].remove(user)
+            await asyncio.sleep(0.16)
+        if cur_player.id == ctx.author.id:
+            col = discord.Colour.blue()
+        else:
+            col = discord.Colour.orange()
+        if check_tie():
+            break
+        if cur_player.id == ctx.author.id:
+            if check_win(emojis["x"]):
+                winner = p1[0]
+                break
+        else:
+            if check_win(emojis["o"]):
+                winner = p2[0]
+                break
+        cur_player = get_other_player()
+        turn_num += 1
+        await game_message.edit(embed=embed_gen(descrip_gen(), col))
+    if winner is None:
+        em = discord.Embed(title="Tie",description=descrip_gen(), colour=discord.Colour.gold())
+        em.set_footer(text=df)
+        em.set_author(name="{} and {}'s Tic Tac Toe Game".format(p1[0].display_name, p2[0].display_name))
+        em.add_field(name="Turn Number", value=str(turn_num))
+    elif winner.id == p1[0].id:
+        em = discord.Embed(title="{} Wins".format(p1[0].display_name), description=descrip_gen(), colour=discord.Colour.blue())
+        em.set_footer(text=df)
+        em.set_author(name="{} and {}'s Tic Tac Toe Game".format(p1[0].display_name, p2[0].display_name))
+        em.add_field(name="Turn Number", value=str(turn_num))
+    elif winner.id == p2[0].id:
+        em = discord.Embed(title="{} Wins".format(p2[0].display_name), description=descrip_gen(), colour=discord.Colour.orange())
+        em.set_footer(text=df)
+        em.set_author(name="{} and {}'s Tic Tac Toe Game".format(p1[0].display_name, p2[0].display_name))
+        em.add_field(name="Turn Number", value=str(turn_num))
+    else:
+        em = discord.Embed(title="Error",description="Game exited without definite winner.",colour=discord.Colour.red())
+        em.set_footer(text=df)
+    await game_message.edit(embed=em)
 
 client.run(BOT_TOKEN)
