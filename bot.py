@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.48.241 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.48.242 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3592,7 +3592,7 @@ async def _tictactoe(ctx,player2:discord.Member=None):
         grid = replace_val(react[0].emoji,grid)
         async for user in react[0].users():
             await react[0].remove(user)
-            await asyncio.sleep(0.16)
+            await asyncio.sleep(0.2)
         if cur_player.id == ctx.author.id:
             col = discord.Colour.blue()
         else:
