@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.48.242 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.48.243 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -2685,8 +2685,10 @@ async def emojitype(ctx,*,message):
     for x in message:
        try:
            msg.append(emojis[x])
+           msg.append(" ")
        except KeyError:
            msg.append(x)
+           msg.append(" ")
     embed = discord.Embed()
     if ctx.message.author.nick is not None:
         embed.set_author(name="{}#{} ({})".format(ctx.message.author.name, ctx.message.author.discriminator, ctx.message.author.nick),
