@@ -3668,7 +3668,7 @@ async def _tictactoe(ctx,player2:discord.Member=None):
 
 @client.command(aliases=["claptext","ct"])
 async def _claptext(ctx,*,message):
-    embed = discord.Embed(description=message.content.replace(" "," 👏 "),colour=hc)
+    embed = discord.Embed(description=message.replace(" "," 👏 "),colour=hc)
     embed.set_footer(text=df)
     await ctx.message.channel.send(embed=embed)
 
