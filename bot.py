@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.48.246 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.48.247 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -75,6 +75,9 @@ async def on_message(message):
             break
     if message.channel.id == 689077082609025089 and not message.author.bot:
         if "//" == message.content[:2]:
+            return
+        if "s!purge" == message.content[:7]:
+            await client.process_commands(message)
             return
         try:
             cur_num = int(message.content)
@@ -127,6 +130,9 @@ async def on_message(message):
         return
     if message.channel.id == 740675095005102153 and not message.author.bot:
         if "//" == message.content[:2]:
+            return
+        if "s!purge" == message.content[:7]:
+            await client.process_commands(message)
             return
         last_message = ""
         limit = 2
