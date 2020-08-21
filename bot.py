@@ -31,7 +31,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.49.253 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.49.254 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3665,5 +3665,11 @@ async def _tictactoe(ctx,player2:discord.Member=None):
         em = discord.Embed(title="Error",description="Game exited without definite winner.",colour=discord.Colour.red())
         em.set_footer(text=df)
     await game_message.edit(embed=em)
+
+@client.command(aliases=["claptext","ct"])
+async def _claptext(ctx,*,message):
+    embed = discord.Embed(description=message.content.replace(" "," 👏 "),colour=hc)
+    embed.set_footer(text=df)
+    await ctx.message.channel.send(embed=embed)
 
 client.run(BOT_TOKEN)

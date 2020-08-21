@@ -237,6 +237,10 @@ Convert the letters and numbers of the message specified into emojis then sends 
 letters multiplyed by 22 (`number_of_letters*22`) is more than 2000, then the message won't be able to be sent
 and the bot will respond back with an error.
 
+### Clap Text
+#### Command: `claptext <message>` **OR** `ct <message>`
+Add a clapping emoji between each space in the message provided.
+
 ### Headsmash
 #### Command: `headsmash` **OR** `hs`
 Send a random string of characters that emulate a headsmash on a keyboard as the bot.
