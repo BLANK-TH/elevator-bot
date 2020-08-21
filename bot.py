@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.48.247 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.48.248 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -1222,7 +1222,7 @@ async def _convertfromtimezone(ctx,hour,min,cfrom,cto):
         colour=hc
     )
     r_embed.set_footer(text=df)
-    r_embed.add_field(name="Current Time:",value=current_to.format('YYYY-MM-DD HH:mm UTC ZZ'))
+    r_embed.add_field(name="Time in {}:".format(cto),value=current_to.format('YYYY-MM-DD HH:mm UTC ZZ'))
     await ctx.message.channel.send(embed=r_embed)
 
 @client.command()
