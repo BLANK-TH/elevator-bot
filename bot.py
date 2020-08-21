@@ -3087,8 +3087,8 @@ async def _developeraddtodo(ctx,type,priority,bot,difficulty,*,title_description
                                                                                                          card.id))
     if type == "featureupdate":
         type = "feature update"
-    elif type == "workintensive":
-        type = "work intensive"
+    if difficulty == "workintensive":
+        difficulty = "work intensive"
     confirm_embed = discord.Embed(title="Developer Queue Addition Succeeded!",
                                   description='To view the card, visit this link:\n'
                                               + "https://app.gitkraken.com/glo/board/{}/card/{}".format(board_id,card.id),
