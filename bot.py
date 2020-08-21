@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.48.245 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.48.246 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -1496,11 +1496,11 @@ async def deathbattle(ctx,user1,user2=None):
         if "blank" in p1tup[0].lower():
             winner = p1tup[0]
             p2tup = (p2tup[0],"-∞")
-            msg = "<:deathbattleright:700815518193680434> __{}__ sent his robot swarm dealing __100__ dmg to __{}__!".format(p1tup[0],p2tup[0])
+            msg = "<:deathbattleright:700815518193680434> __{}__ sent his robot swarm dealing __∞__ dmg to __{}__!".format(p1tup[0],p2tup[0])
         else:
             winner = p2tup[0]
             p1tup = (p1tup[0],"-∞")
-            msg = "<:deathbattleleft:700815578499121183> __{}__ sent his robot swarm dealing __100__ dmg to __{}__!".format(p1tup[0],p2tup[0])
+            msg = "<:deathbattleleft:700815578499121183> __{}__ sent his robot swarm dealing __∞__ dmg to __{}__!".format(p1tup[0],p2tup[0])
         embed = discord.Embed(
             description=msg + f"\n🏆 **{winner}** has won!",
             colour=discord.Colour.gold()
