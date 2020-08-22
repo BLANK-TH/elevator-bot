@@ -127,6 +127,10 @@ Posts a image and message showing that you are insulting the user you mentioned.
 #### Command: `mock <phrase>`
 Posts the message back with random capitalisation and a GIF mocking it.
 
+### Sarcasm
+#### Command: `sarcasm <phrase>`
+Posts the message back with alternating capitalization on the letters of the sentence.
+
 ### Rank Thot
 #### Command: `rankthot [user]`
 Posts a message with a percentage between 0 and 100 marking how thottie the person is. If you don't mention anyone
