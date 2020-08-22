@@ -129,7 +129,8 @@ Posts the message back with random capitalisation and a GIF mocking it.
 
 ### Sarcasm
 #### Command: `sarcasm <phrase>`
-Posts the message back with alternating capitalization on the letters of the sentence.
+Posts the message back with alternating capitalization on the letters of the sentence. The letter `i` is skipped as a
+capital `i` looks weird in the sentence.
 
 ### Rank Thot
 #### Command: `rankthot [user]`
