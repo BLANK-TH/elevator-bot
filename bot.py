@@ -3677,7 +3677,7 @@ async def sarcasm(ctx,*,message):
     msg = ""
     for index,letter in enumerate(message):
         if not letter.isalpha():
-            continue
+            msg += letter
         else:
             if index % 2 == 0 and letter != "i":
                 msg += letter.upper()
