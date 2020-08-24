@@ -127,6 +127,10 @@ Posts a image and message showing that you are insulting the user you mentioned.
 #### Command: `mock <phrase>`
 Posts the message back with random capitalisation and a GIF mocking it.
 
+### Bully
+#### Command: `bully [user]`
+Posts a message showing that you are bullying the user you mentioned.
+
 ### Sarcasm
 #### Command: `sarcasm <phrase>`
 Posts the message back with alternating capitalization on the letters of the sentence. The letter `i` is skipped as a

@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.51.262 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.51.263 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -285,7 +285,7 @@ async def mock(ctx,*,phrase:str):
     embed.set_footer(text=df)
     embed.set_image(url='https://i.imgur.com/qDhQKQb.gif')
     if ('theo' in phrase.lower() or 'blank' in phrase.lower()) and ctx.message.author.id != 616032766974361640:
-        embed.set_image(url='https://nationalpostcom.files.wordpress.com/2019/06/flip-2.png?w=780')
+        embed.set_image(url='https://i.imgur.com/t96AqDf.png')
 
     await ctx.message.channel.send(embed=embed)
 
@@ -3702,6 +3702,23 @@ async def sarcasm(ctx,*,message):
 async def choose(ctx,*args):
     embed = discord.Embed(description="I choose `{}`!".format(choice(args)),colour=hc)
     embed.set_footer(text=df)
+    await ctx.send(embed=embed)
+
+@client.command()
+async def bully(ctx,user:discord.Member=None):
+    if user is None:
+        user = "themselves?"
+    else:
+        user = user.mention + "!"
+    if user.id != 616032766974361640:
+        embed = discord.Embed(description="{} is bullying {}".format(ctx.author.mention,user))
+    else:
+        f"How dare you bully my owner. {ctx.author.mention} go f*ck yourself!"
+    embed.set_footer(text=df)
+    if user.id != 616032766974361640:
+        embed.set_image(url="https://i.imgur.com/RiyVLH9.mp4")
+    else:
+        embed.set_image(url='https://i.imgur.com/t96AqDf.png')
     await ctx.send(embed=embed)
 
 client.run(BOT_TOKEN)
