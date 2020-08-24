@@ -297,6 +297,10 @@ Asks the 8 Ball a question.
 #### Command: `dice [maximum number]`
 Rolls a dice, default maximum is 6.
 
+### Choose
+#### Command: `choose <options>`
+Choose one of the provided options. Separate options by space, use `"` if you need to put an option with spaces. 
+
 ### Flip a Coin
 #### Command: `flipacoin` **OR** `fac`
 Flips a coin.
