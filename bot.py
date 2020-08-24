@@ -68,6 +68,8 @@ async def change_game():
 
 @client.event
 async def on_message(message):
+    if "S!" == message.content.lower()[:2]:
+        message.content = "s!" + message.content[2:]
     for mention in message.mentions:
         if 699677108607123548 == mention.id:
             msg = await message.channel.send("<a:angryping:725393149484335165>")
