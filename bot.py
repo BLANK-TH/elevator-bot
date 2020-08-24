@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.49.260 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.50.260 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -252,7 +252,7 @@ async def test(ctx):
     await ctx.channel.send(embed=embed)
 
 @client.command(pass_context=True, aliases=['pfp','profile','avatar'])
-async def _avatar(ctx, member: discord.Member='None'):
+async def avatar(ctx, member: discord.Member='None'):
     if member == "None":
         member = ctx.message.author
     a_embed = discord.Embed(
@@ -290,7 +290,7 @@ async def mock(ctx,*,phrase:str):
     await ctx.message.channel.send(embed=embed)
 
 @client.command(aliases=['pickup','pickupline','pl'])
-async def _pickuplines(ctx):
+async def pickuplines(ctx):
     url = urllib.request.urlopen("https://raw.githubusercontent.com/BLANK-TH/elevator-bot-resources/bot-storage/pickuplines.json")
     lines = json.loads(url.read())
     line = choice(lines)
@@ -431,7 +431,7 @@ async def cute(ctx,*,user:discord.Member='empty'):
     await ctx.message.channel.send(embed=c_embed)
 
 @client.command(aliases=['rockpaperscissors','rps'])
-async def _rps(ctx,choose):
+async def rps(ctx,choose):
     choose = choose.lower()
     if choose == 'rock' or choose == 'r':
         is_rps = True
@@ -586,7 +586,7 @@ async def punch(ctx,user:discord.Member,*,reason='None'):
     await ctx.message.channel.send(embed=p_embed)
 
 @client.command(aliases=['cry','sad'])
-async def _crysad(ctx,*,reason="None"):
+async def crysad(ctx,*,reason="None"):
     random_cry_sad_image = ['https://i.imgur.com/2idqzX5.jpg',
                             'https://i.imgur.com/21qHg4N.jpg',
                             'https://i.imgur.com/WEIMm9N.jpg',
@@ -612,7 +612,7 @@ async def _crysad(ctx,*,reason="None"):
     await ctx.message.channel.send(embed=embed)
 
 @client.command(aliases=['angry','mad'])
-async def _angry(ctx,*,reason="None"):
+async def angry(ctx,*,reason="None"):
     random_angry_image = ['https://i.imgur.com/1VXQ0cl.jpg',
                           'https://i.imgur.com/lrXbqIq.jpg',
                           'https://i.imgur.com/xCZ8qEr.png'
@@ -696,7 +696,7 @@ async def insult(ctx,user:discord.Member,*,reason="None"):
     await ctx.message.channel.send(embed=i_embed)
 
 @client.command(aliases=['hf','highfive'])
-async def _highfive(ctx,user:discord.Member):
+async def highfive(ctx,user:discord.Member):
     h_embed = discord.Embed(
         description=f"{ctx.message.author.mention} has high-fived {user.mention}",
         colour=hc
@@ -707,7 +707,7 @@ async def _highfive(ctx,user:discord.Member):
     await ctx.message.channel.send(embed=h_embed)
 
 @client.command(aliases=['chatkilled','ck'])
-async def _chatkilled(ctx,user:discord.Member="None"):
+async def chatkilled(ctx,user:discord.Member="None"):
     if user != "None":
         msg = f"{ctx.message.author.mention} thinks {user.mention} has killed the chat! Someone revive it!"
     else:
@@ -722,7 +722,7 @@ async def _chatkilled(ctx,user:discord.Member="None"):
     await ctx.message.channel.send(embed=c_embed)
 
 @client.command(aliases=['flipacoin','fac'])
-async def _flipacoin(ctx):
+async def flipacoin(ctx):
     sides = ["Heads","Tails"]
     ans = choice(sides)
     r_embed = discord.Embed(
@@ -781,7 +781,7 @@ async def invite(ctx):
     await ctx.message.channel.send(embed=i_embed)
 
 @client.command(aliases=['goodjob','gj'])
-async def _goodjob(ctx,user:discord.Member,*,reason="None"):
+async def goodjob(ctx,user:discord.Member,*,reason="None"):
     random_goodjob_message = [
         f"{ctx.message.author.mention} thinks {user.mention} did a good job!",
         f"{ctx.message.author.mention} is congratulating {user.mention} for doing a good job!",
@@ -801,7 +801,7 @@ async def _goodjob(ctx,user:discord.Member,*,reason="None"):
     await ctx.message.channel.send(embed=g_embed)
 
 @client.command(aliases=['f','respects'])
-async def _f(ctx,user:discord.Member="None"):
+async def f(ctx,user:discord.Member="None"):
     random_f_image = [
             'https://i.imgur.com/Qn4lHqJ.png',
             'https://i.imgur.com/Li6lOuw.jpg'
@@ -821,7 +821,7 @@ async def _f(ctx,user:discord.Member="None"):
     await ctx.message.channel.send(embed=f_embed)
 
 @client.command(aliases=['x','doubt'])
-async def _x(ctx,user:discord.Member="None"):
+async def x(ctx,user:discord.Member="None"):
     random_x_image = [
         'https://i.imgur.com/0GETcS1.jpg',
         'https://i.imgur.com/wutBLAX.png'
@@ -841,7 +841,7 @@ async def _x(ctx,user:discord.Member="None"):
     await ctx.message.channel.send(embed=x_embed)
 
 @client.command(aliases=['hb','happybirthday','birthday'])
-async def _happybirthday(ctx,user:discord.Member):
+async def happybirthday(ctx,user:discord.Member):
     random_birthday_image = [
             'https://i.imgur.com/sgJBE5E.jpg',
             'https://i.imgur.com/oHVZmQm.jpg',
@@ -858,7 +858,7 @@ async def _happybirthday(ctx,user:discord.Member):
     await ctx.message.channel.send(embed=b_embed)
 
 @client.command(aliases=['boredom','bored','boredom.exe'])
-async def _boredom(ctx):
+async def boredom(ctx):
     random_boredom_message = [
         f'{ctx.message.author.mention} is bored!',
         f'{ctx.message.author.mention} has started the process boredom.exe!',
@@ -875,7 +875,7 @@ async def _boredom(ctx):
     await ctx.message.channel.send(embed=b_embed)
 
 @client.command(aliases=['thinking','think','thinking.exe'])
-async def _thinking(ctx):
+async def thinking(ctx):
     random_thinking_message = [
         f'{ctx.message.author.mention} is thinking!',
         f'{ctx.message.author.mention} has started the process thinking.exe!',
@@ -1066,7 +1066,7 @@ async def hangman(ctx):
     await ctx.message.channel.send(embed=e_embed)
 
 @client.command(aliases=['unitconvert','uc'])
-async def _unitconvert(ctx,num1,unitfrom,unitto):
+async def unitconvert(ctx,num1,unitfrom,unitto):
     units = [
         'm/meter','g/gram','s/second','A/ampere','K/kelvin','mol/mole','cd/candela','Hz/hertz','N/newton','Pa/pascal',
         'J/joule','W/watt','C/coulomb','V/volt','Ω/ohm','S/siemens','F/farad','T/tesla','Wb/weber','H/henry',
@@ -1102,7 +1102,7 @@ async def _unitconvert(ctx,num1,unitfrom,unitto):
     await ctx.message.channel.send(embed=embed)
 
 @client.command(aliases=['numguess','numberguess','ng'])
-async def _numguess(ctx,lives=8,max=100):
+async def numguess(ctx,lives=8,max=100):
     try:
         lives = int(lives)
         max = int(max)
@@ -1175,7 +1175,7 @@ async def _numguess(ctx,lives=8,max=100):
     await ctx.message.channel.send(embed=e_embed)
 
 @client.command(aliases=['currentinzone','ciz'])
-async def _currenttimeintimezone(ctx,*,timezone):
+async def currenttimeintimezone(ctx,*,timezone):
     if ' ' in timezone:
         timezone = timezone.title()
     else:
@@ -1208,7 +1208,7 @@ async def _currenttimeintimezone(ctx,*,timezone):
     await ctx.message.channel.send(embed=r_embed)
 
 @client.command(aliases=['convertfromzone','cfz'])
-async def _convertfromtimezone(ctx,hour,min,cfrom,cto):
+async def convertfromtimezone(ctx,hour,min,cfrom,cto):
     def error_zone(error):
         e_embed = discord.Embed(
             title="Invalid Timezone!",
@@ -1369,7 +1369,7 @@ async def translatefrom(ctx,languagefrom,*,text):
     await ctx.message.channel.send(embed=embed)
 
 @client.command(aliases=['backwardsname','backname','bn'])
-async def _backwardsname(ctx,*,user:discord.Member="None"):
+async def backwardsname(ctx,*,user:discord.Member="None"):
     if user == "None":
         user = ctx.message.author
     name = user.display_name
@@ -1385,7 +1385,7 @@ async def _backwardsname(ctx,*,user:discord.Member="None"):
 
 @client.command(aliases=['purge','prune'])
 @commands.has_permissions(manage_messages=True)
-async def _purge(ctx,number="None"):
+async def purge(ctx,number="None"):
     if number == "None":
         embed = discord.Embed(title="Please enter a number!",colour=discord.Colour.red())
         embed.set_image(url='https://i.imgur.com/XgqWMei.jpg')
@@ -1760,11 +1760,11 @@ async def shiprate(ctx,user1:str,user2:str):
     await ctx.message.channel.send(content=descrip_msg,embed=embed)
 
 @client.command(aliases=['hellodarkness','hdmof'])
-async def _hellodarknessmyoldfriend(ctx):
+async def hellodarknessmyoldfriend(ctx):
     await ctx.message.channel.send("https://www.youtube.com/watch?v=qYS0EeaAUMw&t=3")
 
 @client.command(aliases=['animatedemoji','animemoji','ae'])
-async def _animatedemoji(ctx,*,emoji_name):
+async def animatedemoji(ctx,*,emoji_name):
     def similar(a,b):
         return SequenceMatcher(None,a,b).ratio()
     emoji_similaritys = {}
@@ -1778,7 +1778,7 @@ async def _animatedemoji(ctx,*,emoji_name):
     await ctx.message.channel.send("<a:{}:{}>".format(highest_emoji[1].name,str(highest_emoji[1].id)))
 
 @client.command(aliases=["blackjack","bj"])
-async def _blackjack(ctx):
+async def blackjack(ctx):
     def get_card(deck):
         first_len = len(deck.deck)
         card = deck.give_random_card()
@@ -2087,7 +2087,7 @@ async def usersend(ctx,*,details):
     await ctx.message.delete()
 
 @client.command(aliases=["jeopardymusic","jm"])
-async def _jeopardymusic(ctx):
+async def jeopardymusic(ctx):
     await ctx.message.channel.send("https://www.youtube.com/watch?v=0Wi8Fv0AJA4")
 
 @client.command()
@@ -2201,7 +2201,7 @@ async def basbot(ctx):
             await ctx.message.channel.send(msg.content)
 
 @client.command(aliases=["calculate","c"])
-async def _calculate(ctx,*,expression):
+async def calculate(ctx,*,expression):
     try:
         result = eval(expression,{},{})
         await ctx.message.channel.send("The answer to `{}` is `{}`".format(expression,str(result)))
@@ -2343,7 +2343,7 @@ async def warn(ctx,user: discord.Member,*,reason):
         await confirm.delete(delay=7)
 
 @client.command(aliases=['sleepy','sleep'])
-async def _sleep(ctx):
+async def sleep(ctx):
     random_sleep_image_gif = ['https://i.imgur.com/XBkPjvb.jpg',
                               'https://i.imgur.com/i6FufIO.png',
                               'https://i.imgur.com/G0SHasR.jpg',
@@ -2370,7 +2370,7 @@ async def _sleep(ctx):
     await ctx.message.channel.send(embed=s_embed)
 
 @client.command(aliases=["fr","finerant"])
-async def _finerant(ctx):
+async def finerant(ctx):
     await ctx.message.channel.send("https://www.youtube.com/watch?v=aS0-P4JR9PU")
 
 @client.command()
@@ -2573,7 +2573,7 @@ async def captchagen(ctx,characters:int=5):
     await ctx.channel.send(file=discord.File(img_data,'captcha.png'))
 
 @client.command(aliases=['report','r'])
-async def _report(ctx,user:discord.Member,*,reason):
+async def report(ctx,user:discord.Member,*,reason):
     msgs = []
     staff_chat = client.get_channel(685919249864458386)
     staff_log = client.get_channel(725438062296826027)
@@ -2655,7 +2655,7 @@ async def trivia(ctx):
 
 @client.command(aliases=['questionoftheday','qotd','qtd','questionotd','questionday'])
 @commands.has_role("Staff")
-async def _questionoftheday(ctx,number:int,*,question):
+async def questionoftheday(ctx,number:int,*,question):
     await ctx.message.delete()
     num_unicode= {1:'1️⃣',2:'2️⃣',3:'3️⃣',4:'4️⃣',5:'5️⃣',6:'6️⃣',7:'7️⃣',8:'8️⃣',9:'9️⃣'}
     emojis = []
@@ -2691,7 +2691,7 @@ async def _questionoftheday(ctx,number:int,*,question):
         await msg.add_reaction(emoji)
 
 @client.command(aliases=['reactioncount','rc'])
-async def _reactioncount(ctx,message:discord.Message,bot_subtract="None"):
+async def reactioncount(ctx,message:discord.Message,bot_subtract="None"):
     await ctx.message.delete()
     reaction_list = message.reactions
     embed = discord.Embed(
@@ -2998,7 +2998,7 @@ async def code(ctx):
     await ctx.message.channel.send(embed=code_embed)
 
 @client.command(aliases=["color","colour"])
-async def _colour(ctx,*,colour_name:str):
+async def colour(ctx,*,colour_name:str):
     colour_name = colour_name.lower()
     active_role = get(ctx.guild.roles, id=740030930021908570)
     url = urllib.request.urlopen(
@@ -3081,7 +3081,7 @@ async def promoteactive(ctx,user:discord.Member):
         description="{} has been successfully promoted to active member!".format(user.mention)))
 
 @client.command(aliases=['devadd','devtodo'])
-async def _developeraddtodo(ctx,type,priority,bot,difficulty,*,title_description):
+async def developeraddtodo(ctx,type,priority,bot,difficulty,*,title_description):
     dev_role = get(ctx.guild.roles,id=733854432978141227)
     if not dev_role in ctx.message.author.roles:
         await ctx.message.channel.send("You do not have permissions to do this, this is for the bot developers only. You "
@@ -3136,7 +3136,7 @@ async def _developeraddtodo(ctx,type,priority,bot,difficulty,*,title_description
     await ctx.message.channel.send(embed=confirm_embed)
 
 @client.command(aliases=['bugreport','br'])
-async def _bugreport(ctx,*,title_description):
+async def bugreport(ctx,*,title_description):
     if "|" in title_description:
         bug_title = title_description.split("|")[0].strip()
         bug_description = title_description.split("|")[1].strip()
@@ -3166,7 +3166,7 @@ async def _bugreport(ctx,*,title_description):
     await ctx.message.channel.send(embed=confirm_embed)
 
 @client.command(aliases=['sco','suggestcommand'])
-async def _suggestcommand(ctx,*,title_description):
+async def suggestcommand(ctx,*,title_description):
     if "|" in title_description:
         command_title = title_description.split("|")[0].strip()
         command_description = title_description.split("|")[1].strip()
@@ -3197,7 +3197,7 @@ async def _suggestcommand(ctx,*,title_description):
     await ctx.message.channel.send(embed=confirm_embed)
 
 @client.command(aliases=['featureupdate','fu'])
-async def _featureupdate(ctx,*,title_description_original):
+async def featureupdate(ctx,*,title_description_original):
     counter = 0
     for x in title_description_original:
         if "|" in x:
@@ -3265,7 +3265,7 @@ async def compilestory(ctx,limit:int=100):
         await ctx.message.channel.send(embed=embed)
 
 @client.command(aliases=['animatedemojiuser','animemojiuser','aeu'])
-async def _animatedemojiuser(ctx,*,emoji_name):
+async def animatedemojiuser(ctx,*,emoji_name):
     def similar(a,b):
         return SequenceMatcher(None,a,b).ratio()
     emoji_similaritys = {}
@@ -3287,18 +3287,18 @@ async def _animatedemojiuser(ctx,*,emoji_name):
     await webhook.send(content="<a:{}:{}>".format(highest_emoji[1].name,str(highest_emoji[1].id)),
                        username=ctx.message.author.display_name, avatar_url=ctx.message.author.avatar_url)
 @client.command(aliases=["noonecares","nc"])
-async def _noonecares(ctx):
+async def noonecares(ctx):
     await ctx.message.channel.send("https://www.youtube.com/watch?v=BLUkgRAy_Vo")
 
 @client.command(aliases=["headsmash","hs"])
-async def _headsmash(ctx):
+async def headsmash(ctx):
     text = ""
     for x in range(0,randint(5,20)):
         text += choice(ascii_lowercase)
     await ctx.message.channel.send(text)
 
 @client.command(aliases=["headsmashuser","hsu"])
-async def _headsmashuser(ctx):
+async def headsmashuser(ctx):
     text = ""
     for x in range(0,randint(5,20)):
         text += choice(ascii_lowercase)
@@ -3376,14 +3376,14 @@ async def pingmusic(ctx):
     await ctx.message.channel.send("https://www.youtube.com/watch?v=RKW6rjnYEkc")
 
 @client.command(aliases=["commandidea","ci"])
-async def _commandidea(ctx):
+async def commandidea(ctx):
     embed = discord.Embed(colour=hc)
     embed.set_footer(text=df)
     embed.set_image(url="https://i.imgur.com/MN0kd7x.jpg")
     await ctx.message.channel.send(embed=embed)
 
 @client.command(aliases=["goodnight","gn"])
-async def _goodnight(ctx,user:discord.Member=None):
+async def goodnight(ctx,user:discord.Member=None):
     if user is None:
         say_user = "Someone"
         user = ctx.message.author
@@ -3454,7 +3454,7 @@ async def lyrics(ctx,*,song_name):
             await ctx.message.channel.send(embed=embed)
 
 @client.command(aliases=["soulsuck","ss"])
-async def _soulsuck(ctx,user:discord.Member):
+async def soulsuck(ctx,user:discord.Member):
     if ctx.message.author.id not in [616032766974361640,597391214765015081]:
         await ctx.message.channel.send(embed=discord.Embed(description="Sorry hun, this command only works for demons "
                                                                        "and demon cult members (<@597391214765015081> "
@@ -3506,7 +3506,7 @@ async def toggledonkey(ctx):
     await ctx.message.channel.send(embed=embed)
 
 @client.command(aliases=["tictactoe","ttt"])
-async def _tictactoe(ctx,player2:discord.Member=None):
+async def tictactoe(ctx,player2:discord.Member=None):
     if player2 is None:
         def check(message):
             return message.channel.id == ctx.message.channel.id and message.content.lower() == "accept" and \
@@ -3678,7 +3678,7 @@ async def _tictactoe(ctx,player2:discord.Member=None):
     await game_message.edit(embed=em)
 
 @client.command(aliases=["claptext","ct"])
-async def _claptext(ctx,*,message):
+async def claptext(ctx,*,message):
     embed = discord.Embed(description=message.replace(" "," 👏 "),colour=hc)
     embed.set_footer(text=df)
     await ctx.message.channel.send(embed=embed)
