@@ -21,7 +21,6 @@ from string import ascii_lowercase
 from lyrics_extractor import SongLyrics
 from lyrics_extractor.lyrics import LyricScraperException
 from textwrap import TextWrapper
-import re
 import urllib
 import urllib.request
 import json
