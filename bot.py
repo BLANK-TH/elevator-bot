@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.49.259 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.49.260 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -211,7 +211,7 @@ async def on_command_error(ctx,error):
         command = ctx.message.content.split(" ")[0]
         command_similarities = {}
         for cmd in client.commands:
-            command_similarities[similar(command,cmd)] = cmd.name
+            command_similarities[similar(command,cmd.name)] = cmd.name
         if len(command_similarities) == 0:
             await ctx.message.channel.send("Invalid Command")
         highest_command = max([*command_similarities]), command_similarities[max([*command_similarities])]
