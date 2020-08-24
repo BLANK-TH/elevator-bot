@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.51.269 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.52.270 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -72,8 +72,7 @@ async def on_message(message):
         message.content = "s!" + message.content[2:]
     for mention in message.mentions:
         if 699677108607123548 == mention.id:
-            msg = await message.channel.send("<a:angryping:725393149484335165>")
-            await msg.delete(delay=15)
+            await message.channel.send("<a:angryping:725393149484335165>",delete_after=15)
             break
     if message.channel.id == 689077082609025089 and not message.author.bot:
         if "//" == message.content[:2]:
@@ -90,8 +89,7 @@ async def on_message(message):
                 colour=hc
             )
             embed.set_footer(text=df)
-            msg = await message.channel.send(embed=embed)
-            await msg.delete(delay=5)
+            await message.channel.send(embed=embed,delete_after=5)
             return
         last_message = ""
         limit = 2
@@ -127,8 +125,7 @@ async def on_message(message):
         else:
             return
         await message.delete()
-        m = await message.channel.send("Sigh, I'm disappointed in you!",embed=embed)
-        await m.delete(delay=5)
+        await message.channel.send("Sigh, I'm disappointed in you!",embed=embed,delete_after=5)
         return
     if message.channel.id == 740675095005102153 and not message.author.bot:
         if "//" == message.content[:2]:
@@ -163,8 +160,7 @@ async def on_message(message):
         else:
             return
         await message.delete()
-        msg = await message.channel.send("Sigh, I'm disappointed in you!",embed=embed)
-        await msg.delete(delay=5)
+        await message.channel.send("Sigh, I'm disappointed in you!",embed=embed,delete_after=5)
         return
     if "good bot" in message.content.lower():
         await message.add_reaction("😄")
@@ -1419,8 +1415,7 @@ async def purge(ctx,number="None"):
 @client.command()
 async def spam(ctx,num:int,*,message):
     if not ctx.message.author.id == 616032766974361640:
-        msg = await ctx.message.channel.send("The spam command can only be used by the bot owner a.k.a. **NOT YOU**")
-        await msg.delete(delay=30)
+        msg = await ctx.message.channel.send("The spam command can only be used by the bot owner a.k.a. **NOT YOU**",delete_after=30)
         return
     await ctx.message.delete()
     for x in range(0,num):
@@ -1430,8 +1425,7 @@ async def spam(ctx,num:int,*,message):
 @client.command()
 async def fastspam(ctx,num:int,*,message):
     if not ctx.message.author.id == 616032766974361640:
-        msg = await ctx.message.channel.send("The spam command can only be used by the bot owner a.k.a. **NOT YOU**")
-        await msg.delete(delay=30)
+        msg = await ctx.message.channel.send("The spam command can only be used by the bot owner a.k.a. **NOT YOU**",delete_after=30)
         return
     await ctx.message.delete()
     for x in range(0,num):
@@ -2258,9 +2252,8 @@ async def ban(ctx,user: discord.Member,*,reason=None):
     confirm_embed.add_field(name="Banned By:", value=ctx.message.author)
     confirm_embed.add_field(name="Reason:", value=reason, inline=False)
     confirm_embed.set_footer(text=df)
-    confirm = await ctx.message.channel.send(embed=confirm_embed)
+    await ctx.message.channel.send(embed=confirm_embed,delete_after=7)
     await ctx.guild.ban(user,delete_message_days=0)
-    await confirm.delete(delay=7)
 
 @client.command()
 @commands.has_permissions(kick_members=True)
@@ -2301,8 +2294,7 @@ async def kick(ctx,user: discord.Member,*,reason="None"):
     confirm_embed.add_field(name="Kicked By:", value=ctx.message.author)
     confirm_embed.add_field(name="Reason:", value=reason, inline=False)
     confirm_embed.set_footer(text=df)
-    confirm = await ctx.message.channel.send(embed=confirm_embed)
-    await confirm.delete(delay=7)
+    await ctx.message.channel.send(embed=confirm_embed,delete_after=7)
     await ctx.guild.kick(user)
 
 @client.command()
@@ -2345,8 +2337,7 @@ async def warn(ctx,user: discord.Member,*,reason):
         confirm_embed.add_field(name="Warned By:", value=ctx.message.author)
         confirm_embed.add_field(name="Reason:", value=reason, inline=False)
         confirm_embed.set_footer(text=df)
-        confirm = await ctx.message.channel.send(embed=confirm_embed)
-        await confirm.delete(delay=7)
+        await ctx.message.channel.send(embed=confirm_embed,delete_after=7)
 
 @client.command(aliases=['sleepy'])
 async def sleep(ctx):
@@ -2666,12 +2657,10 @@ async def questionoftheday(ctx,number:int,*,question):
     num_unicode= {1:'1️⃣',2:'2️⃣',3:'3️⃣',4:'4️⃣',5:'5️⃣',6:'6️⃣',7:'7️⃣',8:'8️⃣',9:'9️⃣'}
     emojis = []
     if number > 9:
-        msg = await ctx.message.channel.send("Please put 9 or less choices.")
-        await msg.delete(delay=10)
+        msg = await ctx.message.channel.send("Please put 9 or less choices.",delete_after=10)
         return
     elif number < 2:
-        msg = await ctx.message.channel.send("Please put 2 or more choices.")
-        await msg.delete(delay=10)
+        msg = await ctx.message.channel.send("Please put 2 or more choices.",delete_after=10)
         return
     for x in range(1,number + 1):
         emojis.append(num_unicode[x])
@@ -2843,9 +2832,8 @@ async def shadow(ctx,user: discord.Member,*,reason="N/A"):
     confirm_embed.add_field(name="Shadowed By:", value=ctx.message.author)
     confirm_embed.add_field(name="Reason:", value=reason, inline=False)
     confirm_embed.set_footer(text=df)
-    confirm = await ctx.message.channel.send(embed=confirm_embed)
+    await ctx.message.channel.send(embed=confirm_embed,delete_after=7)
     await user.add_roles(role)
-    await confirm.delete(delay=7)
 
 @client.command()
 @commands.has_role("Staff")
@@ -2880,9 +2868,8 @@ async def unshadow(ctx,user: discord.Member):
     confirm_embed.add_field(name="Person Unshadowed:", value=user.display_name)
     confirm_embed.add_field(name="Unshadowed By:", value=ctx.message.author)
     confirm_embed.set_footer(text=df)
-    confirm = await ctx.message.channel.send(embed=confirm_embed)
+    await ctx.message.channel.send(embed=confirm_embed,delete_after=7)
     await user.remove_roles(role)
-    await confirm.delete(delay=7)
 
 @client.command()
 async def rule(ctx,rule_num="0"):
@@ -2951,9 +2938,8 @@ async def mute(ctx,user: discord.Member,*,reason="N/A"):
     confirm_embed.add_field(name="Muted By:", value=ctx.message.author)
     confirm_embed.add_field(name="Reason:", value=reason, inline=False)
     confirm_embed.set_footer(text=df)
-    confirm = await ctx.message.channel.send(embed=confirm_embed)
+    await ctx.message.channel.send(embed=confirm_embed,delete_after=7)
     await user.add_roles(role)
-    await confirm.delete(delay=7)
 
 @client.command()
 @commands.has_role("Staff")
@@ -2988,9 +2974,8 @@ async def unmute(ctx,user: discord.Member):
     confirm_embed.add_field(name="Person Unmuted:", value=user.display_name)
     confirm_embed.add_field(name="Unmuted By:", value=ctx.message.author)
     confirm_embed.set_footer(text=df)
-    confirm = await ctx.message.channel.send(embed=confirm_embed)
+    await ctx.message.channel.send(embed=confirm_embed,delete_after=7)
     await user.remove_roles(role)
-    await confirm.delete(delay=7)
 @client.command()
 async def code(ctx):
     code_embed = discord.Embed(
@@ -3481,8 +3466,7 @@ async def donkey(ctx):
     await ctx.message.delete()
     role = get(ctx.guild.roles,id=743829242412007496)
     if role in ctx.message.author.roles and ctx.message.author.id != 616032766974361640:
-        msg = await ctx.message.channel.send("{} you are not allowed to use the donkey emote!".format(ctx.message.author.mention))
-        await msg.delete(delay=10)
+        msg = await ctx.message.channel.send("{} you are not allowed to use the donkey emote!".format(ctx.message.author.mention),delete_after=10)
         return
     webhook = None
     for hook in await ctx.message.channel.webhooks():
