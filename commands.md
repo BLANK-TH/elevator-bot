@@ -53,6 +53,11 @@ Posts a image and message showing that you are facepalming.
 #### Command: `sigh`
 Posts a image and message showing that you are sighing.
 
+### Shocked
+#### Command: `shocked [user]`
+Posts a image and a message showing that you are surprised, optionally saying that you are surprised at a user
+(if provided).
+
 ### Cute
 #### Command: `cute [user]`
 Posts a image and message showing that you think that the user you mentioned is cute.
