@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.51.263 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.51.264 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3707,15 +3707,17 @@ async def choose(ctx,*args):
 @client.command()
 async def bully(ctx,user:discord.Member=None):
     if user is None:
+        user_id = None
         user = "themselves?"
     else:
+        user_id = user.id
         user = user.mention + "!"
-    if user.id != 616032766974361640:
+    if user_id != 616032766974361640:
         embed = discord.Embed(description="{} is bullying {}".format(ctx.author.mention,user))
     else:
         f"How dare you bully my owner. {ctx.author.mention} go f*ck yourself!"
     embed.set_footer(text=df)
-    if user.id != 616032766974361640:
+    if user_id != 616032766974361640:
         embed.set_image(url="https://i.imgur.com/RiyVLH9.mp4")
     else:
         embed.set_image(url='https://i.imgur.com/t96AqDf.png')
