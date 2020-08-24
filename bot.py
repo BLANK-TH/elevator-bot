@@ -31,7 +31,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.49.257 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.49.258 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -207,7 +207,19 @@ async def on_command_error(ctx,error):
     elif isinstance(error, commands.BadArgument):
         await ctx.message.channel.send("Bad Argument: Could Not Parse Commands Argument")
     elif isinstance(error, commands.CommandNotFound):
-        await ctx.message.channel.send("Invalid Command")
+        def similar(a, b):
+            return SequenceMatcher(None, a, b).ratio()
+        command = ctx.message.content.split(" ","")[0]
+        command_similarities = {}
+        for cmd in client.commands:
+            command_similarities[similar(command,cmd)] = cmd.name
+        if len(command_similarities) == 0:
+            await ctx.message.channel.send("Invalid Command")
+        highest_command = max([*command_similarities]), command_similarities[max([*command_similarities])]
+        if highest_command[0] < 0.1:
+            await ctx.message.channel.send("Invalid Command")
+        else:
+            await ctx.message.channel.send("Invalid Command, did you mean `{}`?".format(highest_command[1]))
     elif isinstance(error, commands.CommandOnCooldown):
         await ctx.message.channel.send("The Command is on Cooldown, Try Again in **{}** seconds".format(str(error.retry_after)))
     elif isinstance(error, commands.MissingPermissions):
