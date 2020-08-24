@@ -3700,7 +3700,7 @@ async def sarcasm(ctx,*,message):
 
 @client.command()
 async def choose(ctx,*args):
-    embed = discord.Embed(description="I choose `{}`!".format(choose(args)),colour=hc)
+    embed = discord.Embed(description="I choose `{}`!".format(choice(args)),colour=hc)
     embed.set_footer(text=df)
     await ctx.send(embed=embed)
 
