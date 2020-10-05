@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8d3ca59a-bfc0-4fae-8257-8dfc4f9e0799" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/bot.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JupyterTrust" id="4fdd6e3b-4ce3-4518-a93f-0de4f5ea136c" />
+  <component name="ProjectId" id="1aXegbMh7PPLYRit00h6L5yztA9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="JGlo-board" value="5f1d9801b76d5a001179f31a" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.env&#10;true" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="ignore_missing_gitignore" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ElevatorBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.bot" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8d3ca59a-bfc0-4fae-8257-8dfc4f9e0799" name="Default Changelist" comment="" />
+      <created>1586886477591</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586886477591</updated>
+      <workItem from="1595785100712" duration="1316000" />
+      <workItem from="1595786734954" duration="1601000" />
+      <workItem from="1595806727768" duration="6191000" />
+      <workItem from="1595874593695" duration="814000" />
+      <workItem from="1595948978977" duration="245000" />
+      <workItem from="1595992663132" duration="645000" />
+      <workItem from="1596035670018" duration="164000" />
+      <workItem from="1596036471347" duration="10994000" />
+      <workItem from="1596213727000" duration="3840000" />
+      <workItem from="1596247247003" duration="1036000" />
+      <workItem from="1596248313535" duration="70000" />
+      <workItem from="1596248420386" duration="59000" />
+      <workItem from="1596248502585" duration="454000" />
+      <workItem from="1596248988013" duration="455000" />
+      <workItem from="1596249485118" duration="1162000" />
+      <workItem from="1596285464710" duration="5089000" />
+      <workItem from="1596291292443" duration="2055000" />
+      <workItem from="1596296041798" duration="50000" />
+      <workItem from="1596296138559" duration="680000" />
+      <workItem from="1596296849912" duration="170000" />
+      <workItem from="1596297048752" duration="290000" />
+      <workItem from="1596297363995" duration="369000" />
+      <workItem from="1596297760074" duration="3279000" />
+      <workItem from="1596375700865" duration="1497000" />
+      <workItem from="1596556412036" duration="502000" />
+      <workItem from="1596648777188" duration="4804000" />
+      <workItem from="1596720987173" duration="9877000" />
+      <workItem from="1596804564856" duration="1445000" />
+      <workItem from="1596812880823" duration="10772000" />
+      <workItem from="1596893877445" duration="8031000" />
+      <workItem from="1596907051530" duration="1876000" />
+      <workItem from="1596922025824" duration="3401000" />
+      <workItem from="1596977007263" duration="353000" />
+      <workItem from="1596977992903" duration="7935000" />
+      <workItem from="1597058541797" duration="11204000" />
+      <workItem from="1597159211263" duration="3425000" />
+      <workItem from="1597167653115" duration="7874000" />
+      <workItem from="1597239541910" duration="712000" />
+      <workItem from="1597246932311" duration="1982000" />
+      <workItem from="1597328656822" duration="21699000" />
+      <workItem from="1597411755574" duration="3920000" />
+      <workItem from="1597504923803" duration="13342000" />
+      <workItem from="1597674064910" duration="11039000" />
+      <workItem from="1598023639697" duration="11254000" />
+      <workItem from="1598281769556" duration="9128000" />
+      <workItem from="1598533147111" duration="2349000" />
+      <workItem from="1598628692905" duration="1565000" />
+      <workItem from="1600445984779" duration="165000" />
+      <workItem from="1600446213478" duration="190000" />
+      <workItem from="1600447633300" duration="82000" />
+    </task>
+    <task id="LOCAL-00001" summary="Purge Command Version 13.32.61">
+      <created>1586957169181</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586957169181</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Spam and FastSpam Command (Me Only) Version 13.33.61">
+      <created>1586957440123</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586957440123</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Bug Fixes (Spam/FastSpam) Version 13.34.61">
+      <created>1586957630898</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1586957630898</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Bug Fixes (Spam/FastSpam) Version 13.35.61">
+      <created>1586957778934</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1586957778934</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Counting Auto Version 13.35.62">
+      <created>1586961710536</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1586961710536</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Auto Count Removal, No Word Version 13.35.63">
+      <created>1586962119797</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586962119797</updated>
+    </task>
+    <task id="LOCAL-00007" summary="No Word Feature Update (Message Deletion) Version 13.35.64">
+      <created>1586962225784</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1586962225784</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Message Tracker Version 13.35.65">
+      <created>1586963072579</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1586963072579</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Message Tracker Bug Fixes Version 13.35.66">
+      <created>1586963421236</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1586963421236</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Message Tracker Bug Fixes/Message Update Version 13.35.67">
+      <created>1586964095208</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1586964095208</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Message Tracker Message Update Version 13.35.68">
+      <created>1586964437549</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1586964437549</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Latency Command Version 13.35.69">
+      <created>1586965827331</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1586965827331</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Set Counting Command Version 13.35.70">
+      <created>1586966110455</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1586966110456</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Set Counting Command Update Version 13.35.71">
+      <created>1586966240177</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1586966240177</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Laugh and Stare Command Version 13.35.72">
+      <created>1587051560118</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1587051560118</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Rankthot Command Version 13.35.73">
+      <created>1587065560190</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1587065560190</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Rankthot Command Bug Fix Version 13.35.74">
+      <created>1587065935408</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1587065935408</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Rankthot Command 100% Addition Version 13.35.75">
+      <created>1587066386826</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1587066386826</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Rankthot Command 100% Removal Version 13.35.76">
+      <created>1587066771573</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1587066771573</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Deathbattle Command Version 13.36.76">
+      <created>1587159400537</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1587159400537</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Help Doc Typo Fix Version 13.36.77">
+      <created>1587159516092</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1587159516092</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Deathbattle Responses Addition Version 13.36.78">
+      <created>1587177329410</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1587177329410</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Major Embed (Mention) Overhaul and UserInfo Commands Version 14.36.78">
+      <created>1587309100394</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1587309100394</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Major Bug Fix Duplicate Command Version 14.36.79">
+      <created>1587311044243</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1587311044243</updated>
+    </task>
+    <task id="LOCAL-00025" summary="UserInfo Command Update Version 14.36.90">
+      <created>1587313540566</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1587313540566</updated>
+    </task>
+    <task id="LOCAL-00026" summary="UserInfo Command Update Version 14.36.81">
+      <created>1587313819372</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1587313819372</updated>
+    </task>
+    <task id="LOCAL-00027" summary="UserInfo Command Update Version 14.36.82">
+      <created>1587313883554</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1587313883554</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Server Info Command Bug Fix Version 14.36.83">
+      <created>1587320529567</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1587320529567</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Shiprate Command Version 14.36.84">
+      <created>1587430651286</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1587430651287</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Hello Darkness Command Version 14.36.85">
+      <created>1587437479817</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1587437479817</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Animated Emoji Command Version 14.36.87">
+      <created>1588526945497</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1588526945497</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Incorrect Number Bug Fix Version 14.36.87">
+      <created>1588618340319</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1588618340319</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Message Tracker Version 13.35.65" />
+    <MESSAGE value="Message Tracker Bug Fixes Version 13.35.66" />
+    <MESSAGE value="Message Tracker Bug Fixes/Message Update Version 13.35.67" />
+    <MESSAGE value="Message Tracker Message Update Version 13.35.68" />
+    <MESSAGE value="Latency Command Version 13.35.69" />
+    <MESSAGE value="Set Counting Command Version 13.35.70" />
+    <MESSAGE value="Set Counting Command Update Version 13.35.71" />
+    <MESSAGE value="Laugh and Stare Command Version 13.35.72" />
+    <MESSAGE value="Rankthot Command Version 13.35.73" />
+    <MESSAGE value="Rankthot Command Bug Fix Version 13.35.74" />
+    <MESSAGE value="Rankthot Command 100% Addition Version 13.35.75" />
+    <MESSAGE value="Rankthot Command 100% Removal Version 13.35.76" />
+    <MESSAGE value="Deathbattle Command Version 13.36.76" />
+    <MESSAGE value="Help Doc Typo Fix Version 13.36.77" />
+    <MESSAGE value="Deathbattle Responses Addition Version 13.36.78" />
+    <MESSAGE value="Major Embed (Mention) Overhaul and UserInfo Commands Version 14.36.78" />
+    <MESSAGE value="Major Bug Fix Duplicate Command Version 14.36.79" />
+    <MESSAGE value="UserInfo Command Update Version 14.36.90" />
+    <MESSAGE value="UserInfo Command Update Version 14.36.81" />
+    <MESSAGE value="UserInfo Command Update Version 14.36.82" />
+    <MESSAGE value="Server Info Command Bug Fix Version 14.36.83" />
+    <MESSAGE value="Shiprate Command Version 14.36.84" />
+    <MESSAGE value="Hello Darkness Command Version 14.36.85" />
+    <MESSAGE value="Animated Emoji Command Version 14.36.87" />
+    <MESSAGE value="Incorrect Number Bug Fix Version 14.36.87" />
+    <option name="LAST_COMMIT_MESSAGE" value="Incorrect Number Bug Fix Version 14.36.87" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="521" y="181" key="#Plugins" timestamp="1597350953372">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="521" y="181" key="#Plugins/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1597350953372" />
+    <state x="703" y="342" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596287503287">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="703" y="342" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1596287503287" />
+    <state x="-1291" y="276" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598583240766">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1291" y="276" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@-1920.0.1920.1080" timestamp="1598583240766" />
+    <state x="609" y="276" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1596035755067" />
+    <state x="92" y="92" width="1674" height="896" key="DiffContextDialog" timestamp="1597358040363">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="92" y="92" width="1674" height="896" key="DiffContextDialog/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1594937452613" />
+    <state x="92" y="92" width="1674" height="896" key="DiffContextDialog/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1597358040363" />
+    <state x="-1188" y="282" key="FileChooserDialogImpl" timestamp="1595001399998">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="708" y="282" key="FileChooserDialogImpl/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1594944007497" />
+    <state x="-1188" y="282" key="FileChooserDialogImpl/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@-1920.0.1920.1080" timestamp="1595001399998" />
+    <state width="1877" height="245" key="GridCell.Tab.0.bottom" timestamp="1598065998324">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1837" height="243" key="GridCell.Tab.0.bottom/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@-1920.0.1858.1080" timestamp="1594956661509" />
+    <state width="1815" height="245" key="GridCell.Tab.0.bottom/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1596249456744" />
+    <state width="1877" height="245" key="GridCell.Tab.0.bottom/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@-1920.0.1920.1080" timestamp="1596377295794" />
+    <state width="1877" height="245" key="GridCell.Tab.0.bottom/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1598065998324" />
+    <state width="1877" height="245" key="GridCell.Tab.0.bottom/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1598033109957" />
+    <state width="1877" height="245" key="GridCell.Tab.0.center" timestamp="1598065998324">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1837" height="243" key="GridCell.Tab.0.center/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@-1920.0.1858.1080" timestamp="1594956661509" />
+    <state width="1815" height="245" key="GridCell.Tab.0.center/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1596249456744" />
+    <state width="1877" height="245" key="GridCell.Tab.0.center/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@-1920.0.1920.1080" timestamp="1596377295793" />
+    <state width="1877" height="245" key="GridCell.Tab.0.center/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1598065998324" />
+    <state width="1877" height="245" key="GridCell.Tab.0.center/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1598033109957" />
+    <state width="1877" height="245" key="GridCell.Tab.0.left" timestamp="1598065998324">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1837" height="243" key="GridCell.Tab.0.left/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@-1920.0.1858.1080" timestamp="1594956661509" />
+    <state width="1815" height="245" key="GridCell.Tab.0.left/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1596249456744" />
+    <state width="1877" height="245" key="GridCell.Tab.0.left/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@-1920.0.1920.1080" timestamp="1596377295793" />
+    <state width="1877" height="245" key="GridCell.Tab.0.left/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1598065998324" />
+    <state width="1877" height="245" key="GridCell.Tab.0.left/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1598033109956" />
+    <state width="1877" height="245" key="GridCell.Tab.0.right" timestamp="1598065998324">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1837" height="243" key="GridCell.Tab.0.right/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@-1920.0.1858.1080" timestamp="1594956661509" />
+    <state width="1815" height="245" key="GridCell.Tab.0.right/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1596249456744" />
+    <state width="1877" height="245" key="GridCell.Tab.0.right/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@-1920.0.1920.1080" timestamp="1596377295794" />
+    <state width="1877" height="245" key="GridCell.Tab.0.right/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1598065998324" />
+    <state width="1877" height="245" key="GridCell.Tab.0.right/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1598033109957" />
+    <state x="-1380" y="283" key="IDE.errors.dialog" timestamp="1596291242010">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1380" y="283" key="IDE.errors.dialog/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@-1920.0.1920.1080" timestamp="1596291242010" />
+    <state x="524" y="48" key="SettingsEditor" timestamp="1600446185207">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="766" y="151" key="SettingsEditor/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1596249453178" />
+    <state x="524" y="48" key="SettingsEditor/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1600446185207" />
+    <state x="2364" y="185" key="SettingsEditor/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595500899282" />
+    <state x="555" y="274" key="VcsDiffUtil.ChangesDialog" timestamp="1597357998802">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="555" y="274" key="VcsDiffUtil.ChangesDialog/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1594937150262" />
+    <state x="555" y="274" key="VcsDiffUtil.ChangesDialog/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1597357998802" />
+    <state width="937" height="548" key="XDebugger.FullValuePopup" timestamp="1597356361398">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="937" height="548" key="XDebugger.FullValuePopup/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1597356361398" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1597356485586">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="-1328" y="235" width="672" height="678" key="search.everywhere.popup/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@-1920.0.1858.1080" timestamp="1596724201857" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1597246772874" />
+    <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1597356485586" />
+  </component>
+</project>
