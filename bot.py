@@ -30,7 +30,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.52.270 Developed By: BLANK"
+df = "Elevator Server Bot Ver.17.52.271 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -61,6 +61,9 @@ async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=discord.Game('Developed by BLANK'))
     change_game.start()
     print("Bot is ready.")
+    channel = client.get_channel(741289374309679117)
+    await channel.send("Bot has restarted, bot is currently at {}."
+                       .format(df.replace(" Developed By: BLANK", "").replace("CGC1D1-B4 Server Bot ", "")))
 
 @tasks.loop(seconds=10)
 async def change_game():
