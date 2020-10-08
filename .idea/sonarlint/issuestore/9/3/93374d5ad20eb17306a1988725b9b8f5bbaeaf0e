@@ -1,74 +1,75 @@
 
-tpython:S1192¤
+¬python:S1515¢"‹Add a parameter to function "chk" and use variable "grid" as its default value;The value of "grid" might change at the next loop iteration.(”©Şƒ8ÏËûŒÂ.
+opython:S1192å"JDefine a constant instead of duplicating this literal "Muted By:" 3 times.(Ó­€¤ıÿÿÿÿ8ÏËûŒÂ.
+tpython:S1192§
 "ODefine a constant instead of duplicating this literal "Pronunciation:" 3 times.(¼–şÉıÿÿÿÿ8˜×Ğ‹Â.
-tpython:S1192Á"ODefine a constant instead of duplicating this literal "Person Banned:" 4 times.(÷ç€üûÿÿÿÿ8Ï²èŒÂ.
-tpython:S3776Ğ"TRefactor this function to reduce its Cognitive Complexity from 29 to the 15 allowed.(ªÕõ“8Ï²èŒÂ.
-\python:S5754ï"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
-\python:S5754Á"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
-xpython:S1192µ"SDefine a constant instead of duplicating this literal "%b %d %Y %H:%M UTC" 4 times.(Ô™¢ûÿÿÿÿ8Ï²èŒÂ.
-lpython:S1192ø"MDefine a constant instead of duplicating this literal "Shadowed By:" 3 times.(ß–°$8ÏËûŒÂ.
-lpython:S1192"GDefine a constant instead of duplicating this literal "Error:" 7 times.(¬´Ëøÿÿÿÿ8Ï²èŒÂ.
-upython:S3776õ"URefactor this function to reduce its Cognitive Complexity from 119 to the 15 allowed.(Òıüº8Ï²èŒÂ.
-qpython:S1192Õ"LDefine a constant instead of duplicating this literal "Turn Number" 5 times.(ù¹Ä¸üÿÿÿÿ8ÏËûŒÂ.
-wpython:S1192Ø"WDefine a constant instead of duplicating this literal "Please enter a number!" 4 times.(õş†»8Ï²èŒÂ.
-gpython:S1854ä"HRemove this assignment to local variable 'msg'; the value is never used.(ğÁªT8¥ŒûŒÂ.
-opython:S1192Ù"ODefine a constant instead of duplicating this literal "Dealer's Hand:" 4 times.(ûÿõÂ8˜×Ğ‹Â.
-kpython:S1192Ş"KDefine a constant instead of duplicating this literal "Kicked By:" 3 times.(º†êà8Ï²èŒÂ.
-[python:S5754U"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
-hpython:S1192—"IDefine a constant instead of duplicating this literal "Reason:" 25 times.(ÏùW8Ï²èŒÂ.
-tpython:S3776°"TRefactor this function to reduce its Cognitive Complexity from 33 to the 15 allowed.(ğ—Ş 8ÏËûŒÂ.
-®python:S1192Ò"Define a constant instead of duplicating this literal "https://raw.githubusercontent.com/bevacqua/correcthorse/master/wordlist.json" 5 times.(Àí™§8Ï²èŒÂ.
-tpython:S3776´"TRefactor this function to reduce its Cognitive Complexity from 42 to the 15 allowed.(âçšø8Ï²èŒÂ.
-xpython:S1192Ï"SDefine a constant instead of duplicating this literal "Members With Role:" 3 times.(¦ÖÎ§ùÿÿÿÿ8ÏËûŒÂ.
-kpython:S1192´"KDefine a constant instead of duplicating this literal "Banned By:" 5 times.(ŸÛ…ã8Ï²èŒÂ.
-Æpython:S1192²"¥Define a constant instead of duplicating this literal "Requester ID: {} | Requester Name + Discriminator {}#{} | Message ID: {} | Message Link: {} | At: {}" 4 times.(ãªÄ×8Ï²èŒÂ.
-ypython:S3776ä"TRefactor this function to reduce its Cognitive Complexity from 40 to the 15 allowed.(öŒ›Áúÿÿÿÿ8Ï²èŒÂ.
-lpython:S1192å"GDefine a constant instead of duplicating this literal "Lives:" 3 times.(ŞÊÊ„ùÿÿÿÿ8Ï²èŒÂ.
-\python:S5754×"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
-Kpython:S5806Ö"+Rename this variable; it shadows a builtin.(Óö‚²8Ï²èŒÂ.
-vpython:S1192¦
+vpython:S1192©
 "VDefine a constant instead of duplicating this literal "Destination Language:" 3 times.(Í½›º8Ï²èŒÂ.
-”python:S1192­"oDefine a constant instead of duplicating this literal "https://app.gitkraken.com/glo/board/{}/card/{}" 3 times.(ˆ‹–ßıÿÿÿÿ8ÏËûŒÂ.
-vpython:S1192 
-"VDefine a constant instead of duplicating this literal "Translation Completed" 3 times.(×ÌÑ•8Ï²èŒÂ.
-Ppython:S5806¨"+Rename this variable; it shadows a builtin.(Úé™³ùÿÿÿÿ8ÏËûŒÂ.
-opython:S1192â"JDefine a constant instead of duplicating this literal "Muted By:" 3 times.(Ó­€¤ıÿÿÿÿ8ÏËûŒÂ.
-lpython:S1192"LDefine a constant instead of duplicating this literal "Created At:" 3 times.(×¯æ®8Ï²èŒÂ.
-qpython:S1192Š"LDefine a constant instead of duplicating this literal "Unmuted By:" 3 times.(ı–‹øÿÿÿÿ8ÏËûŒÂ.
-xpython:S1192¢"SDefine a constant instead of duplicating this literal "%Y-%m-%d %H:%M UTC" 5 times.(Ç™êüÿÿÿÿ8Ï²èŒÂ.
-zpython:S117Ä"\Rename this local variable "RPS_options" to match the regular expression ^[_a-z][a-z0-9_]*$.(½*8Ï²èŒÂ.
-ypython:S3776Ó"TRefactor this function to reduce its Cognitive Complexity from 25 to the 15 allowed.(ØÎ’åüÿÿÿÿ8Ï²èŒÂ.
-spython:S3776F"TRefactor this function to reduce its Cognitive Complexity from 53 to the 15 allowed.(è„İï8Ì«Õ‰Â.
-zpython:S1192ü"UDefine a constant instead of duplicating this literal "Elevator Bot Webhook" 5 times.(¨™ÓŠúÿÿÿÿ8Ï²èŒÂ.
-\python:S5754ë"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
-?python:S3626˜"Remove this redundant continue.(À–¬ˆ8Ï²èŒÂ.
-Ãpython:S1192œ
+kpython:S1192·"KDefine a constant instead of duplicating this literal "Banned By:" 5 times.(ŸÛ…ã8Ï²èŒÂ.
+spython:S3776I"TRefactor this function to reduce its Cognitive Complexity from 53 to the 15 allowed.(è„İï8Ì«Õ‰Â.
+tpython:S3776ß"TRefactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.(…Ãã’8Ï²èŒÂ.
+ypython:S3776ç"TRefactor this function to reduce its Cognitive Complexity from 40 to the 15 allowed.(öŒ›Áúÿÿÿÿ8Ï²èŒÂ.
+ypython:S3776ƒ"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ï®À¸ıÿÿÿÿ8Ï²èŒÂ.
+gpython:S1854ç"HRemove this assignment to local variable 'msg'; the value is never used.(ğÁªT8¥ŒûŒÂ.
+hpython:S1854ê"HRemove this assignment to local variable 'msg'; the value is never used.(¥ò÷8ÏËûŒÂ.
+lpython:S1192û"MDefine a constant instead of duplicating this literal "Shadowed By:" 3 times.(ß–°$8ÏËûŒÂ.
+\python:S5754À"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
+Ppython:S5806«"+Rename this variable; it shadows a builtin.(Úé™³ùÿÿÿÿ8ÏËûŒÂ.
+mpython:S1192¨"HDefine a constant instead of duplicating this literal "{} Wins" 3 times.(•üÇÂüÿÿÿÿ8ÏËûŒÂ.
+Ãpython:S1192Ÿ
 "Define a constant instead of duplicating this literal "https://raw.githubusercontent.com/BLANK-TH/elevator-bot-resources/bot-storage/languages.json" 3 times.(’éŒôúÿÿÿÿ8Ï²èŒÂ.
-ipython:S1192Ã"IDefine a constant instead of duplicating this literal "User ID:" 7 times.(ÏÊà§8Ï²èŒÂ.
-=python:S3626Ê"Remove this redundant return.(ÙãŞŸ8ÏËûŒÂ.
-¸python:S1515"—Add a parameter to function "chk" and use variable "cur_player" as its default value;The value of "cur_player" might change at the next loop iteration.(Åß¶ş8ÏËûŒÂ.
-ypython:S3776«"TRefactor this function to reduce its Cognitive Complexity from 83 to the 15 allowed.(ØÑõõıÿÿÿÿ8ÏËûŒÂ.
-\python:S5754‹
-"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
-kpython:S1192‡"KDefine a constant instead of duplicating this literal "Warned By:" 3 times.(¬´³œ8Ï²èŒÂ.
-npython:S1192Ø"NDefine a constant instead of duplicating this literal "{}\nValue: {}" 8 times.(ŒÆ²8Ï²èŒÂ.
-=python:S3626Ô"Remove this redundant return.(ÙãŞŸ8Ï²èŒÂ.
-mpython:S1192¥"HDefine a constant instead of duplicating this literal "{} Wins" 3 times.(•üÇÂüÿÿÿÿ8ÏËûŒÂ.
-kpython:S1192Ø"KDefine a constant instead of duplicating this literal "Your Hand:" 4 times.(ŒÆ²8Ï²èŒÂ.
-tpython:S1192 "ODefine a constant instead of duplicating this literal "Unshadowed By:" 3 times.( òûÿÿÿÿ8ÏËûŒÂ.
-\python:S5754½"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
-‚python:S1192Ë"]Define a constant instead of duplicating this literal "{} and {}'s Tic Tac Toe Game" 5 times.(ìÊ’Ôùÿÿÿÿ8ÏËûŒÂ.
-\python:S5754…
-"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
-kpython:S1192Ñ"FDefine a constant instead of duplicating this literal "Soft " 6 times.(ÂŒÃ¯ûÿÿÿÿ8Ï²èŒÂ.
-£python:S1192¤"‚Define a constant instead of duplicating this literal "Long Link: https://app.gitkraken.com/glo/board/{}/card/{}\nID: {}" 4 times.(¢Ãƒñ8ÏËûŒÂ.
-ypython:S3776€"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ï®À¸ıÿÿÿÿ8Ï²èŒÂ.
-\python:S5754ü"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
-hpython:S1854ç"HRemove this assignment to local variable 'msg'; the value is never used.(¥ò÷8ÏËûŒÂ.
-Ppython:S5806Ì"+Rename this variable; it shadows a builtin.(Îë€Ûşÿÿÿÿ8ÏËûŒÂ.
-tpython:S3776Ü"TRefactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.(…Ãã’8Ï²èŒÂ.
-spython:S1192æ"NDefine a constant instead of duplicating this literal "Letters Left:" 3 times.(ÔÕËËûÿÿÿÿ8˜×Ğ‹Â.
-qpython:S1192£
+…python:S1192Å"`Define a constant instead of duplicating this literal 'https://i.imgur.com/XgqWMei.jpg' 4 times.(Ç¼·øÿÿÿÿ8Ï²èŒÂ.
+lpython:S1192"LDefine a constant instead of duplicating this literal "Created At:" 3 times.(×¯æ®8Ï²èŒÂ.
+=python:S3626×"Remove this redundant return.(ÙãŞŸ8Ï²èŒÂ.
+Ppython:S5806Ï"+Rename this variable; it shadows a builtin.(Îë€Ûşÿÿÿÿ8ÏËûŒÂ.
+Æpython:S1192µ"¥Define a constant instead of duplicating this literal "Requester ID: {} | Requester Name + Discriminator {}#{} | Message ID: {} | Message Link: {} | At: {}" 4 times.(ãªÄ×8Ï²èŒÂ.
+lpython:S1192„"GDefine a constant instead of duplicating this literal "Error:" 7 times.(¬´Ëøÿÿÿÿ8Ï²èŒÂ.
+ypython:S3776Ö"TRefactor this function to reduce its Cognitive Complexity from 25 to the 15 allowed.(ØÎ’åüÿÿÿÿ8Ï²èŒÂ.
+[python:S5754X"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
+\python:S5754Ú"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
+ypython:S3776®"TRefactor this function to reduce its Cognitive Complexity from 83 to the 15 allowed.(ØÑõõıÿÿÿÿ8ÏËûŒÂ.
+xpython:S1192¥"SDefine a constant instead of duplicating this literal "%Y-%m-%d %H:%M UTC" 5 times.(Ç™êüÿÿÿÿ8Ï²èŒÂ.
+spython:S1192é"NDefine a constant instead of duplicating this literal "Letters Left:" 3 times.(ÔÕËËûÿÿÿÿ8˜×Ğ‹Â.
+ipython:S1192Æ"IDefine a constant instead of duplicating this literal "User ID:" 7 times.(ÏÊà§8Ï²èŒÂ.
+kpython:S1192á"KDefine a constant instead of duplicating this literal "Kicked By:" 3 times.(º†êà8Ï²èŒÂ.
+qpython:S1192¦
 "QDefine a constant instead of duplicating this literal "Translated Text:" 3 times.(äŞ‹Ù8Ï²èŒÂ.
-…python:S1192Â"`Define a constant instead of duplicating this literal 'https://i.imgur.com/XgqWMei.jpg' 4 times.(Ç¼·øÿÿÿÿ8Ï²èŒÂ.
-¬python:S1515Ÿ"‹Add a parameter to function "chk" and use variable "grid" as its default value;The value of "grid" might change at the next loop iteration.(”©Şƒ8ÏËûŒÂ.
+opython:S1192Ü"ODefine a constant instead of duplicating this literal "Dealer's Hand:" 4 times.(ûÿõÂ8˜×Ğ‹Â.
+qpython:S1192"LDefine a constant instead of duplicating this literal "Unmuted By:" 3 times.(ı–‹øÿÿÿÿ8ÏËûŒÂ.
+kpython:S1192Š"KDefine a constant instead of duplicating this literal "Warned By:" 3 times.(¬´³œ8Ï²èŒÂ.
+\python:S5754
+"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
+\python:S5754ò"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
+Kpython:S5806Ù"+Rename this variable; it shadows a builtin.(Óö‚²8Ï²èŒÂ.
+kpython:S1192Û"KDefine a constant instead of duplicating this literal "Your Hand:" 4 times.(ŒÆ²8Ï²èŒÂ.
+\python:S5754ÿ"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
+‚python:S1192Î"]Define a constant instead of duplicating this literal "{} and {}'s Tic Tac Toe Game" 5 times.(ìÊ’Ôùÿÿÿÿ8ÏËûŒÂ.
+=python:S3626Í"Remove this redundant return.(ÙãŞŸ8ÏËûŒÂ.
+tpython:S3776³"TRefactor this function to reduce its Cognitive Complexity from 33 to the 15 allowed.(ğ—Ş 8ÏËûŒÂ.
+wpython:S1192Û"WDefine a constant instead of duplicating this literal "Please enter a number!" 4 times.(õş†»8Ï²èŒÂ.
+tpython:S3776Ó"TRefactor this function to reduce its Cognitive Complexity from 29 to the 15 allowed.(ªÕõ“8Ï²èŒÂ.
+lpython:S1192è"GDefine a constant instead of duplicating this literal "Lives:" 3 times.(ŞÊÊ„ùÿÿÿÿ8Ï²èŒÂ.
+”python:S1192°"oDefine a constant instead of duplicating this literal "https://app.gitkraken.com/glo/board/{}/card/{}" 3 times.(ˆ‹–ßıÿÿÿÿ8ÏËûŒÂ.
+xpython:S1192Ò"SDefine a constant instead of duplicating this literal "Members With Role:" 3 times.(¦ÖÎ§ùÿÿÿÿ8ÏËûŒÂ.
+tpython:S1192£"ODefine a constant instead of duplicating this literal "Unshadowed By:" 3 times.( òûÿÿÿÿ8ÏËûŒÂ.
+\python:S5754î"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
+hpython:S1192š"IDefine a constant instead of duplicating this literal "Reason:" 25 times.(ÏùW8Ï²èŒÂ.
+ypython:S1192""UDefine a constant instead of duplicating this literal " Developed By: BLANK" 3 times.(øÅÏ³øÿÿÿÿ8ß„ÂùÏ.
+zpython:S1192ÿ"UDefine a constant instead of duplicating this literal "Elevator Bot Webhook" 5 times.(¨™ÓŠúÿÿÿÿ8Ï²èŒÂ.
+\python:S5754ˆ
+"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
+£python:S1192§"‚Define a constant instead of duplicating this literal "Long Link: https://app.gitkraken.com/glo/board/{}/card/{}\nID: {}" 4 times.(¢Ãƒñ8ÏËûŒÂ.
+zpython:S117Ç"\Rename this local variable "RPS_options" to match the regular expression ^[_a-z][a-z0-9_]*$.(½*8Ï²èŒÂ.
+xpython:S1192¸"SDefine a constant instead of duplicating this literal "%b %d %Y %H:%M UTC" 4 times.(Ô™¢ûÿÿÿÿ8Ï²èŒÂ.
+tpython:S3776·"TRefactor this function to reduce its Cognitive Complexity from 42 to the 15 allowed.(âçšø8Ï²èŒÂ.
+upython:S3776ø"URefactor this function to reduce its Cognitive Complexity from 119 to the 15 allowed.(Òıüº8Ï²èŒÂ.
+\python:S5754Ä"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ï²èŒÂ.
+npython:S1192Û"NDefine a constant instead of duplicating this literal "{}\nValue: {}" 8 times.(ŒÆ²8Ï²èŒÂ.
+®python:S1192Õ"Define a constant instead of duplicating this literal "https://raw.githubusercontent.com/bevacqua/correcthorse/master/wordlist.json" 5 times.(Àí™§8Ï²èŒÂ.
+¸python:S1515 "—Add a parameter to function "chk" and use variable "cur_player" as its default value;The value of "cur_player" might change at the next loop iteration.(Åß¶ş8ÏËûŒÂ.
+qpython:S1192Ø"LDefine a constant instead of duplicating this literal "Turn Number" 5 times.(ù¹Ä¸üÿÿÿÿ8ÏËûŒÂ.
+vpython:S1192£
+"VDefine a constant instead of duplicating this literal "Translation Completed" 3 times.(×ÌÑ•8Ï²èŒÂ.
+?python:S3626›"Remove this redundant continue.(À–¬ˆ8Ï²èŒÂ.
+tpython:S1192Ä"ODefine a constant instead of duplicating this literal "Person Banned:" 4 times.(÷ç€üûÿÿÿÿ8Ï²èŒÂ.
+kpython:S1192Ô"FDefine a constant instead of duplicating this literal "Soft " 6 times.(ÂŒÃ¯ûÿÿÿÿ8Ï²èŒÂ.

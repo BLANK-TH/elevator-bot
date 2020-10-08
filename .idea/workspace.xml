@@ -18,7 +18,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d3ca59a-bfc0-4fae-8257-8dfc4f9e0799" name="Default Changelist" comment="" />
+    <list default="true" id="8d3ca59a-bfc0-4fae-8257-8dfc4f9e0799" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,6 +165,7 @@
       <workItem from="1600447633300" duration="82000" />
       <workItem from="1601925823056" duration="701000" />
       <workItem from="1602005932130" duration="121000" />
+      <workItem from="1602009106982" duration="1920000" />
     </task>
     <task id="LOCAL-00001" summary="Purge Command Version 13.32.61">
       <created>1586957169181</created>
