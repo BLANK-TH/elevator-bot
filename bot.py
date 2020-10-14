@@ -31,7 +31,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.18.53.274 Developed By: BLANK"
+df = "Elevator Server Bot Ver.18.53.275 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3073,7 +3073,7 @@ async def colour(ctx,*,colour_name:str):
                 await ctx.message.author.remove_roles(role)
                 prev_colour = name
         await ctx.message.channel.send("The colour role `{}` has been removed successfully".format(prev_colour.title()))
-    elif colour_name not in colours.keys() and colour_name not in active_colours.keys():
+    elif colour_name not in colours.keys() and colour_name not in active_colours.keys() and colour_name not in special_colours.keys():
         await ctx.message.channel.send("You are trying to get a colour that doesn't exist. "
                                        "Here are the viable colour names: \n```Colours:\n{}``` \n\n```Active Colours:\n{}```\n\n```Special Colour(s):\n{}```".format(
             "\n".join(x.title() for x,y in colours.items()),"\n".join(x.title() for x,y in active_colours.items()),"\n".join(x.title() for x,y in special_colours.items())
