@@ -21,6 +21,7 @@ from string import ascii_lowercase
 from lyrics_extractor import SongLyrics
 from lyrics_extractor.lyrics import LyricScraperException
 from textwrap import TextWrapper
+import re
 import urllib
 import urllib.request
 import json
@@ -30,7 +31,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.17.52.272 Developed By: BLANK"
+df = "Elevator Server Bot Ver.18.52.272 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -71,6 +72,23 @@ async def change_game():
 
 @client.event
 async def on_message(message):
+    if message.channel.id == 692521137166614570:
+        msg_cont = message.content
+        if re.search(r"^Self Role - (.+):$",msg_cont.split("\n")[0]):
+            react_roles = re.findall(r"^(<:\w+:\d+>|\W+) - <@&(\d+)>(\s?)$",msg_cont,re.MULTILINE)
+            added_emotes = []
+            for r in react_roles:
+                em = r[0]
+                if em in added_emotes:
+                    await message.channel.send("Reaction `{}` is already used".format(em),delete_after=30)
+                    continue
+                added_emotes.append(em)
+                try:
+                    await message.add_reaction(em)
+                except discord.errors.NotFound as e:
+                    await message.channel.send("Could not react with `{}`".format(em),embed=discord.Embed(description=repr(e)),delete_after=30)
+                except discord.errors.InvalidArgument as e:
+                    await message.channel.send("Could not react with `{}`".format(em),embed=discord.Embed(description=repr(e)),delete_after=30)
     if "S!" == message.content[:2]:
         message.content = "s!" + message.content[2:]
     for mention in message.mentions:
@@ -170,6 +188,46 @@ async def on_message(message):
     if "bad bot" in message.content.lower():
         await message.add_reaction("😢")
     await client.process_commands(message)
+
+@client.event
+async def on_raw_reaction_add(payload):
+    msg = await client.get_channel(payload.channel_id).fetch_message(payload.message_id)
+    reaction = payload.emoji
+    user = await client.get_guild(payload.guild_id).fetch_member(payload.user_id)
+    if payload.channel_id == 692521137166614570 and not user.bot:
+        msg_cont = msg.content
+        if re.search(r"^Self Role - (.+):$",msg_cont.split("\n")[0]):
+            react_roles = re.findall(r"^(<:\w+:\d+>|\W+) - <@&(\d+)>(\s?)$",msg_cont,re.MULTILINE)
+            for r in react_roles:
+                em = r[0]
+                if em == str(reaction):
+                    r_id = re.match(r"(\d{18})",r[1]).group(0)
+                    role = get(user.guild.roles,id=int(r_id))
+                    if role is None:
+                        await msg.channel.send("Role with the ID `{}` doesn't exist.".format(str(r_id)),delete_after=30)
+                        return
+                    await user.add_roles(role)
+                    break
+
+@client.event
+async def on_raw_reaction_remove(payload):
+    msg = await client.get_channel(payload.channel_id).fetch_message(payload.message_id)
+    reaction = payload.emoji
+    user = await client.get_guild(payload.guild_id).fetch_member(payload.user_id)
+    if payload.channel_id == 692521137166614570 and not user.bot:
+        msg_cont = msg.content
+        if re.search(r"^Self Role - (.+):$",msg_cont.split("\n")[0]):
+            react_roles = re.findall(r"^(<:\w+:\d+>|\W+) - <@&(\d+)>(\s?)$",msg_cont,re.MULTILINE)
+            for r in react_roles:
+                em = r[0]
+                if em == str(reaction):
+                    r_id = re.match(r"(\d{18})",r[1]).group(0)
+                    role = get(user.guild.roles,id=int(r_id))
+                    if role is None:
+                        await msg.channel.send("Role with the ID `{}` doesn't exist.".format(str(r_id)),delete_after=30)
+                        return
+                    await user.remove_roles(role)
+                    break
 
 @client.event
 async def on_member_join(member):
