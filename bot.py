@@ -31,7 +31,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.18.52.273 Developed By: BLANK"
+df = "Elevator Server Bot Ver.18.53.273 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3053,11 +3053,13 @@ async def code(ctx):
 async def colour(ctx,*,colour_name:str):
     colour_name = colour_name.lower()
     active_role = get(ctx.guild.roles, id=740030930021908570)
+    special_role = get(ctx.guild.roles, id=740328940098289734)
     url = urllib.request.urlopen(
         "https://raw.githubusercontent.com/BLANK-TH/elevator-bot-resources/bot-storage/colourids.json")
     all_colours = json.loads(url.read())
     colours = all_colours["colours"]
     active_colours = all_colours["active colours"]
+    special_colours = all_colours["special colours"]
     if colour_name == "none":
         prev_colour = None
         for name, role_id in colours.items():
@@ -3073,12 +3075,26 @@ async def colour(ctx,*,colour_name:str):
         await ctx.message.channel.send("The colour role `{}` has been removed successfully".format(prev_colour.title()))
     elif colour_name not in colours.keys() and colour_name not in active_colours.keys():
         await ctx.message.channel.send("You are trying to get a colour that doesn't exist. "
-                                       "Here are the viable colour names: \n```Colours:\n{}``` \n\n```Active Colours:\n{}```".format(
-            "\n".join(x.title() for x,y in colours.items()),"\n".join(x.title() for x,y in active_colours.items())
+                                       "Here are the viable colour names: \n```Colours:\n{}``` \n\n```Active Colours:\n{}```\n\n``Special Colour(s):\n{}```".format(
+            "\n".join(x.title() for x,y in colours.items()),"\n".join(x.title() for x,y in active_colours.items()),"\n".join(x.title() for x,y in special_colours.items())
         ))
         return
     else:
         prev_colour = None
+        if colour_name in active_colours.keys():
+            if active_role not in ctx.message.author.roles:
+                await ctx.message.channel.send(
+                    "You are trying to get a Active Role only colour when you don't have the Active Member role.")
+                return
+            role = get(ctx.guild.roles,id=active_colours[colour_name])
+        elif colour_name in special_colours.keys():
+            if special_role not in ctx.message.author.roles:
+                await ctx.message.channel.send(
+                    "You're not special enough to get this special colour!")
+                return
+            role = get(ctx.guild.roles,id=special_colours[colour_name])
+        else:
+            role = get(ctx.guild.roles, id=colours[colour_name])
         for name,role_id in colours.items():
             role = get(ctx.guild.roles,id=role_id)
             if role in ctx.message.author.roles:
@@ -3089,14 +3105,11 @@ async def colour(ctx,*,colour_name:str):
             if role in ctx.message.author.roles:
                 await ctx.message.author.remove_roles(role)
                 prev_colour = name
-        if colour_name in active_colours.keys():
-            if active_role not in ctx.message.author.roles:
-                await ctx.message.channel.send(
-                    "You are trying to get a Active Role only colour when you don't have the Active Member role.")
-                return
-            role = get(ctx.guild.roles,id=active_colours[colour_name])
-        else:
-            role = get(ctx.guild.roles, id=colours[colour_name])
+        for name,role_id in special_colours.items():
+            role = get(ctx.guild.roles, id=role_id)
+            if role in ctx.message.author.roles:
+                await ctx.message.author.remove_roles(role)
+                prev_colour = name
         await ctx.message.author.add_roles(role)
         if prev_colour is None:
             await ctx.message.channel.send(
