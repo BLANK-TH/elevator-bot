@@ -31,7 +31,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.18.53.276 Developed By: BLANK"
+df = "Elevator Server Bot Ver.18.54.276 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -267,7 +267,7 @@ async def on_command_error(ctx,error):
         await ctx.message.channel.send("Missing Required Argument: {}. For info on how to use the command, look at the "
                                        "help docs (`s!help`)".format(error.param.name))
     elif isinstance(error, commands.BadArgument):
-        await ctx.message.channel.send("Bad Argument: Could Not Parse Commands Argument")
+        await ctx.message.channel.send("Bad Argument: Could Not Parse Commands Argument",embed=discord.Embed(description=repr(error)))
     elif isinstance(error, commands.CommandNotFound):
         def similar(a, b):
             return SequenceMatcher(None, a, b).ratio()
@@ -283,13 +283,13 @@ async def on_command_error(ctx,error):
         else:
             await ctx.message.channel.send("Invalid Command, did you mean `{}`?".format(highest_command[1]))
     elif isinstance(error, commands.CommandOnCooldown):
-        await ctx.message.channel.send("The Command is on Cooldown, Try Again in **{}** seconds".format(str(error.retry_after)))
+        await ctx.message.channel.send("The Command is on Cooldown, Try Again in **{}** seconds".format(str(error.retry_after)),embed=discord.Embed(description=repr(error)))
     elif isinstance(error, commands.MissingPermissions):
         await ctx.message.channel.send("Missing Permissions to Run This Command: {}"
-                                       .format(", ".join(x.replace("_"," ").title() for x in error.missing_perms)))
+                                       .format(", ".join(x.replace("_"," ").title() for x in error.missing_perms)),embed=discord.Embed(description=repr(error)))
     elif isinstance(error, commands.BotMissingPermissions):
         await ctx.message.channel.send("Bot is Missing the Required Permissions to Run This Command: {}"
-                                       .format(", ".join(x.replace("_"," ").title() for x in error.missing_perms)))
+                                       .format(", ".join(x.replace("_"," ").title() for x in error.missing_perms)),embed=discord.Embed(description=repr(error)))
     else:
         await ctx.message.channel.send("Uncommon Error <@616032766974361640>",embed=discord.Embed(description=repr(error)))
 
