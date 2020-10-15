@@ -19,8 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d3ca59a-bfc0-4fae-8257-8dfc4f9e0799" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/3/93374d5ad20eb17306a1988725b9b8f5bbaeaf0e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/3/93374d5ad20eb17306a1988725b9b8f5bbaeaf0e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +169,7 @@
       <workItem from="1602123159072" duration="1430000" />
       <workItem from="1602683697665" duration="10691000" />
       <workItem from="1602779601649" duration="61000" />
+      <workItem from="1602799758260" duration="296000" />
     </task>
     <task id="LOCAL-00001" summary="Purge Command Version 13.32.61">
       <created>1586957169181</created>

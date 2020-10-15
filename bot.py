@@ -31,7 +31,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.18.54.276 Developed By: BLANK"
+df = "Elevator Server Bot Ver.18.54.277 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -1743,7 +1743,7 @@ async def userinfo(ctx,*,user:discord.Member):
     embed.add_field(name="System User:",value=user.system)
     roles = []
     for x in user.roles:
-        roles.append(x.mention)
+        roles.append(x.mention if "everyone" not in x.name else x.name)
     val = ', '.join(x for x in roles)
     embed.add_field(name="Roles:", value=val, inline=False)
     guildperms = user.guild_permissions
