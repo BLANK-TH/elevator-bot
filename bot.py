@@ -31,7 +31,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.18.54.278 Developed By: BLANK"
+df = "Elevator Server Bot Ver.18.55.278 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3075,6 +3075,11 @@ async def colour(ctx,*,colour_name:str):
             if role in ctx.message.author.roles:
                 await ctx.message.author.remove_roles(role)
                 prev_colour = name
+        for name, role_id in special_colours.items():
+            role = get(ctx.guild.roles, id=role_id)
+            if role in ctx.message.author.roles:
+                await ctx.message.author.remove_roles(role)
+                prev_colour = name
         await ctx.message.channel.send("The colour role `{}` has been removed successfully".format(prev_colour.title()))
     elif colour_name not in colours.keys() and colour_name not in active_colours.keys() and colour_name not in special_colours.keys():
         await ctx.message.channel.send("You are trying to get a colour that doesn't exist. "
@@ -3099,19 +3104,19 @@ async def colour(ctx,*,colour_name:str):
         else:
             role = get(ctx.guild.roles, id=colours[colour_name])
         for name,role_id in colours.items():
-            role = get(ctx.guild.roles,id=role_id)
-            if role in ctx.message.author.roles:
-                await ctx.message.author.remove_roles(role)
+            r = get(ctx.guild.roles,id=role_id)
+            if r in ctx.message.author.roles:
+                await ctx.message.author.remove_roles(r)
                 prev_colour = name
         for name,role_id in active_colours.items():
-            role = get(ctx.guild.roles, id=role_id)
+            r = get(ctx.guild.roles, id=role_id)
             if role in ctx.message.author.roles:
-                await ctx.message.author.remove_roles(role)
+                await ctx.message.author.remove_roles(r)
                 prev_colour = name
         for name,role_id in special_colours.items():
-            role = get(ctx.guild.roles, id=role_id)
-            if role in ctx.message.author.roles:
-                await ctx.message.author.remove_roles(role)
+            r = get(ctx.guild.roles, id=role_id)
+            if r in ctx.message.author.roles:
+                await ctx.message.author.remove_roles(r)
                 prev_colour = name
         await ctx.message.author.add_roles(role)
         if prev_colour is None:
