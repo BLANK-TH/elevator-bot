@@ -31,7 +31,7 @@ import minesweeperPy
 import typing
 
 client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.18.56.278 Developed By: BLANK"
+df = "Elevator Server Bot Ver.18.56.279 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -3816,13 +3816,13 @@ async def archive(ctx,channel:discord.TextChannel,*,reason:str=None):
     await channel.edit(sync_permissions=True,category=category,position=category.channels[-1].position+1)
     if reason is None:
         msg = await channel.send("**------------------------------------------**\n"
-                           "This channel has been archived. A archived channel can still be viewed "
+                           "This channel has been archived. An archived channel can still be viewed "
                            "however you cannot send messages or "
                            "add reactions in it.\n**------------------------------------------**")
     else:
         msg = await channel.send("**------------------------------------------**\n"
                            "This channel has been archived. This channel was archived due to {}. "
-                           "A archived channel can still be viewed however you cannot send messages or "
+                           "An archived channel can still be viewed however you cannot send messages or "
                            "add reactions in it.\n**------------------------------------------**".format(reason))
     await msg.pin()
     await ctx.message.channel.send("{} has been archived successfully".format(channel.mention))
