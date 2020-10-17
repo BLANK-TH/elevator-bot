@@ -583,6 +583,10 @@ You may see that the bot will be typing throughout this proccess, that is explai
 #### Command: `promoteactive <user>`
 Give a user the active member role and DM them some basic information.
 
+### Archive Channel
+#### Command: `archive <channel> [reason]`
+Move a channel to the archived category and post the archive notice in the channel.
+
 [//]: # (new moderation commands goes here)
 
 ## Bot Development Commands
