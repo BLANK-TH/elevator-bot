@@ -19,6 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d3ca59a-bfc0-4fae-8257-8dfc4f9e0799" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/3/93374d5ad20eb17306a1988725b9b8f5bbaeaf0e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/3/93374d5ad20eb17306a1988725b9b8f5bbaeaf0e" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +72,7 @@
     <property name="ignore_missing_gitignore" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="SettingsForm" />
   </component>
   <component name="RunManager">
     <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -172,7 +173,17 @@
       <workItem from="1602799758260" duration="1846000" />
       <workItem from="1602882278776" duration="1674000" />
       <workItem from="1602884628222" duration="2482000" />
-      <workItem from="1602957104000" duration="1352000" />
+      <workItem from="1602957104000" duration="3870000" />
+      <workItem from="1603217535862" duration="11000" />
+      <workItem from="1603217662916" duration="11000" />
+      <workItem from="1603472660133" duration="1745000" />
+      <workItem from="1604605853278" duration="6000" />
+      <workItem from="1605197960056" duration="10000" />
+      <workItem from="1605206189347" duration="166000" />
+      <workItem from="1605206386418" duration="25000" />
+      <workItem from="1605806900296" duration="45000" />
+      <workItem from="1605822333563" duration="46000" />
+      <workItem from="1606505152908" duration="585000" />
     </task>
     <task id="LOCAL-00001" summary="Purge Command Version 13.32.61">
       <created>1586957169181</created>
@@ -452,71 +463,45 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="521" y="181" key="#Plugins/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1597350953372" />
-    <state x="703" y="342" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596287503287">
-      <screen x="0" y="0" width="1858" height="1080" />
-    </state>
-    <state x="703" y="342" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1596287503287" />
     <state x="-1291" y="276" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598583240766">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state x="-1291" y="276" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@-1920.0.1920.1080" timestamp="1598583240766" />
-    <state x="609" y="276" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1596035755067" />
     <state x="92" y="92" width="1674" height="896" key="DiffContextDialog" timestamp="1597358040363">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="92" y="92" width="1674" height="896" key="DiffContextDialog/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1594937452613" />
     <state x="92" y="92" width="1674" height="896" key="DiffContextDialog/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1597358040363" />
-    <state x="-1188" y="282" key="FileChooserDialogImpl" timestamp="1595001399998">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="708" y="282" key="FileChooserDialogImpl/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1594944007497" />
-    <state x="-1188" y="282" key="FileChooserDialogImpl/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@-1920.0.1920.1080" timestamp="1595001399998" />
-    <state width="1815" height="245" key="GridCell.Tab.0.bottom" timestamp="1602884593617">
+    <state x="708" y="282" key="FileChooserDialogImpl" timestamp="1602982062964">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="243" key="GridCell.Tab.0.bottom/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@-1920.0.1858.1080" timestamp="1594956661509" />
-    <state width="1815" height="245" key="GridCell.Tab.0.bottom/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1596249456744" />
-    <state width="1877" height="245" key="GridCell.Tab.0.bottom/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@-1920.0.1920.1080" timestamp="1596377295794" />
-    <state width="1815" height="245" key="GridCell.Tab.0.bottom/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1602884593617" />
+    <state x="708" y="282" key="FileChooserDialogImpl/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1602982062964" />
+    <state width="1815" height="245" key="GridCell.Tab.0.bottom" timestamp="1602982066372">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="245" key="GridCell.Tab.0.bottom/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1602982066372" />
     <state width="1877" height="245" key="GridCell.Tab.0.bottom/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1598033109957" />
-    <state width="1815" height="245" key="GridCell.Tab.0.center" timestamp="1602884593617">
+    <state width="1815" height="245" key="GridCell.Tab.0.center" timestamp="1602982066371">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="243" key="GridCell.Tab.0.center/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@-1920.0.1858.1080" timestamp="1594956661509" />
-    <state width="1815" height="245" key="GridCell.Tab.0.center/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1596249456744" />
-    <state width="1877" height="245" key="GridCell.Tab.0.center/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@-1920.0.1920.1080" timestamp="1596377295793" />
-    <state width="1815" height="245" key="GridCell.Tab.0.center/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1602884593617" />
+    <state width="1815" height="245" key="GridCell.Tab.0.center/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1602982066371" />
     <state width="1877" height="245" key="GridCell.Tab.0.center/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1598033109957" />
-    <state width="1815" height="245" key="GridCell.Tab.0.left" timestamp="1602884593617">
+    <state width="1815" height="245" key="GridCell.Tab.0.left" timestamp="1602982066371">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="243" key="GridCell.Tab.0.left/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@-1920.0.1858.1080" timestamp="1594956661509" />
-    <state width="1815" height="245" key="GridCell.Tab.0.left/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1596249456744" />
-    <state width="1877" height="245" key="GridCell.Tab.0.left/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@-1920.0.1920.1080" timestamp="1596377295793" />
-    <state width="1815" height="245" key="GridCell.Tab.0.left/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1602884593617" />
+    <state width="1815" height="245" key="GridCell.Tab.0.left/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1602982066371" />
     <state width="1877" height="245" key="GridCell.Tab.0.left/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1598033109956" />
-    <state width="1815" height="245" key="GridCell.Tab.0.right" timestamp="1602884593617">
+    <state width="1815" height="245" key="GridCell.Tab.0.right" timestamp="1602982066371">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="243" key="GridCell.Tab.0.right/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@-1920.0.1858.1080" timestamp="1594956661509" />
-    <state width="1815" height="245" key="GridCell.Tab.0.right/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1596249456744" />
-    <state width="1877" height="245" key="GridCell.Tab.0.right/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@-1920.0.1920.1080" timestamp="1596377295794" />
-    <state width="1815" height="245" key="GridCell.Tab.0.right/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1602884593617" />
+    <state width="1815" height="245" key="GridCell.Tab.0.right/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1602982066371" />
     <state width="1877" height="245" key="GridCell.Tab.0.right/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1598033109957" />
-    <state x="-1380" y="283" key="IDE.errors.dialog" timestamp="1596291242010">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="-1380" y="283" key="IDE.errors.dialog/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@-1920.0.1920.1080" timestamp="1596291242010" />
-    <state x="524" y="48" key="SettingsEditor" timestamp="1600446185207">
+    <state x="524" y="48" key="SettingsEditor" timestamp="1605206407904">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="766" y="151" key="SettingsEditor/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1596249453178" />
-    <state x="524" y="48" key="SettingsEditor/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1600446185207" />
-    <state x="2364" y="185" key="SettingsEditor/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595500899282" />
+    <state x="524" y="48" key="SettingsEditor/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1605206407904" />
     <state x="555" y="274" key="VcsDiffUtil.ChangesDialog" timestamp="1597357998802">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="555" y="274" key="VcsDiffUtil.ChangesDialog/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1594937150262" />
     <state x="555" y="274" key="VcsDiffUtil.ChangesDialog/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1597357998802" />
     <state width="937" height="548" key="XDebugger.FullValuePopup" timestamp="1597356361398">
       <screen x="0" y="0" width="1858" height="1080" />
@@ -528,8 +513,5 @@
     <state x="-1328" y="235" width="672" height="678" key="search.everywhere.popup/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@-1920.0.1858.1080" timestamp="1596724201857" />
     <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/-1920.0.1858.1080/1920.0.1920.1080/0.0.1858.1080@0.0.1858.1080" timestamp="1597246772874" />
     <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080/-1920.0.1920.1080/1920.0.1920.1080@0.0.1858.1080" timestamp="1597356485586" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ElevatorBot$bot.coverage" NAME="bot Coverage Results" MODIFIED="1602958417592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
