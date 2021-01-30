@@ -30,8 +30,8 @@ import arrow
 import minesweeperPy
 import typing
 
-client = commands.Bot(command_prefix='s!')
-df = "Elevator Server Bot Ver.18.56.280 Developed By: BLANK"
+client = commands.Bot(command_prefix='s!', guild_subscriptions=True)
+df = "Elevator Server Bot Ver.18.56.281 Developed By: BLANK"
 game = cycle(["A Bot for the Elevator Discord Server!",'Developed By: BLANK','Use s!help to see my commands!',df.replace(" Developed By: BLANK","")])
 hc = 0x8681bb
 client.remove_command('help')
@@ -236,12 +236,11 @@ async def on_member_join(member):
     v_channel = client.get_channel(737093236803239977)
     c_channel = client.get_channel(686703151738519561)
     r_channel = client.get_channel(686700028399452181)
-    b_channel = client.get_channel(690221900621676586)
     unverified = get(member.guild.roles, id=737092006349635706)
     w_embed = discord.Embed(
         description= f'Hey {member.mention}! Welcome to **elevator (F127)**! Make sure to verify yourself in '
                      f'{v_channel.mention} by using `s!verify` and read {r_channel.mention}. Once you\'ve done that'
-                     f', Head over to {sr_channel.mention}, {c_channel.mention}, and {b_channel.mention}!!'
+                     f', Head over to {sr_channel.mention} and {c_channel.mention}!!'
                      f' We hope you enjoy your time here :D',
         colour=hc
     )
